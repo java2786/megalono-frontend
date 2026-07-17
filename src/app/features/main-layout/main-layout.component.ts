@@ -11,7 +11,16 @@ import { CommonModule } from '@angular/common';
 })
 export class MainLayoutComponent implements OnInit {
   isDark = true;
-ngOnInit(): void {
+  today = new Date();
+  
+  consultingExpertise = [
+    { title: 'Enterprise Architecture' },
+    { title: 'Platform Engineering' },
+    { title: 'Full-Stack Development' },
+    { title: 'Technical Consulting & Training' }
+  ];
+
+  ngOnInit(): void {
     // 3. Force the DOM body attribute to match your variable right at startup
     document.documentElement.setAttribute('data-theme', 'dark');
   }

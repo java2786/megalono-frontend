@@ -18,19 +18,45 @@
 </main>
 
 <!-- Unified Profile Network Footer Framework -->
-<footer style="border-top: 1px solid var(--border-color); background: var(--bg-surface); padding: 3rem 1.5rem; margin-top: 4rem; text-align: center;">
-  <p style="margin: 0 0 1.5rem 0; font-size: 0.95rem; opacity: 0.8; font-family: system-ui, sans-serif;">
-    Explore my verified project implementations, production code bases, and consultancy availability:
-  </p>
-  
-  <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
-    <a href="https://linkedin.com/in/your-profile" target="_blank" style="padding: 0.5rem 1rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--accent-color); text-decoration: none;">LinkedIn</a>
-    <a href="https://github.com/your-username" target="_blank" style="padding: 0.5rem 1rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--accent-color); text-decoration: none;">GitHub</a>
-    <a href="https://toptal.com/resume/your-profile" target="_blank" style="padding: 0.5rem 1rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--accent-color); text-decoration: none;">Toptal</a>
-    <a href="https://upwork.com/freelancers/your-id" target="_blank" style="padding: 0.5rem 1rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--accent-color); text-decoration: none;">Upwork</a>
+<footer class="main-footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      
+      <!-- Column 1: Consulting Expertise -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Consulting Expertise</h3>
+        <ul class="footer-list">
+          <li class="footer-list-item" *ngFor="let item of consultingExpertise">
+             {{ item.title }} 
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Connect -->
+      <div class="footer-col">
+        <h3 class="footer-heading">PROFESSIONAL PROFILES</h3>
+        <div class="footer-social-links">
+          <a href="https://linkedin.com/in/your-profile" target="_blank" class="footer-social-link">LinkedIn</a>
+          <a href="https://github.com/your-username" target="_blank" class="footer-social-link">GitHub</a>
+          <a href="https://toptal.com/resume/your-profile" target="_blank" class="footer-social-link">Toptal</a>
+          <a href="https://upwork.com/freelancers/your-id" target="_blank" class="footer-social-link">Upwork</a>
+        </div>
+      </div>
+
+      <!-- Column 3: About -->
+      <div class="footer-col">
+        <h3 class="footer-heading">About</h3>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <p class="footer-about-brand">Megalono</p>
+          <p class="footer-about-subtitle">Enterprise Engineering Platform</p>
+          <p class="footer-about-details" style="margin-top: 0.5rem;">
+            Designed & Engineered by Arun Kumar<br>
+            Delhi NCR, India
+          </p>
+          <p class="footer-about-copyright">© {{ today.getFullYear() }}</p>
+        </div>
+      </div>
+
+    </div>
   </div>
-  
-  <p style="margin-top: 2rem; font-size: 0.75rem; opacity: 0.5;">
-    © 2026 Arun Kumar. Built with Angular Zoneless Architecture.
-  </p>
 </footer>

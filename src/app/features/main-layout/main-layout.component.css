@@ -59,3 +59,147 @@
   flex: 1;
   background-color: var(--bg-primary);
 }
+
+/* --- Footer Reorganization Layout --- */
+.main-footer {
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  padding: 4rem 1.5rem 3rem 1.5rem;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  text-align: left;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-heading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+ 
+.footer-list-item {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  opacity: 0.75;
+}
+.footer-list-item:hover {
+  color: #00C896;
+}
+
+
+/* Connect Column links */
+.footer-social-links {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  gap: 0.75rem;
+}
+
+.footer-social-link {
+  display: inline-block;
+  max-width: 180px;
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-social-link:hover {
+  background-color: var(--border-color);
+}
+
+/* About Section */
+.footer-about-brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.footer-about-subtitle {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin: 0;
+}
+
+.footer-about-details {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer-about-copyright {
+  font-size: 0.75rem;
+  opacity: 0.5;
+  margin: 0;
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+  .footer-grid {
+    gap: 2rem;
+  }
+}
+
+/* Tablet View: Gracefully transition from 3 to 2 columns */
+@media (max-width: 868px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .footer-grid > .footer-col:last-child {
+    grid-column: span 2;
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Mobile View: Vertical list layout */
+@media (max-width: 576px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer-grid > .footer-col:last-child {
+    grid-column: span 1;
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+    margin-top: 0;
+  }
+}

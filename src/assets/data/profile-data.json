@@ -14,22 +14,56 @@
   },
   "services": [
     {
-      "id": "arch-consulting",
-      "title": "Systems Architecture & Consulting",
-      "description": "Designing production-ready microservices, high-availability database schemas, API integrations, and secure network infrastructure topologies.",
-      "technologies": ["Java", "Spring Boot", "Spring Cloud", "Docker", "PostgreSQL", "AWS"]
+      "id": "enterprise-architecture",
+      "title": "Enterprise Architecture",
+      "description": "Designing scalable enterprise applications, microservices, cloud-native platforms, API ecosystems, high-availability databases, and secure infrastructure for production environments.",
+      "technologies": [
+        "Java",
+        "Spring Boot",
+        "Spring Cloud",
+        "Microservices",
+        "System Design",
+        "AWS"
+      ]
     },
     {
-      "id": "tech-training",
-      "title": "Technical Training Programs",
-      "description": "Delivering production-grade technical workshops, syllabus design, and advanced code mentoring for engineering teams and institutions.",
-      "technologies": ["Enterprise Java", "Spring Ecosystem", "Angular", "React", "Python", "Power BI"]
+      "id": "platform-engineering",
+      "title": "Platform Engineering",
+      "description": "Building modern engineering platforms using cloud infrastructure, containerization, CI/CD automation, monitoring, observability, and deployment strategies for reliable software delivery.",
+      "technologies": [
+        "Docker",
+        "GitHub Actions",
+        "Jenkins",
+        "Nginx",
+        "Hetzner Cloud",
+        "Redis"
+      ]
     },
     {
-      "id": "devops-fullstack",
-      "title": "Full-Stack Development & DevOps",
-      "description": "Building clean web/mobile application architectures and designing continuous integration and automated deployment pipelines.",
-      "technologies": ["Node.js", "Express", "TypeScript", "Flutter", "GitHub Actions", "Nginx"]
+      "id": "full-stack-development",
+      "title": "Full-Stack Development",
+      "description": "Developing modern web and enterprise applications with robust backend services, responsive frontends, REST APIs, database integration, and scalable application architectures.",
+      "technologies": [
+        "Angular",
+        "React",
+        "Node.js",
+        "TypeScript",
+        "Flutter",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "id": "technical-consulting-training",
+      "title": "Technical Consulting & Training",
+      "description": "Helping organizations accelerate engineering excellence through architecture consulting, enterprise technical training, mentoring, code reviews, technical assessments, and technology adoption programs.",
+      "technologies": [
+        "Enterprise Java",
+        "Spring",
+        "Python",
+        "Power BI",
+        "System Design",
+        "Technical Mentoring"
+      ]
     }
   ],
   "caseStudies": [
@@ -53,7 +87,23 @@
           "content": "Supported CI/CD automation pipelines using GitHub Actions and Jenkins. Implemented code quality workflows involving centralized SonarQube deployment, static code analysis integration, and quality gates into live development paths."
         }
       ],
-      "stack": ["AWS", "Hetzner Cloud", "Docker", "Docker Compose", "Jenkins", "GitHub Actions", "Nginx", "Node.js", "Spring Boot", "React", "Angular", "MongoDB", "MySQL", "PostgreSQL", "SonarQube"]
+      "stack": [
+        "AWS",
+        "Hetzner Cloud",
+        "Docker",
+        "Docker Compose",
+        "Jenkins",
+        "GitHub Actions",
+        "Nginx",
+        "Node.js",
+        "Spring Boot",
+        "React",
+        "Angular",
+        "MongoDB",
+        "MySQL",
+        "PostgreSQL",
+        "SonarQube"
+      ]
     },
     {
       "title": "Independent Technical Consultant | SME (Advisory & Enablement)",
@@ -71,7 +121,20 @@
           "content": "IBM, Capgemini, LTI Mindtree, Wipro, Cognizant, Infosys, TCS, Accenture, Genpact, ABB, UST Global"
         }
       ],
-      "stack": ["Java", "Spring Boot", "React", "Angular", "Node.js", "AWS", "Docker", "CI/CD", "Microservices", "REST APIs", "Databases", "DevOps"]
+      "stack": [
+        "Java",
+        "Spring Boot",
+        "React",
+        "Angular",
+        "Node.js",
+        "AWS",
+        "Docker",
+        "CI/CD",
+        "Microservices",
+        "REST APIs",
+        "Databases",
+        "DevOps"
+      ]
     },
     {
       "title": "Independent Technical Consultant (Software Delivery)",
@@ -89,7 +152,17 @@
           "content": "Snapdeal, Wipro, Cognizant, HCL Technologies, NIIT Technologies, Boeing"
         }
       ],
-      "stack": ["Java", "Spring", "Spring MVC", "Struts", "AngularJS", "MEAN Stack", "Android", "MySQL", "JUnit"]
+      "stack": [
+        "Java",
+        "Spring",
+        "Spring MVC",
+        "Struts",
+        "AngularJS",
+        "MEAN Stack",
+        "Android",
+        "MySQL",
+        "JUnit"
+      ]
     },
     {
       "title": "Techknow Heights Pvt Ltd (Software Developer to Technical Lead)",
@@ -107,7 +180,21 @@
           "content": "Managed a development team of approximately five engineers. Led modernization efforts that successfully migrated the legacy infrastructure platform towards clean MEAN-based architectures."
         }
       ],
-      "stack": ["Java", "Servlet", "JSP", "Struts", "Spring MVC", "Spring JDBC", "MySQL", "AngularJS", "Node.js", "MongoDB", "MEAN Stack", "JUnit", "Apache Tomcat"]
+      "stack": [
+        "Java",
+        "Servlet",
+        "JSP",
+        "Struts",
+        "Spring MVC",
+        "Spring JDBC",
+        "MySQL",
+        "AngularJS",
+        "Node.js",
+        "MongoDB",
+        "MEAN Stack",
+        "JUnit",
+        "Apache Tomcat"
+      ]
     },
     {
       "title": "Research Project: Secure Online Coding Assessment Sandbox",
@@ -117,7 +204,13 @@
           "content": "Researched and evaluated solution alternatives for a high-availability coding assessment platform supporting secure multi-language code execution. Evaluated Judge0 and JSJail execution architectures, secure Docker sandboxing environments, CPU/Memory resource isolation thresholds, and scalability deployment models."
         }
       ],
-      "stack": ["Docker Sandbox", "Judge0", "JSJail", "Resource Isolation", "API Security"]
+      "stack": [
+        "Docker Sandbox",
+        "Judge0",
+        "JSJail",
+        "Resource Isolation",
+        "API Security"
+      ]
     }
   ],
   "videoLibrary": [
