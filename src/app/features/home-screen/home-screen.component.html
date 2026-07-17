@@ -10,8 +10,22 @@
     </h1>
     <p class="summary-text">{{ data.about.summary }}</p>
     
+    <!-- Professional Statistics Section -->
+    <div class="hero-stats-grid" #statsContainer>
+      <div class="stat-item" 
+           *ngFor="let stat of stats" 
+           [attr.aria-label]="stat.target + stat.suffix + ' ' + stat.label">
+        <div class="stat-number" aria-hidden="true">
+          {{ stat.current() }}{{ stat.suffix }}
+        </div>
+        <div class="stat-label" aria-hidden="true">
+          {{ stat.label }}
+        </div>
+      </div>
+    </div>
+    
     <div class="action-buttons-group">
-      <a href="mailto:your-email@example.com" class="btn-primary">Hire Consultant</a>
+      <a href="mailto:your-email@example.com" class="btn-primary">Book Consultation</a>
       <a href="assets/data/resume.pdf" download class="btn-secondary">Download Resume / CV</a>
     </div>
   </header>
