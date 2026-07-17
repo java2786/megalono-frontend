@@ -1,0 +1,137 @@
+{
+  "about": {
+    "name": "Arun Kumar",
+    "title": "Principal Solutions Architect & Technical Consultant",
+    "subtitle": "Enterprise Java | Full Stack Engineering | Cloud & DevOps",
+    "summary": "Principal Technical Consultant with 15+ years of experience in enterprise software development, platform engineering, cloud modernization, DevOps, full stack application development, and technical consulting. Experienced in designing, developing, deploying, and modernizing enterprise applications using Java, Spring Boot, Microservices, React, Angular, Node.js, AWS, Docker, and CI/CD technologies.",
+    "location": "Delhi NCR, India"
+  },
+  "socialLinks": {
+    "linkedin": "https://linkedin.com/in/arunkumar31786",
+    "github": "https://github.com/java2786",
+    "toptal": "https://toptal.com/resume/arunkumar31786",
+    "upwork": "https://upwork.com/freelancers/~01arunkumar"
+  },
+  "services": [
+    {
+      "id": "arch-consulting",
+      "title": "Systems Architecture & Consulting",
+      "description": "Designing production-ready microservices, high-availability database schemas, API integrations, and secure network infrastructure topologies.",
+      "technologies": ["Java", "Spring Boot", "Spring Cloud", "Docker", "PostgreSQL", "AWS"]
+    },
+    {
+      "id": "tech-training",
+      "title": "Technical Training Programs",
+      "description": "Delivering production-grade technical workshops, syllabus design, and advanced code mentoring for engineering teams and institutions.",
+      "technologies": ["Enterprise Java", "Spring Ecosystem", "Angular", "React", "Python", "Power BI"]
+    },
+    {
+      "id": "devops-fullstack",
+      "title": "Full-Stack Development & DevOps",
+      "description": "Building clean web/mobile application architectures and designing continuous integration and automated deployment pipelines.",
+      "technologies": ["Node.js", "Express", "TypeScript", "Flutter", "GitHub Actions", "Nginx"]
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "Brain Mentors Pvt Ltd (Senior Technical Consultant)",
+      "sections": [
+        {
+          "heading": "Timeline & Location",
+          "content": "February 2024 – Present | Delhi NCR"
+        },
+        {
+          "heading": "Core Responsibilities & Platform Operations",
+          "content": "Responsible for platform engineering, cloud modernization, infrastructure planning, deployment automation, technical operations, and engineering coordination across digital learning platforms. Managed technical operations for Brain Mentors and SkillRisers platforms, coordinating a team of 3–5 engineers across platform and development initiatives."
+        },
+        {
+          "heading": "Key Infrastructure Contributions",
+          "content": "Led AWS to Hetzner Cloud migration planning and execution initiatives. Coordinated infrastructure modernization activities focused on cost optimization, platform reliability, and scalability. Designed containerized deployment strategies using Docker and Docker Compose for improved operational consistency."
+        },
+        {
+          "heading": "CI/CD & Engineering Governance",
+          "content": "Supported CI/CD automation pipelines using GitHub Actions and Jenkins. Implemented code quality workflows involving centralized SonarQube deployment, static code analysis integration, and quality gates into live development paths."
+        }
+      ],
+      "stack": ["AWS", "Hetzner Cloud", "Docker", "Docker Compose", "Jenkins", "GitHub Actions", "Nginx", "Node.js", "Spring Boot", "React", "Angular", "MongoDB", "MySQL", "PostgreSQL", "SonarQube"]
+    },
+    {
+      "title": "Independent Technical Consultant | SME (Advisory & Enablement)",
+      "sections": [
+        {
+          "heading": "Timeline",
+          "content": "January 2018 – January 2024"
+        },
+        {
+          "heading": "Solution Engineering & Architecture Guidance",
+          "content": "Collaborated with enterprise engineering teams and technology organizations to deliver consulting engagements, architecture guidance, technical evaluations, code reviews, and technology adoption initiatives. Supported engineering readiness, technical mentoring, capability-building programs, curriculum architecture, project design, and technical interview engineering assessments."
+        },
+        {
+          "heading": "Enterprise Engagements & Partnerships",
+          "content": "IBM, Capgemini, LTI Mindtree, Wipro, Cognizant, Infosys, TCS, Accenture, Genpact, ABB, UST Global"
+        }
+      ],
+      "stack": ["Java", "Spring Boot", "React", "Angular", "Node.js", "AWS", "Docker", "CI/CD", "Microservices", "REST APIs", "Databases", "DevOps"]
+    },
+    {
+      "title": "Independent Technical Consultant (Software Delivery)",
+      "sections": [
+        {
+          "heading": "Timeline",
+          "content": "2014 – 2018"
+        },
+        {
+          "heading": "Corporate Consulting & Project Support",
+          "content": "Provided freelance consulting, corporate programs, software development guidance, and technology enablement services. Delivered implementation support for Java, Spring, AngularJS, MEAN Stack, Android, and enterprise application development initiatives involving MVC architecture, Struts, databases, and automated testing frameworks."
+        },
+        {
+          "heading": "Client & Program Exposure",
+          "content": "Snapdeal, Wipro, Cognizant, HCL Technologies, NIIT Technologies, Boeing"
+        }
+      ],
+      "stack": ["Java", "Spring", "Spring MVC", "Struts", "AngularJS", "MEAN Stack", "Android", "MySQL", "JUnit"]
+    },
+    {
+      "title": "Techknow Heights Pvt Ltd (Software Developer to Technical Lead)",
+      "sections": [
+        {
+          "heading": "Timeline",
+          "content": "2010 – 2014"
+        },
+        {
+          "heading": "Enterprise Learning Platform Evolved",
+          "content": "Designed and developed a large-scale learning and assessment ecosystem supporting online tests, reporting, learner management, and progress tracking. Designed and implemented enterprise applications using Java, Servlets, JSP, Spring MVC, Struts, MySQL, and Apache Tomcat."
+        },
+        {
+          "heading": "Modernization tracks & Leadership",
+          "content": "Managed a development team of approximately five engineers. Led modernization efforts that successfully migrated the legacy infrastructure platform towards clean MEAN-based architectures."
+        }
+      ],
+      "stack": ["Java", "Servlet", "JSP", "Struts", "Spring MVC", "Spring JDBC", "MySQL", "AngularJS", "Node.js", "MongoDB", "MEAN Stack", "JUnit", "Apache Tomcat"]
+    },
+    {
+      "title": "Research Project: Secure Online Coding Assessment Sandbox",
+      "sections": [
+        {
+          "heading": "Architecture Framework Specs",
+          "content": "Researched and evaluated solution alternatives for a high-availability coding assessment platform supporting secure multi-language code execution. Evaluated Judge0 and JSJail execution architectures, secure Docker sandboxing environments, CPU/Memory resource isolation thresholds, and scalability deployment models."
+        }
+      ],
+      "stack": ["Docker Sandbox", "Judge0", "JSJail", "Resource Isolation", "API Security"]
+    }
+  ],
+  "videoLibrary": [
+    {
+      "title": "Deep Dive: Building Secure REST APIs with Spring Security & JWT",
+      "duration": "18:45",
+      "url": "https://youtube.com/your-video-link-1",
+      "category": "Backend"
+    },
+    {
+      "title": "Angular State Management: Clean Architectures without Boilerplate",
+      "duration": "14:20",
+      "url": "https://youtube.com/your-video-link-2",
+      "category": "Frontend"
+    }
+  ]
+}

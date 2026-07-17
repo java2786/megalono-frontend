@@ -1,0 +1,66 @@
+{
+  "about": {
+    "name": "Arun Kumar",
+    "title": "Principal Solutions Architect & Technical Consultant",
+    "summary": "Full-stack engineer and corporate IT trainer with over 15 years of professional experience building enterprise systems. Specializing in designing robust Java/Spring Boot microservices, high-performance web applications, and automated cloud infrastructure deployment pipelines."
+  },
+  "services": [
+    {
+      "id": "consulting",
+      "title": "Systems Architecture & Consulting",
+      "description": "Designing production-ready microservices, high-availability database schemas, API integrations, and secure network infrastructure topologies.",
+      "technologies": ["Java", "Spring Boot", "Spring Cloud", "Docker", "PostgreSQL", "AWS"]
+    },
+    {
+      "id": "training",
+      "title": "Technical Training Programs",
+      "description": "Delivering production-grade technical workshops, syllabus design, and advanced code mentoring for engineering teams and institutions.",
+      "technologies": ["Enterprise Java", "Spring Ecosystem", "Angular", "React", "Python", "Power BI"]
+    },
+    {
+      "id": "deployment",
+      "title": "Full-Stack Development & DevOps",
+      "description": "Building clean web/mobile application architectures and designing continuous integration and automated deployment pipelines.",
+      "technologies": ["Node.js", "Express", "TypeScript", "Flutter", "GitHub Actions", "Nginx"]
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "Legacy Monolith Migration to Spring Cloud Microservices",
+      "problem": "A client had a heavy, single-instance legacy enterprise platform suffering from single-point-of-failure downtimes and slow release cycles.",
+      "solution": "Deconstructed the core domains into isolated Spring Boot microservices using Eureka for discovery, Spring Cloud Gateway for routing, and Docker for containerized deployment.",
+      "stack": ["Spring Boot", "Spring Cloud", "Docker", "PostgreSQL", "AWS EC2"]
+    },
+  {
+    "title": "Enterprise Cloud Architecture & Legacy Migration",
+    "sections": [
+      {
+        "heading": "Core Architecture Specs",
+        "content": "Migrated a massive single-point-of-failure enterprise system to isolated microservices."
+      },
+      {
+        "heading": "Infrastructure Automation",
+        "content": "Configured secure network topologies using Docker, Nginx, and automated cloud deployments."
+      }
+    ],
+    "stack": ["Java", "Spring Cloud", "Docker", "AWS"]
+  }
+],
+  "videoLibrary": [
+    {
+      "title": "Deep Dive: Building Secure REST APIs with Spring Security & JWT",
+      "duration": "18:45",
+      "url": "https://www.youtube.com/embed/sample-link-1",
+      "category": "Backend"
+    },
+    {
+      "title": "Angular State Management: Clean Architectures without Boilerplate",
+      "duration": "14:20",
+      "url": "https://www.youtube.com/embed/sample-link-2",
+      "category": "Frontend"
+    }
+  ]
+}
+
+
+

@@ -1,0 +1,32 @@
+# Node
+**/node_modules/
+
+# React
+**/dist/
+
+# Python
+**/.venv/
+**/__pycache__/
+
+# Java
+**/target/
+
+# IDE
+**/.vscode/
+**/.idea/
+
+# macOS
+**/.DS_Store
+
+# Logs
+**/*.log
+
+# Environment
+**/.env
+**/.env.*
+
+# Coverage
+**/coverage/
+
+# Custom
+**/kbd/

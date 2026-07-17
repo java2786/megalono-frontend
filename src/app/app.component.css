@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base text selection highlights utilizing your signature tech green */
+::selection {
+  background-color: var(--accent-color);
+  color: #071A16;
+}
+
+

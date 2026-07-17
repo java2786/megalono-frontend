@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* --- Light Theme Configuration --- */
+  --bg-primary: #F4F6F8;
+  --bg-surface: #FFFFFF;
+  --text-main: #0F172A;
+  --btn-fill: #0F172A;
+  --btn-text: #FFFFFF;
+  --accent-color: #10B981;
+  --border-color: #E2E8F0;
+}
+
+[data-theme='dark'] {
+  /* --- Dark Theme Configuration --- */
+  --bg-primary: #071A16;
+  --bg-surface: #112E28;
+  --text-main: #F8FAFC;
+  --btn-fill: #10B981;
+  --btn-text: #071A16;
+  --accent-color: #10B981;
+  --border-color: #1F3A34;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

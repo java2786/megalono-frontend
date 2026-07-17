@@ -1,0 +1,22 @@
+<div class="app-layout-wrapper">
+  
+  <nav class="global-navbar">
+    <div class="nav-brand">AK <span class="dim-text">// Systems Consultant</span></div>
+    
+    <div class="nav-links">
+      <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Overview</a>
+      <a routerLink="/cases" routerLinkActive="active-link">Architecture Labs</a>
+      <a routerLink="/videos" routerLinkActive="active-link">Workshops</a>
+    </div>
+
+    <button class="theme-switcher-btn" (click)="toggleTheme()">
+      {{ isDark ? '☀️ Light View' : '🌙 Dark View' }}
+    </button>
+  </nav>
+
+  <!-- Route Viewport Display Anchor -->
+  <main class="router-outlet-container">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

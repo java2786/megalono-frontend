@@ -1,0 +1,35 @@
+<!-- We execute the signal function here using parenthesis 'profile()' -->
+<div class="hero-container" *ngIf="profile() as data">
+  
+  <!-- Introduction Focus Block -->
+  <header class="hero-intro">
+    <span class="tech-indicator-pill">ENTERPRISE SYSTEM ARCHITECTURE</span>
+    <h1 class="main-heading">
+      Hi, I'm {{ data.about.name }}.<br>
+      <span class="accent-text">{{ data.about.title }}</span>
+    </h1>
+    <p class="summary-text">{{ data.about.summary }}</p>
+    
+    <div class="action-buttons-group">
+      <a href="mailto:your-email@example.com" class="btn-primary">Hire Consultant</a>
+      <a href="assets/data/resume.pdf" download class="btn-secondary">Download Resume / CV</a>
+    </div>
+  </header>
+
+  <!-- Capability Cards Presentation Layer -->
+  <section class="services-section">
+    <h2 class="sub-section-title">Core Competencies</h2>
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of data.services">
+        <h3 class="card-title">{{ service.title }}</h3>
+        <p class="card-desc">{{ service.description }}</p>
+        <div class="pill-wrapper">
+          <span class="tech-tag" *ngFor="let tech of service.technologies">
+            {{ tech }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
