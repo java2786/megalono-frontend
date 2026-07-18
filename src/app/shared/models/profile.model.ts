@@ -20,27 +20,48 @@ export interface CaseStudy {
 }
 
 export interface WorkshopResources {
-  video?: string;
+  video?: string;          // Legacy compatibility
+  youtube?: string;        // Added
   github?: string;
   slides?: string;
   sampleProject?: string;
-  liveDemo?: string;
+  liveDemo?: string;       // Legacy compatibility
+  demo?: string;           // Added
   documentation?: string;
-  downloads?: string;
+  downloads?: string;      // Legacy compatibility
+  download?: string;       // Added
+  awsS3?: string;
   [key: string]: string | undefined;
 }
 
-export interface VideoItem {
+export interface KnowledgeHubItem {
+  id?: string;
+  slug?: string;
   title: string;
-  duration?: string;
-  url?: string;
-  category?: string;
   description?: string;
+  category?: string;
+  level?: string;
+  difficulty?: string;     // Legacy compatibility
+  duration?: string;
   thumbnail?: string;
-  difficulty?: string;
   technologies?: string[];
   learningObjectives?: string[];
   resources?: WorkshopResources;
+  featured?: boolean;
+  published?: boolean;
+  tags?: string[];
+  url?: string;            // Legacy compatibility
+}
+
+export interface KnowledgeHub {
+  workshops: KnowledgeHubItem[];
+  resources: KnowledgeHubItem[];
+  architectureGuides: KnowledgeHubItem[];
+  sampleProjects: KnowledgeHubItem[];
+  downloads: KnowledgeHubItem[];
+  codeTemplates: KnowledgeHubItem[];
+  cheatSheets: KnowledgeHubItem[];
+  learningPaths: KnowledgeHubItem[];
 }
 
 export interface ProfileData {
@@ -51,7 +72,7 @@ export interface ProfileData {
   };
   services: ServicePillar[];
   caseStudies: CaseStudy[];
-  videoLibrary: VideoItem[];
+  knowledgeHub: KnowledgeHub;
 }
 
 

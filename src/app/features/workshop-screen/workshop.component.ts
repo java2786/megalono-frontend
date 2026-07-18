@@ -1,7 +1,7 @@
 import { Component, OnInit, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileService } from '../../core/services/profile.service';
-import { ProfileData, VideoItem } from '../../shared/models/profile.model';
+import { ProfileData, KnowledgeHubItem } from '../../shared/models/profile.model';
 
 @Component({
   selector: 'app-workshop',
@@ -120,12 +120,16 @@ export class VideoLibraryComponent implements OnInit {
 
   readonly resourceConfig: Record<string, { label: string; icon: string }> = {
     video: { label: 'Watch Video', icon: '▶' },
+    youtube: { label: 'Watch Video', icon: '▶' },
     github: { label: 'GitHub', icon: '💻' },
     slides: { label: 'Download Slides', icon: '📊' },
     sampleProject: { label: 'Sample Project', icon: '🚀' },
     liveDemo: { label: 'Live Demo', icon: '⚡' },
+    demo: { label: 'Live Demo', icon: '⚡' },
     documentation: { label: 'Documentation', icon: '📄' },
     downloads: { label: 'Downloads', icon: '📥' },
+    download: { label: 'Download', icon: '📥' },
+    awsS3: { label: 'AWS S3', icon: '☁️' },
     series: { label: 'Workshop Series', icon: '📚' },
     course: { label: 'Course', icon: '🎓' },
     certification: { label: 'Certification', icon: '🏅' },
@@ -139,14 +143,51 @@ export class VideoLibraryComponent implements OnInit {
 
   videoWorkshops = computed(() => {
     const data = this.profile();
-    if (!data || !data.videoLibrary) return [];
-    return data.videoLibrary.filter(item => !!item.resources?.video);
+    if (!data || !data.knowledgeHub || !data.knowledgeHub.workshops) return [];
+    return data.knowledgeHub.workshops;
   });
 
   resourceWorkshops = computed(() => {
     const data = this.profile();
-    if (!data || !data.videoLibrary) return [];
-    return data.videoLibrary.filter(item => !item.resources?.video);
+    if (!data || !data.knowledgeHub || !data.knowledgeHub.resources) return [];
+    return data.knowledgeHub.resources;
+  });
+
+  // Future sections computed signals
+  architectureGuides = computed(() => {
+    const data = this.profile();
+    if (!data || !data.knowledgeHub || !data.knowledgeHub.architectureGuides) return [];
+    return data.knowledgeHub.architectureGuides;
+  });
+
+  sampleProjects = computed(() => {
+    const data = this.profile();
+    if (!data || !data.knowledgeHub || !data.knowledgeHub.sampleProjects) return [];
+    return data.knowledgeHub.sampleProjects;
+  });
+
+  downloads = computed(() => {
+    const data = this.profile();
+    if (!data || !data.knowledgeHub || !data.knowledgeHub.downloads) return [];
+    return data.knowledgeHub.downloads;
+  });
+
+  codeTemplates = computed(() => {
+    const data = this.profile();
+    if (!data || !data.knowledgeHub || !data.knowledgeHub.codeTemplates) return [];
+    return data.knowledgeHub.codeTemplates;
+  });
+
+  cheatSheets = computed(() => {
+    const data = this.profile();
+    if (!data || !data.knowledgeHub || !data.knowledgeHub.cheatSheets) return [];
+    return data.knowledgeHub.cheatSheets;
+  });
+
+  learningPaths = computed(() => {
+    const data = this.profile();
+    if (!data || !data.knowledgeHub || !data.knowledgeHub.learningPaths) return [];
+    return data.knowledgeHub.learningPaths;
   });
 
   constructor(private profileService: ProfileService) { }
@@ -168,6 +209,31 @@ export class VideoLibraryComponent implements OnInit {
           url: url as string
         };
       });
+  }
+
+  // Future sections empty rendering methods
+  renderArchitectureGuides() {
+    return [];
+  }
+
+  renderSampleProjects() {
+    return [];
+  }
+
+  renderDownloads() {
+    return [];
+  }
+
+  renderCodeTemplates() {
+    return [];
+  }
+
+  renderCheatSheets() {
+    return [];
+  }
+
+  renderLearningPaths() {
+    return [];
   }
 
   private capitalize(val: string): string {
