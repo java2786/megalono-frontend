@@ -69,6 +69,7 @@
   "caseStudies": [
     {
       "title": "Brain Mentors Pvt Ltd (Senior Technical Consultant)",
+      "businessImpact": "Improved engineering operations, cloud infrastructure, and deployment automation across multiple digital learning platforms.",
       "sections": [
         {
           "heading": "Timeline & Location",
@@ -107,6 +108,7 @@
     },
     {
       "title": "Independent Technical Consultant | SME (Advisory & Enablement)",
+      "businessImpact": "Enabled enterprise engineering teams through architecture consulting, technical mentoring, and large-scale capability-building programs.",
       "sections": [
         {
           "heading": "Timeline",
@@ -138,6 +140,7 @@
     },
     {
       "title": "Independent Technical Consultant (Software Delivery)",
+      "businessImpact": "Delivered enterprise software solutions and consulting engagements across multiple corporate clients and technology domains.",
       "sections": [
         {
           "heading": "Timeline",
@@ -166,6 +169,7 @@
     },
     {
       "title": "Techknow Heights Pvt Ltd (Software Developer to Technical Lead)",
+      "businessImpact": "Led the evolution of a large-scale learning platform while modernizing architecture and engineering practices.",
       "sections": [
         {
           "heading": "Timeline",
@@ -198,6 +202,7 @@
     },
     {
       "title": "Research Project: Secure Online Coding Assessment Sandbox",
+      "businessImpact": "Designed and evaluated secure, scalable architectures for enterprise-grade online coding assessment platforms.",
       "sections": [
         {
           "heading": "Architecture Framework Specs",

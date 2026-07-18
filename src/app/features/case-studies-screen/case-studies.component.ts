@@ -11,7 +11,7 @@ import { ProfileData } from '../../shared/models/profile.model';
       <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem; font-family: system-ui, sans-serif;">
         <!-- Page Header -->
         <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem; color: var(--text-main);">
-          Architecture Labs & Professional Experience
+          Enterprise Case Studies
         </h2>
         
         <!-- Case Studies & Experience Track Cards Loop -->
@@ -21,6 +21,18 @@ import { ProfileData } from '../../shared/models/profile.model';
             <h3 style="margin-top:0; font-size:1.4rem; color:var(--accent-color); font-weight: 700; margin-bottom: 1.5rem;">
               {{ item.title }}
             </h3>
+
+            <!-- Business Impact Summary -->
+            @if (item.businessImpact) {
+              <div style="margin-bottom: 1.5rem; border-left: 3px solid var(--accent-color); padding-left: 0.75rem;">
+                <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-color); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.2rem;">
+                  Business Impact
+                </span>
+                <p style="font-size: 1.05rem; line-height: 1.5; color: var(--text-main); font-weight: 500; margin: 0; opacity: 0.9;">
+                  {{ item.businessImpact }}
+                </p>
+              </div>
+            }
             
             <!-- Dynamic Sections Display Loop -->
             <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 1.75rem;">
@@ -57,7 +69,7 @@ export class CaseStudiesComponent implements OnInit {
   ngOnInit() {
     this.profileService.getProfileData().subscribe({
       next: (data) => this.profile.set(data),
-      error: (err) => console.error('Failed to load profile details in Architecture Labs:', err)
+      error: (err) => console.error('Failed to load profile details in Case Studies:', err)
     });
   }
 }

@@ -12,6 +12,7 @@ export interface StudySection {
 
 export interface CaseStudy {
   title: string;
+  businessImpact?: string;
   problem?: string;   // Optional: For items using problem/solution layout
   solution?: string;  // Optional
   sections?: StudySection[]; // Optional: For items using nested section array blocks
