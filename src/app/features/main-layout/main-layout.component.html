@@ -5,7 +5,7 @@
   <nav style="display: flex; gap: 2rem;">
     <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="text-decoration: none; color: var(--text-main); font-weight: 500;">Overview</a>
     <a routerLink="/cases" routerLinkActive="active" style="text-decoration: none; color: var(--text-main); font-weight: 500;">Case Studies</a>
-    <a routerLink="/videos" routerLinkActive="active" style="text-decoration: none; color: var(--text-main); font-weight: 500;">Workshops</a>
+    <a routerLink="/workshops" routerLinkActive="active" style="text-decoration: none; color: var(--text-main); font-weight: 500;">Workshops</a>
   </nav>
   <button (click)="toggleTheme()" style="padding: 0.5rem 1rem; border-radius: 2rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-weight: 600; cursor: pointer;">
     {{ isDark ? '☀️ Light View' : '🌙 Dark View' }}

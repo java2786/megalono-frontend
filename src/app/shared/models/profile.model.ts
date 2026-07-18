@@ -19,11 +19,28 @@ export interface CaseStudy {
   stack: string[];
 }
 
+export interface WorkshopResources {
+  video?: string;
+  github?: string;
+  slides?: string;
+  sampleProject?: string;
+  liveDemo?: string;
+  documentation?: string;
+  downloads?: string;
+  [key: string]: string | undefined;
+}
+
 export interface VideoItem {
   title: string;
-  duration: string;
-  url: string;
-  category: string;
+  duration?: string;
+  url?: string;
+  category?: string;
+  description?: string;
+  thumbnail?: string;
+  difficulty?: string;
+  technologies?: string[];
+  learningObjectives?: string[];
+  resources?: WorkshopResources;
 }
 
 export interface ProfileData {
@@ -36,5 +53,6 @@ export interface ProfileData {
   caseStudies: CaseStudy[];
   videoLibrary: VideoItem[];
 }
+
 
 

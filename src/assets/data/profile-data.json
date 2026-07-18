@@ -223,13 +223,62 @@
       "title": "Deep Dive: Building Secure REST APIs with Spring Security & JWT",
       "duration": "18:45",
       "url": "https://youtube.com/your-video-link-1",
-      "category": "Backend"
+      "category": "Backend",
+      "description": "Learn to secure enterprise Spring Boot REST APIs using Spring Security 6 and JSON Web Tokens (JWT). Covers authentication, role-based access control, and stateless session management.",
+      "thumbnail": "assets/spring_security_jwt_workshop.png",
+      "difficulty": "Advanced",
+      "technologies": ["Spring Boot", "Spring Security", "JWT", "Java"],
+      "learningObjectives": [
+        "Configure JWT authentication filter",
+        "Implement stateless session management",
+        "Enable role-based method security"
+      ],
+      "resources": {
+        "video": "https://youtube.com/your-video-link-1",
+        "github": "https://github.com/java2786/spring-security-jwt",
+        "slides": "https://slideshare.net/example-slides-1"
+      }
     },
     {
       "title": "Angular State Management: Clean Architectures without Boilerplate",
       "duration": "14:20",
       "url": "https://youtube.com/your-video-link-2",
-      "category": "Frontend"
+      "category": "Frontend",
+      "description": "An in-depth look at managing state in Angular applications using Signals and RxJS. Build a scalable state management pattern without the boilerplate of Redux/NgRx.",
+      "thumbnail": "assets/angular_state_management_workshop.png",
+      "difficulty": "Intermediate",
+      "technologies": ["Angular", "Signals", "RxJS", "TypeScript"],
+      "learningObjectives": [
+        "Leverage Angular Signals for local state management",
+        "Combine Signals with RxJS for asynchronous actions",
+        "Design scalable service-based store pattern"
+      ],
+      "resources": {
+        "video": "https://youtube.com/your-video-link-2",
+        "github": "https://github.com/java2786/angular-signals-store",
+        "documentation": "https://angular.dev/guide/signals"
+      }
+    },
+    {
+      "title": "Enterprise Java Microservices Starter",
+      "category": "Backend",
+      "description": "A comprehensive template for building cloud-native enterprise microservices using Spring Boot, Spring Cloud, PostgreSQL, and Docker.",
+      "technologies": ["Java", "Spring Boot", "Spring Cloud", "Docker", "PostgreSQL"],
+      "resources": {
+        "github": "https://github.com/java2786/java-microservices-starter",
+        "sampleProject": "https://github.com/java2786/java-microservices-starter/archive/refs/heads/main.zip",
+        "documentation": "https://github.com/java2786/java-microservices-starter/wiki"
+      }
+    },
+    {
+      "title": "CI/CD Deployment Pipelines Cheat Sheet",
+      "category": "DevOps",
+      "description": "Reference guide and starter templates for GitHub Actions, Jenkins declarative pipelines, and Docker Compose deployments.",
+      "technologies": ["GitHub Actions", "Jenkins", "Docker Compose", "CI/CD"],
+      "resources": {
+        "github": "https://github.com/java2786/cicd-templates",
+        "downloads": "https://raw.githubusercontent.com/java2786/cicd-templates/main/cheatsheet.pdf"
+      }
     }
   ]
 }
