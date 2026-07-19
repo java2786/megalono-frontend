@@ -9,6 +9,15 @@ export interface ResourceLink {
   description?: string;
 }
 
+export interface SocialLinkItem {
+  id: string;
+  title: string;
+  url: string;
+  icon?: string;
+  visible?: boolean;
+  displayOrder?: number;
+}
+
 export interface ProofLink {
   id?: string;
   type: string; // 'github' | 'swagger' | 'youtube' | 'documentation' | 'slides' | 'demo' | string
@@ -214,8 +223,9 @@ export interface ProfileData {
     summary: string;
     subtitle?: string;
     location?: string;
+    email?: string;
   };
-  socialLinks?: Record<string, string>;
+  socialLinks?: SocialLinkItem[] | Record<string, string>;
   services: ServicePillar[];
   caseStudies: CaseStudy[];
   knowledgeHub: KnowledgeHub;

@@ -4,14 +4,43 @@
     "title": "Principal Solutions Architect & Technical Consultant",
     "subtitle": "Enterprise Java | Full Stack Engineering | Cloud & DevOps",
     "summary": "Principal Technical Consultant with 15+ years of experience in enterprise software development, platform engineering, cloud modernization, DevOps, full stack application development, and technical consulting. Experienced in designing, developing, deploying, and modernizing enterprise applications using Java, Spring Boot, Microservices, React, Angular, Node.js, AWS, Docker, and CI/CD technologies.",
-    "location": "Delhi NCR, India"
+    "location": "Delhi NCR, India",
+    "email": "arunkumar31786@gmail.com"
   },
-  "socialLinks": {
-    "linkedin": "https://linkedin.com/in/arunkumar31786",
-    "github": "https://github.com/java2786",
-    "toptal": "https://www.toptal.com/developers/resume/arun-kumar1",
-    "upwork": "https://www.upwork.com/freelancers/~017258c360bea50c26?viewMode=1"
-  },
+  "socialLinks": [
+    {
+      "id": "linkedin",
+      "title": "LinkedIn",
+      "url": "https://linkedin.com/in/arunkumar31786",
+      "icon": "linkedin",
+      "visible": true,
+      "displayOrder": 10
+    },
+    {
+      "id": "github",
+      "title": "GitHub",
+      "url": "https://github.com/java2786",
+      "icon": "github",
+      "visible": true,
+      "displayOrder": 20
+    },
+    {
+      "id": "toptal",
+      "title": "Toptal",
+      "url": "https://www.toptal.com/developers/resume/arun-kumar1",
+      "icon": "toptal",
+      "visible": true,
+      "displayOrder": 30
+    },
+    {
+      "id": "upwork",
+      "title": "Upwork",
+      "url": "https://www.upwork.com/freelancers/~017258c360bea50c26?viewMode=1",
+      "icon": "upwork",
+      "visible": true,
+      "displayOrder": 40
+    }
+  ],
   "services": [
     {
       "id": "enterprise-architecture",

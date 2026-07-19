@@ -62,10 +62,9 @@
       <div class="footer-col">
         <h3 class="footer-heading">PROFESSIONAL PROFILES</h3>
         <div class="footer-social-links">
-          <a href="https://linkedin.com/in/your-profile" target="_blank" class="footer-social-link">LinkedIn</a>
-          <a href="https://github.com/your-username" target="_blank" class="footer-social-link">GitHub</a>
-          <a href="https://toptal.com/resume/your-profile" target="_blank" class="footer-social-link">Toptal</a>
-          <a href="https://upwork.com/freelancers/your-id" target="_blank" class="footer-social-link">Upwork</a>
+          <a *ngFor="let link of socialLinks()" [href]="link.url" target="_blank" class="footer-social-link">
+            {{ link.title }}
+          </a>
         </div>
       </div>
 

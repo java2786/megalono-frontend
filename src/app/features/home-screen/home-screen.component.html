@@ -25,7 +25,7 @@
     </div>
     
     <div class="action-buttons-group">
-      <a href="mailto:your-email@example.com" class="btn-primary">Book Consultation</a>
+      <a [href]="'mailto:' + (data.about.email || 'arunkumar31786@gmail.com')" class="btn-primary">Book Consultation</a>
       <a href="assets/data/resume.pdf" download class="btn-secondary">Download Technical Profile</a>
     </div>
   </header>
