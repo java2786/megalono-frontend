@@ -9,9 +9,48 @@ export interface ResourceLink {
   description?: string;
 }
 
+export interface ProofLink {
+  id?: string;
+  type: string; // 'github' | 'swagger' | 'youtube' | 'documentation' | 'slides' | 'demo' | string
+  title: string;
+  url: string;
+  visible?: boolean;
+}
+
+export interface ProofArtifact {
+  id?: string;
+  type: string; // 'architectureDiagram' | 'erDiagram' | 'deploymentScreenshot' | 'dockerCompose' | 'nginx' | 'redis' | 'cicd' | 'monitoring' | 'infrastructure' | 'performanceReport' | 'databaseSchema' | string
+  title: string;
+  thumbnail?: string;
+  url?: string;
+  visible?: boolean;
+}
+
+export interface EngineeringEvidenceItem {
+  id: string;
+  title: string;
+  description?: string;
+  category?: string;
+  status?: string; // 'AVAILABLE' | 'PUBLISHED' | string
+  verified?: boolean;
+  visible?: boolean;
+  priority?: number;
+  technologies?: string[];
+  links?: ProofLink[];
+  artifacts?: ProofArtifact[];
+  relatedCaseStudies?: string[];
+  relatedWorkshops?: string[];
+}
+
+export interface EngineeringEvidenceData {
+  evidence?: EngineeringEvidenceItem[];
+  [key: string]: any;
+}
+
+// Legacy interfaces retained for backward compatibility
 export interface EngineeringProofItem {
   id?: string;
-  type: string; // 'architectureDiagram' | 'swagger' | 'githubRepository' | 'deployment' | 'cicd' | 'docker' | 'nginx' | 'redis' | 'monitoring' | 'databaseSchema' | 'erDiagram' | 'performanceReport' | 'screenshots' | string
+  type: string;
   title: string;
   description?: string;
   url?: string;
@@ -20,11 +59,12 @@ export interface EngineeringProofItem {
 }
 
 export interface ArchitectureDiagram {
-  id: string;
+  id?: string;
   title: string;
   description?: string;
   thumbnail?: string;
   fullImage?: string;
+  url?: string;
   technologies?: string[];
   category?: string;
   visible?: boolean;
@@ -174,5 +214,6 @@ export interface ProfileData {
   services: ServicePillar[];
   caseStudies: CaseStudy[];
   knowledgeHub: KnowledgeHub;
+  engineeringEvidence?: EngineeringEvidenceData;
   engineeringProof?: EngineeringProofData;
 }

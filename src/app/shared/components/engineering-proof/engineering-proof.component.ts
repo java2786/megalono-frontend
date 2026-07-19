@@ -1,6 +1,6 @@
 import { Component, Input, computed, signal, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EngineeringProofData } from '../../models/profile.model';
+import { EngineeringEvidenceData, EngineeringProofData, EngineeringEvidenceItem, ProofLink, ProofArtifact, ArchitectureDiagram, GitHubRepositoryProof, SwaggerApiProof } from '../../models/profile.model';
 
 @Component({
   selector: 'app-engineering-proof',
@@ -20,7 +20,7 @@ import { EngineeringProofData } from '../../models/profile.model';
         <div class="proof-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; align-items: start;">
           <article *ngFor="let diag of diagrams()" style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 0.75rem; display: flex; flex-direction: column; height: 100%; box-sizing: border-box;">
             
-            <img *ngIf="diag.thumbnail || diag.fullImage" [src]="diag.thumbnail || diag.fullImage" [alt]="diag.title" loading="lazy"
+            <img *ngIf="diag.thumbnail || diag.url" [src]="diag.thumbnail || diag.url" [alt]="diag.title" loading="lazy"
                  style="width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; border-radius: 0.5rem; margin-bottom: 1rem; display: block;" />
 
             <div *ngIf="diag.category" style="font-size: 0.75rem; font-weight: 600; opacity: 0.7; margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-color);">
@@ -129,19 +129,100 @@ import { EngineeringProofData } from '../../models/profile.model';
   `]
 })
 export class EngineeringProofComponent implements OnChanges {
+  @Input() evidenceData?: EngineeringEvidenceData;
   @Input() proof?: EngineeringProofData;
 
+  evidenceSignal = signal<EngineeringEvidenceData | undefined>(undefined);
   proofSignal = signal<EngineeringProofData | undefined>(undefined);
 
-  diagrams = computed(() => 
-    (this.proofSignal()?.architectureDiagrams || []).filter(item => item.visible !== false)
-  );
-  repos = computed(() => 
-    (this.proofSignal()?.githubRepositories || []).filter(item => item.visible !== false)
-  );
-  swaggerApis = computed(() => 
-    (this.proofSignal()?.swaggerApis || []).filter(item => item.visible !== false)
-  );
+  activeEvidence = computed(() => {
+    const ev = this.evidenceSignal()?.evidence;
+    if (ev && Array.isArray(ev)) {
+      return ev
+        .filter(item => item.visible !== false)
+        .sort((a, b) => (b.priority || 0) - (a.priority || 0));
+    }
+    return [];
+  });
+
+  diagrams = computed<ArchitectureDiagram[]>(() => {
+    const evList = this.activeEvidence();
+    if (evList.length > 0) {
+      const results: ArchitectureDiagram[] = [];
+      for (const ev of evList) {
+        if (ev.artifacts && Array.isArray(ev.artifacts)) {
+          for (const art of ev.artifacts) {
+            if (art.visible !== false && art.type === 'architectureDiagram') {
+              results.push({
+                id: art.id || ev.id,
+                title: art.title || ev.title,
+                description: ev.description,
+                thumbnail: art.thumbnail || art.url,
+                url: art.url,
+                category: ev.category,
+                technologies: ev.technologies
+              });
+            }
+          }
+        }
+      }
+      return results;
+    }
+    // Fallback to legacy structure
+    return (this.proofSignal()?.architectureDiagrams || []).filter(item => item.visible !== false);
+  });
+
+  repos = computed<GitHubRepositoryProof[]>(() => {
+    const evList = this.activeEvidence();
+    if (evList.length > 0) {
+      const results: GitHubRepositoryProof[] = [];
+      for (const ev of evList) {
+        if (ev.links && Array.isArray(ev.links)) {
+          for (const link of ev.links) {
+            if (link.visible !== false && link.type === 'github') {
+              const repoName = ev.id.replace('evid-', '').replace('repo-', '');
+              results.push({
+                id: link.id || ev.id,
+                repositoryName: repoName,
+                description: ev.description,
+                url: link.url,
+                technologies: ev.technologies
+              });
+            }
+          }
+        }
+      }
+      return results;
+    }
+    // Fallback to legacy structure
+    return (this.proofSignal()?.githubRepositories || []).filter(item => item.visible !== false);
+  });
+
+  swaggerApis = computed<SwaggerApiProof[]>(() => {
+    const evList = this.activeEvidence();
+    if (evList.length > 0) {
+      const results: SwaggerApiProof[] = [];
+      for (const ev of evList) {
+        if (ev.links && Array.isArray(ev.links)) {
+          for (const link of ev.links) {
+            if (link.visible !== false && link.type === 'swagger') {
+              results.push({
+                id: link.id || ev.id,
+                title: link.title || ev.title,
+                description: ev.description,
+                url: link.url,
+                service: ev.title,
+                version: '1.0'
+              });
+            }
+          }
+        }
+      }
+      return results;
+    }
+    // Fallback to legacy structure
+    return (this.proofSignal()?.swaggerApis || []).filter(item => item.visible !== false);
+  });
 
   hasData = computed(() => 
     this.diagrams().length > 0 || 
@@ -150,6 +231,9 @@ export class EngineeringProofComponent implements OnChanges {
   );
 
   ngOnChanges(changes: SimpleChanges): void {
+    if (changes['evidenceData']) {
+      this.evidenceSignal.set(this.evidenceData);
+    }
     if (changes['proof']) {
       this.proofSignal.set(this.proof);
     }

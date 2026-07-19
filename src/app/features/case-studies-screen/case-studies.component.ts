@@ -61,7 +61,7 @@ import { EngineeringProofComponent } from '../../shared/components/engineering-p
         }
 
         <!-- Reusable Engineering Proof & Verified Artifacts Component -->
-        <app-engineering-proof [proof]="data.engineeringProof"></app-engineering-proof>
+        <app-engineering-proof [evidenceData]="data.engineeringEvidence" [proof]="data.engineeringProof"></app-engineering-proof>
       </div>
     }
   `,
