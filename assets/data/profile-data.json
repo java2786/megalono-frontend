@@ -4,14 +4,43 @@
     "title": "Principal Solutions Architect & Technical Consultant",
     "subtitle": "Enterprise Java | Full Stack Engineering | Cloud & DevOps",
     "summary": "Principal Technical Consultant with 15+ years of experience in enterprise software development, platform engineering, cloud modernization, DevOps, full stack application development, and technical consulting. Experienced in designing, developing, deploying, and modernizing enterprise applications using Java, Spring Boot, Microservices, React, Angular, Node.js, AWS, Docker, and CI/CD technologies.",
-    "location": "Delhi NCR, India"
+    "location": "Delhi NCR, India",
+    "email": "arunkumar31786@gmail.com"
   },
-  "socialLinks": {
-    "linkedin": "https://linkedin.com/in/arunkumar31786",
-    "github": "https://github.com/java2786",
-    "toptal": "https://toptal.com/resume/arunkumar31786",
-    "upwork": "https://upwork.com/freelancers/~01arunkumar"
-  },
+  "socialLinks": [
+    {
+      "id": "linkedin",
+      "title": "LinkedIn",
+      "url": "https://linkedin.com/in/arunkumar31786",
+      "icon": "linkedin",
+      "visible": true,
+      "displayOrder": 10
+    },
+    {
+      "id": "github",
+      "title": "GitHub",
+      "url": "https://github.com/java2786",
+      "icon": "github",
+      "visible": true,
+      "displayOrder": 20
+    },
+    {
+      "id": "toptal",
+      "title": "Toptal",
+      "url": "https://www.toptal.com/developers/resume/arun-kumar1",
+      "icon": "toptal",
+      "visible": true,
+      "displayOrder": 30
+    },
+    {
+      "id": "upwork",
+      "title": "Upwork",
+      "url": "https://www.upwork.com/freelancers/~017258c360bea50c26?viewMode=1",
+      "icon": "upwork",
+      "visible": true,
+      "displayOrder": 40
+    }
+  ],
   "services": [
     {
       "id": "enterprise-architecture",
@@ -74,6 +103,7 @@
       "businessImpact": "Improved engineering operations, cloud infrastructure, and deployment automation across multiple digital learning platforms.",
       "status": "PUBLISHED",
       "priority": 100,
+      "displayOrder": 100,
       "createdAt": "2024-02-01",
       "updatedAt": "2026-07-19",
       "sections": [
@@ -119,6 +149,7 @@
       "businessImpact": "Enabled enterprise engineering teams through architecture consulting, technical mentoring, and large-scale capability-building programs.",
       "status": "PUBLISHED",
       "priority": 90,
+      "displayOrder": 90,
       "createdAt": "2018-01-01",
       "updatedAt": "2026-07-19",
       "sections": [
@@ -157,6 +188,7 @@
       "businessImpact": "Delivered enterprise software solutions and consulting engagements across multiple corporate clients and technology domains.",
       "status": "PUBLISHED",
       "priority": 80,
+      "displayOrder": 80,
       "createdAt": "2014-01-01",
       "updatedAt": "2026-07-19",
       "sections": [
@@ -192,6 +224,7 @@
       "businessImpact": "Led the evolution of a large-scale learning platform while modernizing architecture and engineering practices.",
       "status": "PUBLISHED",
       "priority": 70,
+      "displayOrder": 70,
       "createdAt": "2010-01-01",
       "updatedAt": "2026-07-19",
       "sections": [
@@ -231,6 +264,7 @@
       "businessImpact": "Designed and evaluated secure, scalable architectures for enterprise-grade online coding assessment platforms.",
       "status": "PUBLISHED",
       "priority": 60,
+      "displayOrder": 60,
       "createdAt": "2023-06-01",
       "updatedAt": "2026-07-19",
       "sections": [
@@ -289,6 +323,7 @@
         ],
         "status": "PUBLISHED",
         "priority": 100,
+        "displayOrder": 100,
         "createdAt": "2026-01-01",
         "updatedAt": "2026-07-19",
         "seo": {
@@ -336,6 +371,7 @@
         ],
         "status": "PUBLISHED",
         "priority": 90,
+        "displayOrder": 90,
         "createdAt": "2026-01-01",
         "updatedAt": "2026-07-19",
         "seo": {
@@ -377,6 +413,7 @@
         ],
         "status": "PUBLISHED",
         "priority": 50,
+        "displayOrder": 50,
         "createdAt": "2026-01-01",
         "updatedAt": "2026-07-19",
         "seo": {
@@ -410,6 +447,7 @@
         ],
         "status": "PUBLISHED",
         "priority": 40,
+        "displayOrder": 40,
         "createdAt": "2026-01-01",
         "updatedAt": "2026-07-19",
         "seo": {
@@ -426,56 +464,97 @@
     "cheatSheets": [],
     "learningPaths": []
   },
-  "engineeringProof": {
-    "architectureDiagrams": [
+  "engineeringEvidence": {
+    "title": "Engineering Evidence",
+    "description": "Architecture diagrams, source code repositories, deployments, APIs and technical artifacts demonstrating engineering capabilities.",
+    "evidence": [
       {
-        "id": "diag-spring-security",
+        "id": "evid-spring-security-jwt",
         "title": "Spring Security & JWT Authentication Architecture",
         "description": "Stateless authentication and role-based authorization flow diagram for enterprise Spring Boot microservices.",
-        "thumbnail": "assets/spring_security_jwt_workshop.png",
-        "fullImage": "assets/spring_security_jwt_workshop.png",
+        "category": "Security Architecture",
+        "status": "AVAILABLE",
+        "verified": true,
+        "visible": true,
+        "displayOrder": 100,
         "technologies": ["Spring Boot", "Spring Security", "JWT", "Java"],
-        "category": "Security Architecture"
+        "links": [
+          {
+            "id": "link-spring-sec-repo",
+            "type": "github",
+            "title": "GitHub",
+            "url": "https://github.com/java2786/spring-security-jwt",
+            "visible": true
+          }
+        ],
+        "artifacts": [
+          {
+            "id": "art-spring-sec-diag",
+            "type": "architecture",
+            "title": "Spring Security & JWT Authentication Architecture",
+            "thumbnail": "assets/spring_security_jwt_workshop.png",
+            "url": "assets/spring_security_jwt_workshop.png",
+            "visible": true
+          }
+        ],
+        "relatedCaseStudies": ["case-brain-mentors"],
+        "relatedWorkshops": ["spring-security-jwt"]
       },
       {
-        "id": "diag-angular-signals",
+        "id": "evid-angular-signals",
         "title": "Angular Signals Reactive State Flow Architecture",
         "description": "Component and state manager data flow architecture for modern reactive Angular applications.",
-        "thumbnail": "assets/angular_state_management_workshop.png",
-        "fullImage": "assets/angular_state_management_workshop.png",
+        "category": "Frontend Architecture",
+        "status": "AVAILABLE",
+        "verified": true,
+        "visible": true,
+        "displayOrder": 90,
         "technologies": ["Angular", "Signals", "RxJS", "TypeScript"],
-        "category": "Frontend Architecture"
-      }
-    ],
-    "githubRepositories": [
-      {
-        "id": "repo-megalono-frontend",
-        "repositoryName": "megalono-frontend",
-        "description": "Enterprise Angular Profile & System Architecture Showcase Platform built with standalone components and reactive Signals.",
-        "url": "https://github.com/java2786/megalono-frontend",
-        "technologies": ["Angular", "TypeScript", "RxJS", "CSS"],
-        "status": "PUBLISHED",
-        "featured": true
+        "links": [
+          {
+            "id": "link-megalono-repo",
+            "type": "github",
+            "title": "GitHub",
+            "url": "https://github.com/java2786/megalono-frontend",
+            "visible": true
+          }
+        ],
+        "artifacts": [
+          {
+            "id": "art-angular-signals-diag",
+            "type": "architecture",
+            "title": "Angular Signals Reactive State Flow Architecture",
+            "thumbnail": "assets/angular_state_management_workshop.png",
+            "url": "assets/angular_state_management_workshop.png",
+            "visible": true
+          }
+        ],
+        "relatedCaseStudies": ["case-megalono"],
+        "relatedWorkshops": ["angular-signals-store"]
       },
       {
-        "id": "repo-spring-security-jwt",
-        "repositoryName": "spring-security-jwt",
-        "description": "Production-ready Spring Boot microservice security template with JWT filter chains and role-based access control.",
-        "url": "https://github.com/java2786/spring-security-jwt",
-        "technologies": ["Java", "Spring Boot", "Spring Security", "JWT"],
-        "status": "PUBLISHED",
-        "featured": true
-      },
-      {
-        "id": "repo-java-microservices-starter",
-        "repositoryName": "java-microservices-starter",
+        "id": "evid-java-microservices",
+        "title": "Cloud-Native Java Microservices Architecture",
         "description": "Cloud-native enterprise microservices starter with Spring Cloud, PostgreSQL, and Docker containerization.",
-        "url": "https://github.com/java2786/java-microservices-starter",
+        "category": "Backend Architecture",
+        "status": "AVAILABLE",
+        "verified": true,
+        "visible": true,
+        "displayOrder": 80,
         "technologies": ["Java", "Spring Boot", "Spring Cloud", "Docker", "PostgreSQL"],
-        "status": "PUBLISHED",
-        "featured": false
+        "links": [
+          {
+            "id": "link-microservices-repo",
+            "type": "github",
+            "title": "GitHub",
+            "url": "https://github.com/java2786/java-microservices-starter",
+            "visible": true
+          }
+        ],
+        "artifacts": [],
+        "relatedCaseStudies": ["case-freelance"],
+        "relatedWorkshops": ["java-microservices-starter"]
       }
-    ],
-    "swaggerApis": []
+    ]
   }
 }
