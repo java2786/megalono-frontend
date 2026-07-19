@@ -1,7 +1,7 @@
 import { Component, OnInit, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileService } from '../../core/services/profile.service';
-import { ProfileData, KnowledgeHubItem } from '../../shared/models/profile.model';
+import { ProfileData, KnowledgeHubItem, ResourceLink, EngineeringProofItem } from '../../shared/models/profile.model';
 
 @Component({
   selector: 'app-workshop',
@@ -21,13 +21,13 @@ import { ProfileData, KnowledgeHubItem } from '../../shared/models/profile.model
             <img *ngIf="workshop.thumbnail" [src]="workshop.thumbnail" [alt]="workshop.title" loading="lazy" 
                  style="width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; border-radius: 0.5rem; margin-bottom: 1.25rem; display: block;" />
             
-            <!-- Metadata (Duration, Category, Difficulty) -->
+            <!-- Metadata (Duration, Category, Level) -->
             <div style="font-size: 0.8rem; font-weight: 500; opacity: 0.7; margin-bottom: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;">
               <span *ngIf="workshop.category">📁 {{workshop.category}}</span>
-              <span *ngIf="workshop.category && (workshop.duration || workshop.difficulty)">•</span>
+              <span *ngIf="workshop.category && (workshop.duration || workshop.level || workshop.difficulty)">•</span>
               <span *ngIf="workshop.duration">⏱️ {{workshop.duration}}</span>
-              <span *ngIf="workshop.duration && workshop.difficulty">•</span>
-              <span *ngIf="workshop.difficulty">🎯 {{workshop.difficulty}}</span>
+              <span *ngIf="workshop.duration && (workshop.level || workshop.difficulty)">•</span>
+              <span *ngIf="workshop.level || workshop.difficulty">🎯 {{workshop.level || workshop.difficulty}}</span>
             </div>
 
             <!-- Title -->
@@ -56,6 +56,18 @@ import { ProfileData, KnowledgeHubItem } from '../../shared/models/profile.model
               <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.8rem; opacity: 0.85; line-height: 1.45; display: flex; flex-direction: column; gap: 0.35rem;">
                 <li *ngFor="let obj of workshop.learningObjectives">{{obj}}</li>
               </ul>
+            </div>
+
+            <!-- Dynamic Proof Items (if present) -->
+            <div *ngIf="getProofItems(workshop.proof).length > 0" style="margin-bottom: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+              <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-color); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.35rem;">
+                Engineering Proof
+              </span>
+              <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+                <a *ngFor="let proofItem of getProofItems(workshop.proof)" [href]="proofItem.url" target="_blank" style="font-size: 0.8rem; color: var(--text-main); text-decoration: none; opacity: 0.9;">
+                  🛡️ <strong>{{proofItem.title}}</strong> <span *ngIf="proofItem.description">({{proofItem.description}})</span>
+                </a>
+              </div>
             </div>
 
             <!-- Resource Controls (Interactive buttons) -->
@@ -100,6 +112,15 @@ import { ProfileData, KnowledgeHubItem } from '../../shared/models/profile.model
               </span>
             </div>
 
+            <!-- Dynamic Proof Items (if present) -->
+            <div *ngIf="getProofItems(workshop.proof).length > 0" style="margin-bottom: 0.75rem; border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                <a *ngFor="let proofItem of getProofItems(workshop.proof)" [href]="proofItem.url" target="_blank" style="font-size: 0.75rem; color: var(--text-main); text-decoration: none; opacity: 0.9;">
+                  🛡️ <strong>{{proofItem.title}}</strong>
+                </a>
+              </div>
+            </div>
+
             <!-- Resource Controls (Interactive buttons) -->
             <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
               <a *ngFor="let link of getResourceLinks(workshop.resources)" [href]="link.url" target="_blank"
@@ -130,11 +151,17 @@ export class VideoLibraryComponent implements OnInit {
     downloads: { label: 'Downloads', icon: '📥' },
     download: { label: 'Download', icon: '📥' },
     awsS3: { label: 'AWS S3', icon: '☁️' },
+    swagger: { label: 'OpenAPI / Swagger', icon: '📜' },
+    pdf: { label: 'PDF Document', icon: '📕' },
+    dockerCompose: { label: 'Docker Compose', icon: '🐳' },
+    architectureDiagram: { label: 'Architecture Diagram', icon: '🗺️' },
+    erDiagram: { label: 'ER Diagram', icon: '📐' },
+    npm: { label: 'NPM Package', icon: '📦' },
+    maven: { label: 'Maven Artifact', icon: '🏛️' },
+    cloudDeployment: { label: 'Cloud Deployment', icon: '☁️' },
     series: { label: 'Workshop Series', icon: '📚' },
     course: { label: 'Course', icon: '🎓' },
     certification: { label: 'Certification', icon: '🏅' },
-    pdf: { label: 'PDF', icon: '📕' },
-    architectureDiagram: { label: 'Architecture Diagram', icon: '🗺️' },
     cheatSheet: { label: 'Cheat Sheet', icon: '📝' },
     githubTemplate: { label: 'GitHub Template', icon: '⚙️' },
     starterProject: { label: 'Starter Project', icon: '🚀' },
@@ -144,50 +171,66 @@ export class VideoLibraryComponent implements OnInit {
   videoWorkshops = computed(() => {
     const data = this.profile();
     if (!data || !data.knowledgeHub || !data.knowledgeHub.workshops) return [];
-    return data.knowledgeHub.workshops;
+    return data.knowledgeHub.workshops
+      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
+      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
   });
 
   resourceWorkshops = computed(() => {
     const data = this.profile();
     if (!data || !data.knowledgeHub || !data.knowledgeHub.resources) return [];
-    return data.knowledgeHub.resources;
+    return data.knowledgeHub.resources
+      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
+      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
   });
 
   // Future sections computed signals
   architectureGuides = computed(() => {
     const data = this.profile();
     if (!data || !data.knowledgeHub || !data.knowledgeHub.architectureGuides) return [];
-    return data.knowledgeHub.architectureGuides;
+    return data.knowledgeHub.architectureGuides
+      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
+      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
   });
 
   sampleProjects = computed(() => {
     const data = this.profile();
     if (!data || !data.knowledgeHub || !data.knowledgeHub.sampleProjects) return [];
-    return data.knowledgeHub.sampleProjects;
+    return data.knowledgeHub.sampleProjects
+      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
+      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
   });
 
   downloads = computed(() => {
     const data = this.profile();
     if (!data || !data.knowledgeHub || !data.knowledgeHub.downloads) return [];
-    return data.knowledgeHub.downloads;
+    return data.knowledgeHub.downloads
+      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
+      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
   });
 
   codeTemplates = computed(() => {
     const data = this.profile();
     if (!data || !data.knowledgeHub || !data.knowledgeHub.codeTemplates) return [];
-    return data.knowledgeHub.codeTemplates;
+    return data.knowledgeHub.codeTemplates
+      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
+      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
   });
 
   cheatSheets = computed(() => {
     const data = this.profile();
     if (!data || !data.knowledgeHub || !data.knowledgeHub.cheatSheets) return [];
-    return data.knowledgeHub.cheatSheets;
+    return data.knowledgeHub.cheatSheets
+      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
+      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
   });
 
   learningPaths = computed(() => {
     const data = this.profile();
     if (!data || !data.knowledgeHub || !data.knowledgeHub.learningPaths) return [];
-    return data.knowledgeHub.learningPaths;
+    return data.knowledgeHub.learningPaths
+      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
+      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
   });
 
   constructor(private profileService: ProfileService) { }
@@ -196,8 +239,26 @@ export class VideoLibraryComponent implements OnInit {
     this.profileService.getProfileData().subscribe(data => this.profile.set(data));
   }
 
-  getResourceLinks(resources?: any) {
+  getResourceLinks(resources?: any): Array<{ key: string; label: string; icon: string; url: string }> {
     if (!resources) return [];
+
+    // If resources is already a normalized array
+    if (Array.isArray(resources)) {
+      return resources
+        .filter(link => !!link && !!link.url)
+        .map(link => {
+          const typeKey = link.type || 'default';
+          const config = this.resourceConfig[typeKey] || { label: this.capitalize(typeKey), icon: '🔗' };
+          return {
+            key: typeKey,
+            label: link.title || config.label,
+            icon: link.icon || config.icon,
+            url: link.url
+          };
+        });
+    }
+
+    // Fallback for legacy key-value object dictionaries
     return Object.entries(resources)
       .filter(([_, url]) => !!url)
       .map(([key, url]) => {
@@ -209,6 +270,11 @@ export class VideoLibraryComponent implements OnInit {
           url: url as string
         };
       });
+  }
+
+  getProofItems(proof?: EngineeringProofItem[]): EngineeringProofItem[] {
+    if (!proof || !Array.isArray(proof)) return [];
+    return proof.filter(item => !!item && !!item.title);
   }
 
   // Future sections empty rendering methods

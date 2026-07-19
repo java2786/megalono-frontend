@@ -68,8 +68,14 @@
   ],
   "caseStudies": [
     {
+      "id": "case-brain-mentors",
+      "slug": "brain-mentors-platform-engineering",
       "title": "Brain Mentors Pvt Ltd (Senior Technical Consultant)",
       "businessImpact": "Improved engineering operations, cloud infrastructure, and deployment automation across multiple digital learning platforms.",
+      "status": "PUBLISHED",
+      "priority": 100,
+      "createdAt": "2024-02-01",
+      "updatedAt": "2026-07-19",
       "sections": [
         {
           "heading": "Timeline & Location",
@@ -107,8 +113,14 @@
       ]
     },
     {
+      "id": "case-independent-consultant-enablement",
+      "slug": "independent-consultant-advisory-enablement",
       "title": "Independent Technical Consultant | SME (Advisory & Enablement)",
       "businessImpact": "Enabled enterprise engineering teams through architecture consulting, technical mentoring, and large-scale capability-building programs.",
+      "status": "PUBLISHED",
+      "priority": 90,
+      "createdAt": "2018-01-01",
+      "updatedAt": "2026-07-19",
       "sections": [
         {
           "heading": "Timeline",
@@ -139,8 +151,14 @@
       ]
     },
     {
+      "id": "case-independent-consultant-delivery",
+      "slug": "independent-consultant-software-delivery",
       "title": "Independent Technical Consultant (Software Delivery)",
       "businessImpact": "Delivered enterprise software solutions and consulting engagements across multiple corporate clients and technology domains.",
+      "status": "PUBLISHED",
+      "priority": 80,
+      "createdAt": "2014-01-01",
+      "updatedAt": "2026-07-19",
       "sections": [
         {
           "heading": "Timeline",
@@ -168,8 +186,14 @@
       ]
     },
     {
+      "id": "case-techknow-heights",
+      "slug": "techknow-heights-technical-lead",
       "title": "Techknow Heights Pvt Ltd (Software Developer to Technical Lead)",
       "businessImpact": "Led the evolution of a large-scale learning platform while modernizing architecture and engineering practices.",
+      "status": "PUBLISHED",
+      "priority": 70,
+      "createdAt": "2010-01-01",
+      "updatedAt": "2026-07-19",
       "sections": [
         {
           "heading": "Timeline",
@@ -201,8 +225,14 @@
       ]
     },
     {
+      "id": "case-coding-assessment-sandbox",
+      "slug": "secure-online-coding-assessment-sandbox",
       "title": "Research Project: Secure Online Coding Assessment Sandbox",
       "businessImpact": "Designed and evaluated secure, scalable architectures for enterprise-grade online coding assessment platforms.",
+      "status": "PUBLISHED",
+      "priority": 60,
+      "createdAt": "2023-06-01",
+      "updatedAt": "2026-07-19",
       "sections": [
         {
           "heading": "Architecture Framework Specs",
@@ -227,24 +257,45 @@
         "duration": "18:45",
         "url": "https://youtube.com/your-video-link-1",
         "category": "Backend",
+        "level": "Advanced",
         "description": "Learn to secure enterprise Spring Boot REST APIs using Spring Security 6 and JSON Web Tokens (JWT). Covers authentication, role-based access control, and stateless session management.",
         "thumbnail": "assets/spring_security_jwt_workshop.png",
-        "difficulty": "Advanced",
-        "level": "Advanced",
         "technologies": ["Spring Boot", "Spring Security", "JWT", "Java"],
+        "tags": ["spring", "security", "jwt", "java", "rest-api"],
         "learningObjectives": [
           "Configure JWT authentication filter",
           "Implement stateless session management",
           "Enable role-based method security"
         ],
-        "resources": {
-          "youtube": "https://youtube.com/your-video-link-1",
-          "github": "https://github.com/java2786/spring-security-jwt",
-          "slides": "https://slideshare.net/example-slides-1"
-        },
-        "featured": true,
-        "published": true,
-        "tags": ["spring", "security", "jwt", "java", "rest-api"]
+        "resources": [
+          {
+            "id": "res-spring-jwt-youtube",
+            "type": "youtube",
+            "title": "Watch Video",
+            "url": "https://youtube.com/your-video-link-1"
+          },
+          {
+            "id": "res-spring-jwt-github",
+            "type": "github",
+            "title": "GitHub",
+            "url": "https://github.com/java2786/spring-security-jwt"
+          },
+          {
+            "id": "res-spring-jwt-slides",
+            "type": "slides",
+            "title": "Download Slides",
+            "url": "https://slideshare.net/example-slides-1"
+          }
+        ],
+        "status": "PUBLISHED",
+        "priority": 100,
+        "createdAt": "2026-01-01",
+        "updatedAt": "2026-07-19",
+        "seo": {
+          "title": "Building Secure REST APIs with Spring Security & JWT",
+          "description": "Learn to secure enterprise Spring Boot REST APIs using Spring Security 6 and JSON Web Tokens (JWT).",
+          "keywords": ["Spring Boot", "Spring Security", "JWT", "Java", "REST API"]
+        }
       },
       {
         "id": "angular-state-signals",
@@ -253,24 +304,45 @@
         "duration": "14:20",
         "url": "https://youtube.com/your-video-link-2",
         "category": "Frontend",
+        "level": "Intermediate",
         "description": "An in-depth look at managing state in Angular applications using Signals and RxJS. Build a scalable state management pattern without the boilerplate of Redux/NgRx.",
         "thumbnail": "assets/angular_state_management_workshop.png",
-        "difficulty": "Intermediate",
-        "level": "Intermediate",
         "technologies": ["Angular", "Signals", "RxJS", "TypeScript"],
+        "tags": ["angular", "signals", "rxjs", "typescript", "state-management"],
         "learningObjectives": [
           "Leverage Angular Signals for local state management",
           "Combine Signals with RxJS for asynchronous actions",
           "Design scalable service-based store pattern"
         ],
-        "resources": {
-          "youtube": "https://youtube.com/your-video-link-2",
-          "github": "https://github.com/java2786/angular-signals-store",
-          "documentation": "https://angular.dev/guide/signals"
-        },
-        "featured": true,
-        "published": true,
-        "tags": ["angular", "signals", "rxjs", "typescript", "state-management"]
+        "resources": [
+          {
+            "id": "res-angular-signals-youtube",
+            "type": "youtube",
+            "title": "Watch Video",
+            "url": "https://youtube.com/your-video-link-2"
+          },
+          {
+            "id": "res-angular-signals-github",
+            "type": "github",
+            "title": "GitHub",
+            "url": "https://github.com/java2786/angular-signals-store"
+          },
+          {
+            "id": "res-angular-signals-doc",
+            "type": "documentation",
+            "title": "Documentation",
+            "url": "https://angular.dev/guide/signals"
+          }
+        ],
+        "status": "PUBLISHED",
+        "priority": 90,
+        "createdAt": "2026-01-01",
+        "updatedAt": "2026-07-19",
+        "seo": {
+          "title": "Angular State Management with Signals",
+          "description": "An in-depth look at managing state in Angular applications using Signals and RxJS.",
+          "keywords": ["Angular", "Signals", "RxJS", "TypeScript", "State Management"]
+        }
       }
     ],
     "resources": [
@@ -279,31 +351,72 @@
         "slug": "enterprise-java-microservices-starter",
         "title": "Enterprise Java Microservices Starter",
         "category": "Backend",
+        "level": "Advanced",
         "description": "A comprehensive template for building cloud-native enterprise microservices using Spring Boot, Spring Cloud, PostgreSQL, and Docker.",
         "technologies": ["Java", "Spring Boot", "Spring Cloud", "Docker", "PostgreSQL"],
-        "resources": {
-          "github": "https://github.com/java2786/java-microservices-starter",
-          "sampleProject": "https://github.com/java2786/java-microservices-starter/archive/refs/heads/main.zip",
-          "documentation": "https://github.com/java2786/java-microservices-starter/wiki"
-        },
-        "featured": false,
-        "published": true,
-        "tags": ["java", "microservices", "docker", "spring-boot", "postgresql"]
+        "tags": ["java", "microservices", "docker", "spring-boot", "postgresql"],
+        "resources": [
+          {
+            "id": "res-microservices-github",
+            "type": "github",
+            "title": "GitHub",
+            "url": "https://github.com/java2786/java-microservices-starter"
+          },
+          {
+            "id": "res-microservices-sample",
+            "type": "sampleProject",
+            "title": "Sample Project",
+            "url": "https://github.com/java2786/java-microservices-starter/archive/refs/heads/main.zip"
+          },
+          {
+            "id": "res-microservices-doc",
+            "type": "documentation",
+            "title": "Documentation",
+            "url": "https://github.com/java2786/java-microservices-starter/wiki"
+          }
+        ],
+        "status": "PUBLISHED",
+        "priority": 50,
+        "createdAt": "2026-01-01",
+        "updatedAt": "2026-07-19",
+        "seo": {
+          "title": "Enterprise Java Microservices Starter Template",
+          "description": "A comprehensive template for building cloud-native enterprise microservices using Spring Boot.",
+          "keywords": ["Java", "Microservices", "Spring Boot", "Docker", "PostgreSQL"]
+        }
       },
       {
         "id": "cicd-pipelines-cheatsheet",
         "slug": "cicd-deployment-pipelines-cheatsheet",
         "title": "CI/CD Deployment Pipelines Cheat Sheet",
         "category": "DevOps",
+        "level": "Intermediate",
         "description": "Reference guide and starter templates for GitHub Actions, Jenkins declarative pipelines, and Docker Compose deployments.",
         "technologies": ["GitHub Actions", "Jenkins", "Docker Compose", "CI/CD"],
-        "resources": {
-          "github": "https://github.com/java2786/cicd-templates",
-          "downloads": "https://raw.githubusercontent.com/java2786/cicd-templates/main/cheatsheet.pdf"
-        },
-        "featured": false,
-        "published": true,
-        "tags": ["github-actions", "jenkins", "docker-compose", "ci-cd", "devops"]
+        "tags": ["github-actions", "jenkins", "docker-compose", "ci-cd", "devops"],
+        "resources": [
+          {
+            "id": "res-cicd-github",
+            "type": "github",
+            "title": "GitHub",
+            "url": "https://github.com/java2786/cicd-templates"
+          },
+          {
+            "id": "res-cicd-download",
+            "type": "download",
+            "title": "Downloads",
+            "url": "https://raw.githubusercontent.com/java2786/cicd-templates/main/cheatsheet.pdf"
+          }
+        ],
+        "status": "PUBLISHED",
+        "priority": 40,
+        "createdAt": "2026-01-01",
+        "updatedAt": "2026-07-19",
+        "seo": {
+          "title": "CI/CD Deployment Pipelines Cheat Sheet",
+          "description": "Reference guide and starter templates for GitHub Actions, Jenkins, and Docker Compose.",
+          "keywords": ["GitHub Actions", "Jenkins", "Docker Compose", "CI/CD", "DevOps"]
+        }
       }
     ],
     "architectureGuides": [],
@@ -313,4 +426,4 @@
     "cheatSheets": [],
     "learningPaths": []
   }
-} 
+}
