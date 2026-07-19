@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:prod": "ng build --configuration production --base-href /megalono-frontend/ && cp dist/arun_kumar_profile/browser/index.html dist/arun_kumar_profile/browser/404.html"
   },
   "private": true,
   "packageManager": "npm@11.12.1",

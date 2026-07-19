@@ -32,4 +32,4 @@
 **/kbd/
 
 # For deployment, dist is required
-!./dist
+# !./dist
