@@ -1,11 +1,12 @@
 import { Component, OnInit, signal, inject } from '@angular/core';
 import { ProfileService } from '../../core/services/profile.service';
 import { ProfileData } from '../../shared/models/profile.model';
+import { EngineeringProofComponent } from '../../shared/components/engineering-proof/engineering-proof.component';
 
 @Component({
   selector: 'app-case-studies',
   standalone: true,
-  imports: [],
+  imports: [EngineeringProofComponent],
   template: `
     @if (profile(); as data) {
       <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem; font-family: system-ui, sans-serif;">
@@ -58,6 +59,9 @@ import { ProfileData } from '../../shared/models/profile.model';
             </div>
           </div>
         }
+
+        <!-- Reusable Engineering Proof & Verified Artifacts Component -->
+        <app-engineering-proof [proof]="data.engineeringProof"></app-engineering-proof>
       </div>
     }
   `

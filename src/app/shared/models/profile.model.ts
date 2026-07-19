@@ -18,6 +18,42 @@ export interface EngineeringProofItem {
   thumbnail?: string;
 }
 
+export interface ArchitectureDiagram {
+  id: string;
+  title: string;
+  description?: string;
+  thumbnail?: string;
+  fullImage?: string;
+  technologies?: string[];
+  category?: string;
+}
+
+export interface GitHubRepositoryProof {
+  id?: string;
+  repositoryName: string;
+  description?: string;
+  url: string;
+  technologies?: string[];
+  status?: string;
+  featured?: boolean;
+}
+
+export interface SwaggerApiProof {
+  id?: string;
+  title: string;
+  description?: string;
+  url: string;
+  service?: string;
+  version?: string;
+}
+
+export interface EngineeringProofData {
+  architectureDiagrams?: ArchitectureDiagram[];
+  githubRepositories?: GitHubRepositoryProof[];
+  swaggerApis?: SwaggerApiProof[];
+  [key: string]: any;
+}
+
 export interface SEOConfig {
   title?: string;
   description?: string;
@@ -40,7 +76,7 @@ export interface BaseContentItem {
   level?: string;
   technologies?: string[];
   tags?: string[];
-  resources?: ResourceLink[] | WorkshopResources; // Array of links or legacy map
+  resources?: ResourceLink[] | WorkshopResources;
   proof?: EngineeringProofItem[];
   seo?: SEOConfig;
   metadata?: ContentMetadata;
@@ -132,4 +168,5 @@ export interface ProfileData {
   services: ServicePillar[];
   caseStudies: CaseStudy[];
   knowledgeHub: KnowledgeHub;
+  engineeringProof?: EngineeringProofData;
 }

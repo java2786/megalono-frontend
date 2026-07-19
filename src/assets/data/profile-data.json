@@ -425,5 +425,57 @@
     "codeTemplates": [],
     "cheatSheets": [],
     "learningPaths": []
+  },
+  "engineeringProof": {
+    "architectureDiagrams": [
+      {
+        "id": "diag-spring-security",
+        "title": "Spring Security & JWT Authentication Architecture",
+        "description": "Stateless authentication and role-based authorization flow diagram for enterprise Spring Boot microservices.",
+        "thumbnail": "assets/spring_security_jwt_workshop.png",
+        "fullImage": "assets/spring_security_jwt_workshop.png",
+        "technologies": ["Spring Boot", "Spring Security", "JWT", "Java"],
+        "category": "Security Architecture"
+      },
+      {
+        "id": "diag-angular-signals",
+        "title": "Angular Signals Reactive State Flow Architecture",
+        "description": "Component and state manager data flow architecture for modern reactive Angular applications.",
+        "thumbnail": "assets/angular_state_management_workshop.png",
+        "fullImage": "assets/angular_state_management_workshop.png",
+        "technologies": ["Angular", "Signals", "RxJS", "TypeScript"],
+        "category": "Frontend Architecture"
+      }
+    ],
+    "githubRepositories": [
+      {
+        "id": "repo-megalono-frontend",
+        "repositoryName": "megalono-frontend",
+        "description": "Enterprise Angular Profile & System Architecture Showcase Platform built with standalone components and reactive Signals.",
+        "url": "https://github.com/java2786/megalono-frontend",
+        "technologies": ["Angular", "TypeScript", "RxJS", "CSS"],
+        "status": "PUBLISHED",
+        "featured": true
+      },
+      {
+        "id": "repo-spring-security-jwt",
+        "repositoryName": "spring-security-jwt",
+        "description": "Production-ready Spring Boot microservice security template with JWT filter chains and role-based access control.",
+        "url": "https://github.com/java2786/spring-security-jwt",
+        "technologies": ["Java", "Spring Boot", "Spring Security", "JWT"],
+        "status": "PUBLISHED",
+        "featured": true
+      },
+      {
+        "id": "repo-java-microservices-starter",
+        "repositoryName": "java-microservices-starter",
+        "description": "Cloud-native enterprise microservices starter with Spring Cloud, PostgreSQL, and Docker containerization.",
+        "url": "https://github.com/java2786/java-microservices-starter",
+        "technologies": ["Java", "Spring Boot", "Spring Cloud", "Docker", "PostgreSQL"],
+        "status": "PUBLISHED",
+        "featured": false
+      }
+    ],
+    "swaggerApis": []
   }
 }
