@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Specify the Node version matching your development environment
+          node-version: '26' # Specify the Node version matching your development environment
           cache: 'npm'
 
       - name: Install Dependencies
