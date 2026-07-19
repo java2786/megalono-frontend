@@ -8,13 +8,13 @@ import { ProfileData, KnowledgeHubItem, ResourceLink, EngineeringProofItem } fro
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="container" *ngIf="profile() as data" style="max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem;">
+    <div class="workshop-container" *ngIf="profile() as data" style="max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem;">
       <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem; color: var(--text-main);">Technical Workshops</h2>
       
       <!-- SECTION 1: Featured Video Workshops -->
       <section *ngIf="videoWorkshops().length > 0" style="margin-bottom: 4rem;">
        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start;">
+        <div class="workshop-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start;">
           <article *ngFor="let workshop of videoWorkshops()" style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 0.75rem; display: flex; flex-direction: column; height: 100%; box-sizing: border-box;">
             
             <!-- Thumbnail (Lazy Loaded) -->
@@ -71,8 +71,8 @@ import { ProfileData, KnowledgeHubItem, ResourceLink, EngineeringProofItem } fro
             </div>
 
             <!-- Resource Controls (Interactive buttons) -->
-            <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
-              <a *ngFor="let link of getResourceLinks(workshop.resources)" [href]="link.url" target="_blank"
+            <div class="action-links-group" style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+              <a *ngFor="let link of getResourceLinks(workshop.resources)" [href]="link.url" target="_blank" class="action-btn"
                  style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.45rem 0.85rem; border-radius: 0.375rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-weight: 600; font-size: 0.8rem; text-decoration: none; transition: all 0.2s ease;">
                 <span>{{link.icon}}</span>
                 <span>{{link.label}}</span>
@@ -86,7 +86,7 @@ import { ProfileData, KnowledgeHubItem, ResourceLink, EngineeringProofItem } fro
       <!-- SECTION 2: Workshop Resources -->
       <section *ngIf="resourceWorkshops().length > 0">
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; align-items: start;">
+        <div class="workshop-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; align-items: start;">
           <article *ngFor="let workshop of resourceWorkshops()" style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 0.75rem; display: flex; flex-direction: column; height: 100%; box-sizing: border-box;">
             
             <!-- Metadata (Category) -->
@@ -122,8 +122,8 @@ import { ProfileData, KnowledgeHubItem, ResourceLink, EngineeringProofItem } fro
             </div>
 
             <!-- Resource Controls (Interactive buttons) -->
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
-              <a *ngFor="let link of getResourceLinks(workshop.resources)" [href]="link.url" target="_blank"
+            <div class="action-links-group" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+              <a *ngFor="let link of getResourceLinks(workshop.resources)" [href]="link.url" target="_blank" class="action-btn"
                  style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.4rem 0.75rem; border-radius: 0.35rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-weight: 600; font-size: 0.75rem; text-decoration: none; transition: all 0.2s ease;">
                 <span>{{link.icon}}</span>
                 <span>{{link.label}}</span>
@@ -134,7 +134,28 @@ import { ProfileData, KnowledgeHubItem, ResourceLink, EngineeringProofItem } fro
         </div>
       </section>
     </div>
-  `
+  `,
+  styles: [`
+    @media (max-width: 767px) {
+      .workshop-container {
+        padding: 2.5rem 1.25rem !important;
+      }
+      .workshop-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .action-links-group {
+        flex-direction: column !important;
+        width: 100% !important;
+      }
+      .action-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        padding: 0.6rem 1rem !important;
+      }
+    }
+  `]
 })
 export class VideoLibraryComponent implements OnInit {
   profile = signal<ProfileData | null>(null);

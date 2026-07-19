@@ -17,7 +17,7 @@ import { EngineeringProofData } from '../../models/profile.model';
         <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-main); opacity: 0.9;">
           Architecture Diagrams
         </h4>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; align-items: start;">
+        <div class="proof-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; align-items: start;">
           <article *ngFor="let diag of diagrams()" style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 0.75rem; display: flex; flex-direction: column; height: 100%; box-sizing: border-box;">
             
             <img *ngIf="diag.thumbnail || diag.fullImage" [src]="diag.thumbnail || diag.fullImage" [alt]="diag.title" loading="lazy"
@@ -50,7 +50,7 @@ import { EngineeringProofData } from '../../models/profile.model';
         <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-main); opacity: 0.9;">
           Verified GitHub Repositories
         </h4>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; align-items: start;">
+        <div class="proof-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; align-items: start;">
           <article *ngFor="let repo of repos()" style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 0.75rem; display: flex; flex-direction: column; height: 100%; box-sizing: border-box;">
             
             <h5 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; font-weight: 700; color: var(--text-main); line-height: 1.3;">
@@ -69,7 +69,7 @@ import { EngineeringProofData } from '../../models/profile.model';
             </div>
 
             <div style="margin-top: 0.75rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
-              <a [href]="repo.url" target="_blank"
+              <a [href]="repo.url" target="_blank" class="proof-btn"
                  style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.4rem 0.85rem; border-radius: 0.35rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-weight: 600; font-size: 0.8rem; text-decoration: none; transition: all 0.2s ease;">
                 <span>💻 View Repository →</span>
               </a>
@@ -83,7 +83,7 @@ import { EngineeringProofData } from '../../models/profile.model';
         <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-main); opacity: 0.9;">
           Live Swagger / OpenAPI Specifications
         </h4>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; align-items: start;">
+        <div class="proof-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; align-items: start;">
           <article *ngFor="let api of swaggerApis()" style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 0.75rem; display: flex; flex-direction: column; height: 100%; box-sizing: border-box;">
             
             <div *ngIf="api.service || api.version" style="font-size: 0.75rem; font-weight: 600; opacity: 0.7; margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-color);">
@@ -99,7 +99,7 @@ import { EngineeringProofData } from '../../models/profile.model';
             </p>
 
             <div style="margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
-              <a [href]="api.url" target="_blank"
+              <a [href]="api.url" target="_blank" class="proof-btn"
                  style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.4rem 0.85rem; border-radius: 0.35rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-weight: 600; font-size: 0.8rem; text-decoration: none; transition: all 0.2s ease;">
                 <span>📜 Open Swagger Specs →</span>
               </a>
@@ -108,7 +108,25 @@ import { EngineeringProofData } from '../../models/profile.model';
         </div>
       </section>
     </div>
-  `
+  `,
+  styles: [`
+    @media (max-width: 767px) {
+      .engineering-proof-container {
+        margin-top: 2.5rem !important;
+        padding-top: 2rem !important;
+      }
+      .proof-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+      }
+      .proof-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        padding: 0.6rem 1rem !important;
+      }
+    }
+  `]
 })
 export class EngineeringProofComponent implements OnChanges {
   @Input() proof?: EngineeringProofData;

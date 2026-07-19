@@ -9,7 +9,7 @@ import { EngineeringProofComponent } from '../../shared/components/engineering-p
   imports: [EngineeringProofComponent],
   template: `
     @if (profile(); as data) {
-      <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem; font-family: system-ui, sans-serif;">
+      <div class="case-studies-container" style="max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem; font-family: system-ui, sans-serif;">
         <!-- Page Header -->
         <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem; color: var(--text-main);">
           Enterprise Case Studies
@@ -17,9 +17,9 @@ import { EngineeringProofComponent } from '../../shared/components/engineering-p
         
         <!-- Case Studies & Experience Track Cards Loop -->
         @for (item of data.caseStudies; track item.title) {
-          <div style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 2.5rem; border-radius: 0.75rem; margin-bottom: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+          <div class="case-card" style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 2.5rem; border-radius: 0.75rem; margin-bottom: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
             <!-- Title -->
-            <h3 style="margin-top:0; font-size:1.4rem; color:var(--accent-color); font-weight: 700; margin-bottom: 1.5rem;">
+            <h3 class="case-card-title" style="margin-top:0; font-size:1.4rem; color:var(--accent-color); font-weight: 700; margin-bottom: 1.5rem;">
               {{ item.title }}
             </h3>
 
@@ -42,7 +42,7 @@ import { EngineeringProofComponent } from '../../shared/components/engineering-p
                   <h4 style="font-size: 1.05rem; font-weight: 600; margin: 0 0 0.35rem 0; color: var(--text-main); letter-spacing: 0.025em;">
                     {{ sec.heading }}
                   </h4>
-                  <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.85; margin: 0; white-space: pre-wrap;">
+                  <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.85; margin: 0; white-space: pre-wrap; word-break: break-word;">
                     {{ sec.content }}
                   </p>
                 </div>
@@ -64,7 +64,22 @@ import { EngineeringProofComponent } from '../../shared/components/engineering-p
         <app-engineering-proof [proof]="data.engineeringProof"></app-engineering-proof>
       </div>
     }
-  `
+  `,
+  styles: [`
+    @media (max-width: 767px) {
+      .case-studies-container {
+        padding: 2.5rem 1.25rem !important;
+      }
+      .case-card {
+        padding: 1.5rem 1.25rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .case-card-title {
+        font-size: 1.2rem !important;
+        margin-bottom: 1.25rem !important;
+      }
+    }
+  `]
 })
 export class CaseStudiesComponent implements OnInit {
   profile = signal<ProfileData | null>(null);

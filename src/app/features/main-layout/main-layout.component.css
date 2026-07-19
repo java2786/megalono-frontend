@@ -1,66 +1,72 @@
-.app-layout-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.global-navbar {
+.main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 2rem;
-  background-color: var(--bg-surface);
+  padding: 1.5rem 3rem;
   border-bottom: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  position: relative;
+  z-index: 100;
 }
 
-.nav-brand {
+.logo-area {
   font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.05em;
+  color: var(--text-main);
+  font-size: 1.05rem;
 }
 
-.dim-text {
+.logo-subtitle {
+  opacity: 0.5;
   font-weight: 400;
-  opacity: 0.6;
-  font-size: 0.85rem;
 }
 
-.nav-links {
+.desktop-nav {
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
-.nav-links a {
+.desktop-nav a {
   text-decoration: none;
   color: var(--text-main);
-  font-size: 0.9rem;
   font-weight: 500;
+  font-size: 0.95rem;
   opacity: 0.7;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
-.nav-links a:hover, .nav-links a.active-link {
+.desktop-nav a:hover,
+.desktop-nav a.active {
   opacity: 1;
   color: var(--accent-color);
-}
-
-.theme-switcher-btn {
-  background: transparent;
-  border: 1px solid var(--border-color);
-  color: var(--text-main);
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.35rem;
-  cursor: pointer;
-  font-size: 0.8rem;
   font-weight: 600;
 }
 
-.router-outlet-container {
-  flex: 1;
-  background-color: var(--bg-primary);
+.desktop-theme-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-main);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: border-color 0.2s ease, transform 0.15s ease;
 }
 
-/* --- Footer Reorganization Layout --- */
+.desktop-theme-btn:hover {
+  border-color: var(--accent-color);
+}
+
+.mobile-hamburger-btn {
+  display: none;
+}
+
+.mobile-menu-overlay {
+  display: none;
+}
+
+/* Footer Container Styling */
 .main-footer {
   border-top: 1px solid var(--border-color);
   background-color: var(--bg-surface);
@@ -103,22 +109,16 @@
   flex-direction: column;
   gap: 0.75rem;
 }
- 
+
 .footer-list-item {
   font-size: 0.9rem;
   color: var(--text-main);
   opacity: 0.75;
 }
-.footer-list-item:hover {
-  color: #00C896;
-}
 
-
-/* Connect Column links */
 .footer-social-links {
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
   gap: 0.75rem;
 }
 
@@ -140,7 +140,6 @@
   background-color: var(--border-color);
 }
 
-/* About Section */
 .footer-about-brand {
   font-weight: 700;
   font-size: 1.1rem;
@@ -167,39 +166,143 @@
   margin: 0;
 }
 
-/* Responsive Rules */
-@media (max-width: 1024px) {
-  .footer-grid {
-    gap: 2rem;
+/* ==========================================================
+   Dedicated Mobile Styles (<768px)
+   ========================================================== */
+@media (max-width: 767px) {
+  .main-header {
+    padding: 1rem 1.25rem;
   }
-}
 
-/* Tablet View: Gracefully transition from 3 to 2 columns */
-@media (max-width: 868px) {
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+  .desktop-nav {
+    display: none;
   }
-  
-  .footer-grid > .footer-col:last-child {
-    grid-column: span 2;
+
+  .desktop-theme-btn {
+    display: none;
+  }
+
+  .mobile-hamburger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 1002;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .mobile-hamburger-btn:hover {
+    border-color: var(--accent-color);
+  }
+
+  .mobile-menu-overlay {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    padding-top: 4.5rem;
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .mobile-menu-drawer {
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 1.25rem 2rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .mobile-nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    border-radius: 0.5rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .mobile-nav-links a:hover,
+  .mobile-nav-links a.active {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    font-weight: 700;
+  }
+
+  .mobile-theme-wrapper {
+    width: 100%;
     border-top: 1px solid var(--border-color);
-    padding-top: 2rem;
-    margin-top: 0.5rem;
+    padding-top: 1.25rem;
   }
-}
 
-/* Mobile View: Vertical list layout */
-@media (max-width: 576px) {
+  .mobile-theme-btn {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  .main-footer {
+    padding: 3rem 1.25rem 2.5rem 1.25rem;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  
-  .footer-grid > .footer-col:last-child {
-    grid-column: span 1;
-    border-top: 1px solid var(--border-color);
-    padding-top: 2rem;
-    margin-top: 0;
+
+  .footer-social-link {
+    max-width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

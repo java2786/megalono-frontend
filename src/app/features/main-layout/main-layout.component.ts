@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router'; // <-- Add this import
+import { Component, OnInit, signal } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-main-layout',
-  standalone: true, // Enforces modern standalone architecture
-  imports: [RouterModule, CommonModule], // <-- Add RouterModule here to fix the template errors
+  standalone: true,
+  imports: [RouterModule, CommonModule],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.css']
 })
 export class MainLayoutComponent implements OnInit {
   isDark = true;
   today = new Date();
+  isMobileMenuOpen = signal<boolean>(false);
   
   consultingExpertise = [
     { title: 'Enterprise Architecture' },
@@ -21,12 +22,19 @@ export class MainLayoutComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    // 3. Force the DOM body attribute to match your variable right at startup
     document.documentElement.setAttribute('data-theme', 'dark');
   }
+
   toggleTheme(): void {
     this.isDark = !this.isDark;
-    const activeTheme = this.isDark ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', this.isDark ? 'dark' : 'light');
+  }
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen.update(open => !open);
+  }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen.set(false);
   }
 }
