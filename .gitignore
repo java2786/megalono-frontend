@@ -3,6 +3,7 @@
 
 # React or Angular
 **/dist/
+**/.angular/
 
 # Python
 **/.venv/
