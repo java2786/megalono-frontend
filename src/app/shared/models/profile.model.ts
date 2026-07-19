@@ -19,7 +19,7 @@ export interface ProofLink {
 
 export interface ProofArtifact {
   id?: string;
-  type: string; // 'architectureDiagram' | 'erDiagram' | 'deploymentScreenshot' | 'dockerCompose' | 'nginx' | 'redis' | 'cicd' | 'monitoring' | 'infrastructure' | 'performanceReport' | 'databaseSchema' | string
+  type: string; // 'architecture' | 'deployment' | 'docker' | 'swagger' | 'database' | 'performance' | 'infrastructure' | 'cicd' | 'security' | 'monitoring' | 'configuration' | 'diagram' | string
   title: string;
   thumbnail?: string;
   url?: string;
@@ -34,7 +34,8 @@ export interface EngineeringEvidenceItem {
   status?: string; // 'AVAILABLE' | 'PUBLISHED' | string
   verified?: boolean;
   visible?: boolean;
-  priority?: number;
+  displayOrder?: number;
+  priority?: number; // Retained for backward compatibility
   technologies?: string[];
   links?: ProofLink[];
   artifacts?: ProofArtifact[];
@@ -43,6 +44,8 @@ export interface EngineeringEvidenceItem {
 }
 
 export interface EngineeringEvidenceData {
+  title?: string;
+  description?: string;
   evidence?: EngineeringEvidenceItem[];
   [key: string]: any;
 }
@@ -125,7 +128,8 @@ export interface BaseContentItem {
   seo?: SEOConfig;
   metadata?: ContentMetadata;
   status?: ContentStatus;
-  priority?: number;
+  displayOrder?: number;
+  priority?: number; // Retained for backward compatibility
   visible?: boolean;
   createdAt?: string;
   updatedAt?: string;
@@ -196,7 +200,8 @@ export interface CaseStudy {
   artifacts?: ResourceLink[];
   proof?: EngineeringProofItem[];
   status?: ContentStatus;
-  priority?: number;
+  displayOrder?: number;
+  priority?: number; // Retained for backward compatibility
   visible?: boolean;
   createdAt?: string;
   updatedAt?: string;

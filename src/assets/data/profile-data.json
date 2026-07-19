@@ -74,6 +74,7 @@
       "businessImpact": "Improved engineering operations, cloud infrastructure, and deployment automation across multiple digital learning platforms.",
       "status": "PUBLISHED",
       "priority": 100,
+      "displayOrder": 100,
       "createdAt": "2024-02-01",
       "updatedAt": "2026-07-19",
       "sections": [
@@ -119,6 +120,7 @@
       "businessImpact": "Enabled enterprise engineering teams through architecture consulting, technical mentoring, and large-scale capability-building programs.",
       "status": "PUBLISHED",
       "priority": 90,
+      "displayOrder": 90,
       "createdAt": "2018-01-01",
       "updatedAt": "2026-07-19",
       "sections": [
@@ -157,6 +159,7 @@
       "businessImpact": "Delivered enterprise software solutions and consulting engagements across multiple corporate clients and technology domains.",
       "status": "PUBLISHED",
       "priority": 80,
+      "displayOrder": 80,
       "createdAt": "2014-01-01",
       "updatedAt": "2026-07-19",
       "sections": [
@@ -192,6 +195,7 @@
       "businessImpact": "Led the evolution of a large-scale learning platform while modernizing architecture and engineering practices.",
       "status": "PUBLISHED",
       "priority": 70,
+      "displayOrder": 70,
       "createdAt": "2010-01-01",
       "updatedAt": "2026-07-19",
       "sections": [
@@ -231,6 +235,7 @@
       "businessImpact": "Designed and evaluated secure, scalable architectures for enterprise-grade online coding assessment platforms.",
       "status": "PUBLISHED",
       "priority": 60,
+      "displayOrder": 60,
       "createdAt": "2023-06-01",
       "updatedAt": "2026-07-19",
       "sections": [
@@ -289,6 +294,7 @@
         ],
         "status": "PUBLISHED",
         "priority": 100,
+        "displayOrder": 100,
         "createdAt": "2026-01-01",
         "updatedAt": "2026-07-19",
         "seo": {
@@ -336,6 +342,7 @@
         ],
         "status": "PUBLISHED",
         "priority": 90,
+        "displayOrder": 90,
         "createdAt": "2026-01-01",
         "updatedAt": "2026-07-19",
         "seo": {
@@ -377,6 +384,7 @@
         ],
         "status": "PUBLISHED",
         "priority": 50,
+        "displayOrder": 50,
         "createdAt": "2026-01-01",
         "updatedAt": "2026-07-19",
         "seo": {
@@ -410,6 +418,7 @@
         ],
         "status": "PUBLISHED",
         "priority": 40,
+        "displayOrder": 40,
         "createdAt": "2026-01-01",
         "updatedAt": "2026-07-19",
         "seo": {
@@ -427,6 +436,8 @@
     "learningPaths": []
   },
   "engineeringEvidence": {
+    "title": "Engineering Evidence",
+    "description": "Architecture diagrams, source code repositories, deployments, APIs and technical artifacts demonstrating engineering capabilities.",
     "evidence": [
       {
         "id": "evid-spring-security-jwt",
@@ -436,7 +447,7 @@
         "status": "AVAILABLE",
         "verified": true,
         "visible": true,
-        "priority": 100,
+        "displayOrder": 100,
         "technologies": ["Spring Boot", "Spring Security", "JWT", "Java"],
         "links": [
           {
@@ -450,14 +461,14 @@
         "artifacts": [
           {
             "id": "art-spring-sec-diag",
-            "type": "architectureDiagram",
+            "type": "architecture",
             "title": "Spring Security & JWT Authentication Architecture",
             "thumbnail": "assets/spring_security_jwt_workshop.png",
             "url": "assets/spring_security_jwt_workshop.png",
             "visible": true
           }
         ],
-        "relatedCaseStudies": [],
+        "relatedCaseStudies": ["case-brain-mentors"],
         "relatedWorkshops": ["spring-security-jwt"]
       },
       {
@@ -468,7 +479,7 @@
         "status": "AVAILABLE",
         "verified": true,
         "visible": true,
-        "priority": 90,
+        "displayOrder": 90,
         "technologies": ["Angular", "Signals", "RxJS", "TypeScript"],
         "links": [
           {
@@ -482,14 +493,14 @@
         "artifacts": [
           {
             "id": "art-angular-signals-diag",
-            "type": "architectureDiagram",
+            "type": "architecture",
             "title": "Angular Signals Reactive State Flow Architecture",
             "thumbnail": "assets/angular_state_management_workshop.png",
             "url": "assets/angular_state_management_workshop.png",
             "visible": true
           }
         ],
-        "relatedCaseStudies": [],
+        "relatedCaseStudies": ["case-megalono"],
         "relatedWorkshops": ["angular-signals-store"]
       },
       {
@@ -500,7 +511,7 @@
         "status": "AVAILABLE",
         "verified": true,
         "visible": true,
-        "priority": 80,
+        "displayOrder": 80,
         "technologies": ["Java", "Spring Boot", "Spring Cloud", "Docker", "PostgreSQL"],
         "links": [
           {
@@ -512,7 +523,7 @@
           }
         ],
         "artifacts": [],
-        "relatedCaseStudies": [],
+        "relatedCaseStudies": ["case-freelance"],
         "relatedWorkshops": ["java-microservices-starter"]
       }
     ]

@@ -194,7 +194,7 @@ export class VideoLibraryComponent implements OnInit {
     if (!data || !data.knowledgeHub || !data.knowledgeHub.workshops) return [];
     return data.knowledgeHub.workshops
       .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
-      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
+      .sort((a, b) => (b.displayOrder ?? b.priority ?? 0) - (a.displayOrder ?? a.priority ?? 0));
   });
 
   resourceWorkshops = computed(() => {
@@ -202,7 +202,7 @@ export class VideoLibraryComponent implements OnInit {
     if (!data || !data.knowledgeHub || !data.knowledgeHub.resources) return [];
     return data.knowledgeHub.resources
       .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
-      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
+      .sort((a, b) => (b.displayOrder ?? b.priority ?? 0) - (a.displayOrder ?? a.priority ?? 0));
   });
 
   // Future sections computed signals
@@ -211,7 +211,7 @@ export class VideoLibraryComponent implements OnInit {
     if (!data || !data.knowledgeHub || !data.knowledgeHub.architectureGuides) return [];
     return data.knowledgeHub.architectureGuides
       .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
-      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
+      .sort((a, b) => (b.displayOrder ?? b.priority ?? 0) - (a.displayOrder ?? a.priority ?? 0));
   });
 
   sampleProjects = computed(() => {
@@ -219,7 +219,7 @@ export class VideoLibraryComponent implements OnInit {
     if (!data || !data.knowledgeHub || !data.knowledgeHub.sampleProjects) return [];
     return data.knowledgeHub.sampleProjects
       .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
-      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
+      .sort((a, b) => (b.displayOrder ?? b.priority ?? 0) - (a.displayOrder ?? a.priority ?? 0));
   });
 
   downloads = computed(() => {
@@ -227,7 +227,7 @@ export class VideoLibraryComponent implements OnInit {
     if (!data || !data.knowledgeHub || !data.knowledgeHub.downloads) return [];
     return data.knowledgeHub.downloads
       .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
-      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
+      .sort((a, b) => (b.displayOrder ?? b.priority ?? 0) - (a.displayOrder ?? a.priority ?? 0));
   });
 
   codeTemplates = computed(() => {
@@ -235,7 +235,7 @@ export class VideoLibraryComponent implements OnInit {
     if (!data || !data.knowledgeHub || !data.knowledgeHub.codeTemplates) return [];
     return data.knowledgeHub.codeTemplates
       .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
-      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
+      .sort((a, b) => (b.displayOrder ?? b.priority ?? 0) - (a.displayOrder ?? a.priority ?? 0));
   });
 
   cheatSheets = computed(() => {

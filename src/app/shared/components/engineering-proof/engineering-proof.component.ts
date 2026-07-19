@@ -8,9 +8,12 @@ import { EngineeringEvidenceData, EngineeringProofData, EngineeringEvidenceItem,
   imports: [CommonModule],
   template: `
     <div *ngIf="hasData()" class="engineering-proof-container" style="margin-top: 3.5rem; border-top: 1px solid var(--border-color); padding-top: 3rem;">
-      <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem; color: var(--text-main);">
-        Engineering Proof & Technical Evidence
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem; color: var(--text-main);">
+        {{ sectionTitle() }}
       </h3>
+      <p *ngIf="sectionDescription()" style="font-size: 0.95rem; opacity: 0.8; margin-top: 0; margin-bottom: 2rem; padding-left: 0.75rem; line-height: 1.5;">
+        {{ sectionDescription() }}
+      </p>
 
       <!-- CATEGORY 1: Architecture Diagrams -->
       <section *ngIf="diagrams().length > 0" style="margin-bottom: 3rem;">
@@ -135,12 +138,15 @@ export class EngineeringProofComponent implements OnChanges {
   evidenceSignal = signal<EngineeringEvidenceData | undefined>(undefined);
   proofSignal = signal<EngineeringProofData | undefined>(undefined);
 
+  sectionTitle = computed(() => this.evidenceSignal()?.title || 'Engineering Evidence');
+  sectionDescription = computed(() => this.evidenceSignal()?.description || '');
+
   activeEvidence = computed(() => {
     const ev = this.evidenceSignal()?.evidence;
     if (ev && Array.isArray(ev)) {
       return ev
         .filter(item => item.visible !== false)
-        .sort((a, b) => (b.priority || 0) - (a.priority || 0));
+        .sort((a, b) => (b.displayOrder ?? b.priority ?? 0) - (a.displayOrder ?? a.priority ?? 0));
     }
     return [];
   });
@@ -152,7 +158,7 @@ export class EngineeringProofComponent implements OnChanges {
       for (const ev of evList) {
         if (ev.artifacts && Array.isArray(ev.artifacts)) {
           for (const art of ev.artifacts) {
-            if (art.visible !== false && art.type === 'architectureDiagram') {
+            if (art.visible !== false && (art.type === 'architecture' || art.type === 'architectureDiagram' || art.type === 'diagram')) {
               results.push({
                 id: art.id || ev.id,
                 title: art.title || ev.title,
