@@ -9,8 +9,8 @@
   "socialLinks": {
     "linkedin": "https://linkedin.com/in/arunkumar31786",
     "github": "https://github.com/java2786",
-    "toptal": "https://toptal.com/resume/arunkumar31786",
-    "upwork": "https://upwork.com/freelancers/~01arunkumar"
+    "toptal": "https://www.toptal.com/developers/resume/arun-kumar1",
+    "upwork": "https://www.upwork.com/freelancers/~017258c360bea50c26?viewMode=1"
   },
   "services": [
     {
@@ -435,7 +435,8 @@
         "thumbnail": "assets/spring_security_jwt_workshop.png",
         "fullImage": "assets/spring_security_jwt_workshop.png",
         "technologies": ["Spring Boot", "Spring Security", "JWT", "Java"],
-        "category": "Security Architecture"
+        "category": "Security Architecture",
+        "visible": true
       },
       {
         "id": "diag-angular-signals",
@@ -444,7 +445,8 @@
         "thumbnail": "assets/angular_state_management_workshop.png",
         "fullImage": "assets/angular_state_management_workshop.png",
         "technologies": ["Angular", "Signals", "RxJS", "TypeScript"],
-        "category": "Frontend Architecture"
+        "category": "Frontend Architecture",
+        "visible": true
       }
     ],
     "githubRepositories": [
@@ -455,7 +457,8 @@
         "url": "https://github.com/java2786/megalono-frontend",
         "technologies": ["Angular", "TypeScript", "RxJS", "CSS"],
         "status": "PUBLISHED",
-        "featured": true
+        "featured": true,
+        "visible": true
       },
       {
         "id": "repo-spring-security-jwt",
@@ -464,7 +467,8 @@
         "url": "https://github.com/java2786/spring-security-jwt",
         "technologies": ["Java", "Spring Boot", "Spring Security", "JWT"],
         "status": "PUBLISHED",
-        "featured": true
+        "featured": true,
+        "visible": true
       },
       {
         "id": "repo-java-microservices-starter",
@@ -473,7 +477,8 @@
         "url": "https://github.com/java2786/java-microservices-starter",
         "technologies": ["Java", "Spring Boot", "Spring Cloud", "Docker", "PostgreSQL"],
         "status": "PUBLISHED",
-        "featured": false
+        "featured": false,
+        "visible": true
       }
     ],
     "swaggerApis": []

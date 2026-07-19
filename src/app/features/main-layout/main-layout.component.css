@@ -124,7 +124,7 @@
 
 .footer-social-link {
   display: inline-block;
-  max-width: 180px;
+  max-width: 300px;
   padding: 0.5rem 1rem;
   background-color: var(--bg-primary);
   border: 1px solid var(--border-color);

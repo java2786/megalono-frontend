@@ -16,6 +16,7 @@ export interface EngineeringProofItem {
   description?: string;
   url?: string;
   thumbnail?: string;
+  visible?: boolean;
 }
 
 export interface ArchitectureDiagram {
@@ -26,6 +27,7 @@ export interface ArchitectureDiagram {
   fullImage?: string;
   technologies?: string[];
   category?: string;
+  visible?: boolean;
 }
 
 export interface GitHubRepositoryProof {
@@ -36,6 +38,7 @@ export interface GitHubRepositoryProof {
   technologies?: string[];
   status?: string;
   featured?: boolean;
+  visible?: boolean;
 }
 
 export interface SwaggerApiProof {
@@ -45,6 +48,7 @@ export interface SwaggerApiProof {
   url: string;
   service?: string;
   version?: string;
+  visible?: boolean;
 }
 
 export interface EngineeringProofData {
@@ -82,6 +86,7 @@ export interface BaseContentItem {
   metadata?: ContentMetadata;
   status?: ContentStatus;
   priority?: number;
+  visible?: boolean;
   createdAt?: string;
   updatedAt?: string;
 }
@@ -152,6 +157,7 @@ export interface CaseStudy {
   proof?: EngineeringProofItem[];
   status?: ContentStatus;
   priority?: number;
+  visible?: boolean;
   createdAt?: string;
   updatedAt?: string;
 }

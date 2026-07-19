@@ -295,7 +295,7 @@ export class VideoLibraryComponent implements OnInit {
 
   getProofItems(proof?: EngineeringProofItem[]): EngineeringProofItem[] {
     if (!proof || !Array.isArray(proof)) return [];
-    return proof.filter(item => !!item && !!item.title);
+    return proof.filter(item => !!item && !!item.title && item.visible !== false);
   }
 
   // Future sections empty rendering methods

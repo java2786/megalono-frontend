@@ -133,9 +133,15 @@ export class EngineeringProofComponent implements OnChanges {
 
   proofSignal = signal<EngineeringProofData | undefined>(undefined);
 
-  diagrams = computed(() => this.proofSignal()?.architectureDiagrams || []);
-  repos = computed(() => this.proofSignal()?.githubRepositories || []);
-  swaggerApis = computed(() => this.proofSignal()?.swaggerApis || []);
+  diagrams = computed(() => 
+    (this.proofSignal()?.architectureDiagrams || []).filter(item => item.visible !== false)
+  );
+  repos = computed(() => 
+    (this.proofSignal()?.githubRepositories || []).filter(item => item.visible !== false)
+  );
+  swaggerApis = computed(() => 
+    (this.proofSignal()?.swaggerApis || []).filter(item => item.visible !== false)
+  );
 
   hasData = computed(() => 
     this.diagrams().length > 0 || 
