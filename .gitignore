@@ -1,7 +1,7 @@
 # Node
 **/node_modules/
 
-# React
+# React or Angular
 **/dist/
 
 # Python
@@ -30,3 +30,6 @@
 
 # Custom
 **/kbd/
+
+# For deployment, dist is required
+!./dist
