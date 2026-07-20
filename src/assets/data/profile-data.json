@@ -14,6 +14,9 @@
       "url": "https://linkedin.com/in/arunkumar31786",
       "icon": "linkedin",
       "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 100,
       "displayOrder": 10
     },
     {
@@ -22,6 +25,9 @@
       "url": "https://github.com/java2786",
       "icon": "github",
       "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 90,
       "displayOrder": 20
     },
     {
@@ -30,6 +36,9 @@
       "url": "https://www.toptal.com/developers/resume/arun-kumar1",
       "icon": "toptal",
       "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 80,
       "displayOrder": 30
     },
     {
@@ -38,6 +47,9 @@
       "url": "https://www.upwork.com/freelancers/~017258c360bea50c26?viewMode=1",
       "icon": "upwork",
       "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 70,
       "displayOrder": 40
     }
   ],
@@ -53,7 +65,12 @@
         "Microservices",
         "System Design",
         "AWS"
-      ]
+      ],
+      "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 100,
+      "displayOrder": 10
     },
     {
       "id": "platform-engineering",
@@ -66,7 +83,12 @@
         "Nginx",
         "Hetzner Cloud",
         "Redis"
-      ]
+      ],
+      "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 90,
+      "displayOrder": 20
     },
     {
       "id": "full-stack-development",
@@ -79,7 +101,12 @@
         "TypeScript",
         "Flutter",
         "PostgreSQL"
-      ]
+      ],
+      "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 80,
+      "displayOrder": 30
     },
     {
       "id": "technical-consulting-training",
@@ -92,7 +119,69 @@
         "Power BI",
         "System Design",
         "Technical Mentoring"
-      ]
+      ],
+      "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 70,
+      "displayOrder": 40
+    }
+  ],
+  "statistics": [
+    {
+      "id": "years-experience",
+      "target": 15,
+      "suffix": "+",
+      "label": "Years Experience",
+      "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 100,
+      "displayOrder": 10
+    },
+    {
+      "id": "engineers-trained",
+      "target": 20,
+      "suffix": "K+",
+      "label": "Engineers Trained",
+      "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 90,
+      "displayOrder": 20
+    },
+    {
+      "id": "enterprise-organizations",
+      "target": 20,
+      "suffix": "+",
+      "label": "Enterprise Organizations",
+      "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 80,
+      "displayOrder": 30
+    },
+    {
+      "id": "technical-workshops",
+      "target": 100,
+      "suffix": "+",
+      "label": "Technical Workshops",
+      "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 70,
+      "displayOrder": 40
+    },
+    {
+      "id": "production-applications",
+      "target": 50,
+      "suffix": "+",
+      "label": "Production Applications",
+      "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 60,
+      "displayOrder": 50
     }
   ],
   "caseStudies": [
@@ -101,7 +190,9 @@
       "slug": "brain-mentors-platform-engineering",
       "title": "Brain Mentors Pvt Ltd (Senior Technical Consultant)",
       "businessImpact": "Improved engineering operations, cloud infrastructure, and deployment automation across multiple digital learning platforms.",
+      "visible": true,
       "status": "PUBLISHED",
+      "featured": false,
       "priority": 100,
       "displayOrder": 100,
       "createdAt": "2024-02-01",
@@ -109,19 +200,39 @@
       "sections": [
         {
           "heading": "Timeline & Location",
-          "content": "February 2024 – Present | Delhi NCR"
+          "content": "February 2024 – Present | Delhi NCR",
+          "visible": true,
+          "status": "PUBLISHED",
+          "featured": false,
+          "priority": 100,
+          "displayOrder": 10
         },
         {
           "heading": "Core Responsibilities & Platform Operations",
-          "content": "Responsible for platform engineering, cloud modernization, infrastructure planning, deployment automation, technical operations, and engineering coordination across digital learning platforms. Managed technical operations for Brain Mentors and SkillRisers platforms, coordinating a team of 3–5 engineers across platform and development initiatives."
+          "content": "Responsible for platform engineering, cloud modernization, infrastructure planning, deployment automation, technical operations, and engineering coordination across digital learning platforms. Managed technical operations for Brain Mentors and SkillRisers platforms, coordinating a team of 3–5 engineers across platform and development initiatives.",
+          "visible": true,
+          "status": "PUBLISHED",
+          "featured": false,
+          "priority": 90,
+          "displayOrder": 20
         },
         {
           "heading": "Key Infrastructure Contributions",
-          "content": "Led AWS to Hetzner Cloud migration planning and execution initiatives. Coordinated infrastructure modernization activities focused on cost optimization, platform reliability, and scalability. Designed containerized deployment strategies using Docker and Docker Compose for improved operational consistency."
+          "content": "Led AWS to Hetzner Cloud migration planning and execution initiatives. Coordinated infrastructure modernization activities focused on cost optimization, platform reliability, and scalability. Designed containerized deployment strategies using Docker and Docker Compose for improved operational consistency.",
+          "visible": true,
+          "status": "PUBLISHED",
+          "featured": false,
+          "priority": 80,
+          "displayOrder": 30
         },
         {
           "heading": "CI/CD & Engineering Governance",
-          "content": "Supported CI/CD automation pipelines using GitHub Actions and Jenkins. Implemented code quality workflows involving centralized SonarQube deployment, static code analysis integration, and quality gates into live development paths."
+          "content": "Supported CI/CD automation pipelines using GitHub Actions and Jenkins. Implemented code quality workflows involving centralized SonarQube deployment, static code analysis integration, and quality gates into live development paths.",
+          "visible": true,
+          "status": "PUBLISHED",
+          "featured": false,
+          "priority": 70,
+          "displayOrder": 40
         }
       ],
       "stack": [
@@ -147,7 +258,9 @@
       "slug": "independent-consultant-advisory-enablement",
       "title": "Independent Technical Consultant | SME (Advisory & Enablement)",
       "businessImpact": "Enabled enterprise engineering teams through architecture consulting, technical mentoring, and large-scale capability-building programs.",
+      "visible": true,
       "status": "PUBLISHED",
+      "featured": false,
       "priority": 90,
       "displayOrder": 90,
       "createdAt": "2018-01-01",
@@ -155,15 +268,30 @@
       "sections": [
         {
           "heading": "Timeline",
-          "content": "January 2018 – January 2024"
+          "content": "January 2018 – January 2024",
+          "visible": true,
+          "status": "PUBLISHED",
+          "featured": false,
+          "priority": 100,
+          "displayOrder": 10
         },
         {
           "heading": "Solution Engineering & Architecture Guidance",
-          "content": "Collaborated with enterprise engineering teams and technology organizations to deliver consulting engagements, architecture guidance, technical evaluations, code reviews, and technology adoption initiatives. Supported engineering readiness, technical mentoring, capability-building programs, curriculum architecture, project design, and technical interview engineering assessments."
+          "content": "Collaborated with enterprise engineering teams and technology organizations to deliver consulting engagements, architecture guidance, technical evaluations, code reviews, and technology adoption initiatives. Supported engineering readiness, technical mentoring, capability-building programs, curriculum architecture, project design, and technical interview engineering assessments.",
+          "visible": true,
+          "status": "PUBLISHED",
+          "featured": false,
+          "priority": 90,
+          "displayOrder": 20
         },
         {
           "heading": "Enterprise Engagements & Partnerships",
-          "content": "IBM, Capgemini, LTI Mindtree, Wipro, Cognizant, Infosys, TCS, Accenture, Genpact, ABB, UST Global"
+          "content": "IBM, Capgemini, LTI Mindtree, Wipro, Cognizant, Infosys, TCS, Accenture, Genpact, ABB, UST Global",
+          "visible": true,
+          "status": "PUBLISHED",
+          "featured": false,
+          "priority": 80,
+          "displayOrder": 30
         }
       ],
       "stack": [
@@ -186,7 +314,9 @@
       "slug": "independent-consultant-software-delivery",
       "title": "Independent Technical Consultant (Software Delivery)",
       "businessImpact": "Delivered enterprise software solutions and consulting engagements across multiple corporate clients and technology domains.",
+      "visible": true,
       "status": "PUBLISHED",
+      "featured": false,
       "priority": 80,
       "displayOrder": 80,
       "createdAt": "2014-01-01",
@@ -194,15 +324,30 @@
       "sections": [
         {
           "heading": "Timeline",
-          "content": "2014 – 2018"
+          "content": "2014 – 2018",
+          "visible": true,
+          "status": "PUBLISHED",
+          "featured": false,
+          "priority": 100,
+          "displayOrder": 10
         },
         {
           "heading": "Corporate Consulting & Project Support",
-          "content": "Provided freelance consulting, corporate programs, software development guidance, and technology enablement services. Delivered implementation support for Java, Spring, AngularJS, MEAN Stack, Android, and enterprise application development initiatives involving MVC architecture, Struts, databases, and automated testing frameworks."
+          "content": "Provided freelance consulting, corporate programs, software development guidance, and technology enablement services. Delivered implementation support for Java, Spring, AngularJS, MEAN Stack, Android, and enterprise application development initiatives involving MVC architecture, Struts, databases, and automated testing frameworks.",
+          "visible": true,
+          "status": "PUBLISHED",
+          "featured": false,
+          "priority": 90,
+          "displayOrder": 20
         },
         {
           "heading": "Client & Program Exposure",
-          "content": "Snapdeal, Wipro, Cognizant, HCL Technologies, NIIT Technologies, Boeing"
+          "content": "Snapdeal, Wipro, Cognizant, HCL Technologies, NIIT Technologies, Boeing",
+          "visible": true,
+          "status": "PUBLISHED",
+          "featured": false,
+          "priority": 80,
+          "displayOrder": 30
         }
       ],
       "stack": [
@@ -222,7 +367,9 @@
       "slug": "techknow-heights-technical-lead",
       "title": "Techknow Heights Pvt Ltd (Software Developer to Technical Lead)",
       "businessImpact": "Led the evolution of a large-scale learning platform while modernizing architecture and engineering practices.",
+      "visible": true,
       "status": "PUBLISHED",
+      "featured": false,
       "priority": 70,
       "displayOrder": 70,
       "createdAt": "2010-01-01",
@@ -230,15 +377,30 @@
       "sections": [
         {
           "heading": "Timeline",
-          "content": "2010 – 2014"
+          "content": "2010 – 2014",
+          "visible": true,
+          "status": "PUBLISHED",
+          "featured": false,
+          "priority": 100,
+          "displayOrder": 10
         },
         {
           "heading": "Enterprise Learning Platform Evolved",
-          "content": "Designed and developed a large-scale learning and assessment ecosystem supporting online tests, reporting, learner management, and progress tracking. Designed and implemented enterprise applications using Java, Servlets, JSP, Spring MVC, Struts, MySQL, and Apache Tomcat."
+          "content": "Designed and developed a large-scale learning and assessment ecosystem supporting online tests, reporting, learner management, and progress tracking. Designed and implemented enterprise applications using Java, Servlets, JSP, Spring MVC, Struts, MySQL, and Apache Tomcat.",
+          "visible": true,
+          "status": "PUBLISHED",
+          "featured": false,
+          "priority": 90,
+          "displayOrder": 20
         },
         {
           "heading": "Modernization tracks & Leadership",
-          "content": "Managed a development team of approximately five engineers. Led modernization efforts that successfully migrated the legacy infrastructure platform towards clean MEAN-based architectures."
+          "content": "Managed a development team of approximately five engineers. Led modernization efforts that successfully migrated the legacy infrastructure platform towards clean MEAN-based architectures.",
+          "visible": true,
+          "status": "PUBLISHED",
+          "featured": false,
+          "priority": 80,
+          "displayOrder": 30
         }
       ],
       "stack": [
@@ -262,7 +424,9 @@
       "slug": "secure-online-coding-assessment-sandbox",
       "title": "Research Project: Secure Online Coding Assessment Sandbox",
       "businessImpact": "Designed and evaluated secure, scalable architectures for enterprise-grade online coding assessment platforms.",
+      "visible": true,
       "status": "PUBLISHED",
+      "featured": false,
       "priority": 60,
       "displayOrder": 60,
       "createdAt": "2023-06-01",
@@ -270,7 +434,12 @@
       "sections": [
         {
           "heading": "Architecture Framework Specs",
-          "content": "Researched and evaluated solution alternatives for a high-availability coding assessment platform supporting secure multi-language code execution. Evaluated Judge0 and JSJail execution architectures, secure Docker sandboxing environments, CPU/Memory resource isolation thresholds, and scalability deployment models."
+          "content": "Researched and evaluated solution alternatives for a high-availability coding assessment platform supporting secure multi-language code execution. Evaluated Judge0 and JSJail execution architectures, secure Docker sandboxing environments, CPU/Memory resource isolation thresholds, and scalability deployment models.",
+          "visible": true,
+          "status": "PUBLISHED",
+          "featured": false,
+          "priority": 100,
+          "displayOrder": 10
         }
       ],
       "stack": [
@@ -306,22 +475,39 @@
             "id": "res-spring-jwt-youtube",
             "type": "youtube",
             "title": "Watch Video",
-            "url": "https://youtube.com/your-video-link-1"
+            "url": "https://youtube.com/your-video-link-1",
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 100,
+            "displayOrder": 10
           },
           {
             "id": "res-spring-jwt-github",
             "type": "github",
             "title": "GitHub",
-            "url": "https://github.com/java2786/spring-security-jwt"
+            "url": "https://github.com/java2786/spring-security-jwt",
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 90,
+            "displayOrder": 20
           },
           {
             "id": "res-spring-jwt-slides",
             "type": "slides",
             "title": "Download Slides",
-            "url": "https://slideshare.net/example-slides-1"
+            "url": "https://slideshare.net/example-slides-1",
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 80,
+            "displayOrder": 30
           }
         ],
+        "visible": true,
         "status": "PUBLISHED",
+        "featured": false,
         "priority": 100,
         "displayOrder": 100,
         "createdAt": "2026-01-01",
@@ -354,22 +540,39 @@
             "id": "res-angular-signals-youtube",
             "type": "youtube",
             "title": "Watch Video",
-            "url": "https://youtube.com/your-video-link-2"
+            "url": "https://youtube.com/your-video-link-2",
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 100,
+            "displayOrder": 10
           },
           {
             "id": "res-angular-signals-github",
             "type": "github",
             "title": "GitHub",
-            "url": "https://github.com/java2786/angular-signals-store"
+            "url": "https://github.com/java2786/angular-signals-store",
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 90,
+            "displayOrder": 20
           },
           {
             "id": "res-angular-signals-doc",
             "type": "documentation",
             "title": "Documentation",
-            "url": "https://angular.dev/guide/signals"
+            "url": "https://angular.dev/guide/signals",
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 80,
+            "displayOrder": 30
           }
         ],
+        "visible": true,
         "status": "PUBLISHED",
+        "featured": false,
         "priority": 90,
         "displayOrder": 90,
         "createdAt": "2026-01-01",
@@ -396,22 +599,39 @@
             "id": "res-microservices-github",
             "type": "github",
             "title": "GitHub",
-            "url": "https://github.com/java2786/java-microservices-starter"
+            "url": "https://github.com/java2786/java-microservices-starter",
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 100,
+            "displayOrder": 10
           },
           {
             "id": "res-microservices-sample",
             "type": "sampleProject",
             "title": "Sample Project",
-            "url": "https://github.com/java2786/java-microservices-starter/archive/refs/heads/main.zip"
+            "url": "https://github.com/java2786/java-microservices-starter/archive/refs/heads/main.zip",
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 90,
+            "displayOrder": 20
           },
           {
             "id": "res-microservices-doc",
             "type": "documentation",
             "title": "Documentation",
-            "url": "https://github.com/java2786/java-microservices-starter/wiki"
+            "url": "https://github.com/java2786/java-microservices-starter/wiki",
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 80,
+            "displayOrder": 30
           }
         ],
+        "visible": true,
         "status": "PUBLISHED",
+        "featured": false,
         "priority": 50,
         "displayOrder": 50,
         "createdAt": "2026-01-01",
@@ -436,16 +656,28 @@
             "id": "res-cicd-github",
             "type": "github",
             "title": "GitHub",
-            "url": "https://github.com/java2786/cicd-templates"
+            "url": "https://github.com/java2786/cicd-templates",
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 100,
+            "displayOrder": 10
           },
           {
             "id": "res-cicd-download",
             "type": "download",
             "title": "Downloads",
-            "url": "https://raw.githubusercontent.com/java2786/cicd-templates/main/cheatsheet.pdf"
+            "url": "https://raw.githubusercontent.com/java2786/cicd-templates/main/cheatsheet.pdf",
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 90,
+            "displayOrder": 20
           }
         ],
+        "visible": true,
         "status": "PUBLISHED",
+        "featured": false,
         "priority": 40,
         "displayOrder": 40,
         "createdAt": "2026-01-01",
@@ -473,9 +705,11 @@
         "title": "Spring Security & JWT Authentication Architecture",
         "description": "Stateless authentication and role-based authorization flow diagram for enterprise Spring Boot microservices.",
         "category": "Security Architecture",
-        "status": "AVAILABLE",
+        "status": "PUBLISHED",
         "verified": true,
         "visible": true,
+        "featured": false,
+        "priority": 100,
         "displayOrder": 100,
         "technologies": ["Spring Boot", "Spring Security", "JWT", "Java"],
         "links": [
@@ -484,7 +718,11 @@
             "type": "github",
             "title": "GitHub",
             "url": "https://github.com/java2786/spring-security-jwt",
-            "visible": true
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 100,
+            "displayOrder": 10
           }
         ],
         "artifacts": [
@@ -494,7 +732,11 @@
             "title": "Spring Security & JWT Authentication Architecture",
             "thumbnail": "assets/spring_security_jwt_workshop.png",
             "url": "assets/spring_security_jwt_workshop.png",
-            "visible": true
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 100,
+            "displayOrder": 10
           }
         ],
         "relatedCaseStudies": ["case-brain-mentors"],
@@ -505,9 +747,11 @@
         "title": "Angular Signals Reactive State Flow Architecture",
         "description": "Component and state manager data flow architecture for modern reactive Angular applications.",
         "category": "Frontend Architecture",
-        "status": "AVAILABLE",
+        "status": "PUBLISHED",
         "verified": true,
         "visible": true,
+        "featured": false,
+        "priority": 90,
         "displayOrder": 90,
         "technologies": ["Angular", "Signals", "RxJS", "TypeScript"],
         "links": [
@@ -516,7 +760,11 @@
             "type": "github",
             "title": "GitHub",
             "url": "https://github.com/java2786/megalono-frontend",
-            "visible": true
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 100,
+            "displayOrder": 10
           }
         ],
         "artifacts": [
@@ -526,7 +774,11 @@
             "title": "Angular Signals Reactive State Flow Architecture",
             "thumbnail": "assets/angular_state_management_workshop.png",
             "url": "assets/angular_state_management_workshop.png",
-            "visible": true
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 100,
+            "displayOrder": 10
           }
         ],
         "relatedCaseStudies": ["case-megalono"],
@@ -537,9 +789,11 @@
         "title": "Cloud-Native Java Microservices Architecture",
         "description": "Cloud-native enterprise microservices starter with Spring Cloud, PostgreSQL, and Docker containerization.",
         "category": "Backend Architecture",
-        "status": "AVAILABLE",
+        "status": "PUBLISHED",
         "verified": true,
         "visible": true,
+        "featured": false,
+        "priority": 80,
         "displayOrder": 80,
         "technologies": ["Java", "Spring Boot", "Spring Cloud", "Docker", "PostgreSQL"],
         "links": [
@@ -548,7 +802,11 @@
             "type": "github",
             "title": "GitHub",
             "url": "https://github.com/java2786/java-microservices-starter",
-            "visible": true
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": false,
+            "priority": 100,
+            "displayOrder": 10
           }
         ],
         "artifacts": [],

@@ -2,6 +2,7 @@ import { Component, OnInit, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileService } from '../../core/services/profile.service';
 import { ProfileData, KnowledgeHubItem, ResourceLink, EngineeringProofItem } from '../../shared/models/profile.model';
+import { getVisibleContent } from '../../shared/utils/content.utility';
 
 @Component({
   selector: 'app-workshop',
@@ -190,68 +191,35 @@ export class VideoLibraryComponent implements OnInit {
   };
 
   videoWorkshops = computed(() => {
-    const data = this.profile();
-    if (!data || !data.knowledgeHub || !data.knowledgeHub.workshops) return [];
-    return data.knowledgeHub.workshops
-      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
-      .sort((a, b) => (b.displayOrder ?? b.priority ?? 0) - (a.displayOrder ?? a.priority ?? 0));
+    return getVisibleContent(this.profile()?.knowledgeHub?.workshops);
   });
 
   resourceWorkshops = computed(() => {
-    const data = this.profile();
-    if (!data || !data.knowledgeHub || !data.knowledgeHub.resources) return [];
-    return data.knowledgeHub.resources
-      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
-      .sort((a, b) => (b.displayOrder ?? b.priority ?? 0) - (a.displayOrder ?? a.priority ?? 0));
+    return getVisibleContent(this.profile()?.knowledgeHub?.resources);
   });
 
-  // Future sections computed signals
   architectureGuides = computed(() => {
-    const data = this.profile();
-    if (!data || !data.knowledgeHub || !data.knowledgeHub.architectureGuides) return [];
-    return data.knowledgeHub.architectureGuides
-      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
-      .sort((a, b) => (b.displayOrder ?? b.priority ?? 0) - (a.displayOrder ?? a.priority ?? 0));
+    return getVisibleContent(this.profile()?.knowledgeHub?.architectureGuides);
   });
 
   sampleProjects = computed(() => {
-    const data = this.profile();
-    if (!data || !data.knowledgeHub || !data.knowledgeHub.sampleProjects) return [];
-    return data.knowledgeHub.sampleProjects
-      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
-      .sort((a, b) => (b.displayOrder ?? b.priority ?? 0) - (a.displayOrder ?? a.priority ?? 0));
+    return getVisibleContent(this.profile()?.knowledgeHub?.sampleProjects);
   });
 
   downloads = computed(() => {
-    const data = this.profile();
-    if (!data || !data.knowledgeHub || !data.knowledgeHub.downloads) return [];
-    return data.knowledgeHub.downloads
-      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
-      .sort((a, b) => (b.displayOrder ?? b.priority ?? 0) - (a.displayOrder ?? a.priority ?? 0));
+    return getVisibleContent(this.profile()?.knowledgeHub?.downloads);
   });
 
   codeTemplates = computed(() => {
-    const data = this.profile();
-    if (!data || !data.knowledgeHub || !data.knowledgeHub.codeTemplates) return [];
-    return data.knowledgeHub.codeTemplates
-      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
-      .sort((a, b) => (b.displayOrder ?? b.priority ?? 0) - (a.displayOrder ?? a.priority ?? 0));
+    return getVisibleContent(this.profile()?.knowledgeHub?.codeTemplates);
   });
 
   cheatSheets = computed(() => {
-    const data = this.profile();
-    if (!data || !data.knowledgeHub || !data.knowledgeHub.cheatSheets) return [];
-    return data.knowledgeHub.cheatSheets
-      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
-      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
+    return getVisibleContent(this.profile()?.knowledgeHub?.cheatSheets);
   });
 
   learningPaths = computed(() => {
-    const data = this.profile();
-    if (!data || !data.knowledgeHub || !data.knowledgeHub.learningPaths) return [];
-    return data.knowledgeHub.learningPaths
-      .filter(item => item.status !== 'DRAFT' && item.status !== 'ARCHIVED')
-      .sort((a, b) => (b.priority || 0) - (a.priority || 0));
+    return getVisibleContent(this.profile()?.knowledgeHub?.learningPaths);
   });
 
   constructor(private profileService: ProfileService) { }
@@ -263,9 +231,9 @@ export class VideoLibraryComponent implements OnInit {
   getResourceLinks(resources?: any): Array<{ key: string; label: string; icon: string; url: string }> {
     if (!resources) return [];
 
-    // If resources is already a normalized array
     if (Array.isArray(resources)) {
-      return resources
+      const visibleLinks = getVisibleContent(resources as ResourceLink[]);
+      return visibleLinks
         .filter(link => !!link && !!link.url)
         .map(link => {
           const typeKey = link.type || 'default';
@@ -279,7 +247,6 @@ export class VideoLibraryComponent implements OnInit {
         });
     }
 
-    // Fallback for legacy key-value object dictionaries
     return Object.entries(resources)
       .filter(([_, url]) => !!url)
       .map(([key, url]) => {
@@ -295,32 +262,31 @@ export class VideoLibraryComponent implements OnInit {
 
   getProofItems(proof?: EngineeringProofItem[]): EngineeringProofItem[] {
     if (!proof || !Array.isArray(proof)) return [];
-    return proof.filter(item => !!item && !!item.title && item.visible !== false);
+    return getVisibleContent(proof).filter(item => !!item && !!item.title);
   }
 
-  // Future sections empty rendering methods
   renderArchitectureGuides() {
-    return [];
+    return this.architectureGuides();
   }
 
   renderSampleProjects() {
-    return [];
+    return this.sampleProjects();
   }
 
   renderDownloads() {
-    return [];
+    return this.downloads();
   }
 
   renderCodeTemplates() {
-    return [];
+    return this.codeTemplates();
   }
 
   renderCheatSheets() {
-    return [];
+    return this.cheatSheets();
   }
 
   renderLearningPaths() {
-    return [];
+    return this.learningPaths();
   }
 
   private capitalize(val: string): string {

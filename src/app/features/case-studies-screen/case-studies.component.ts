@@ -1,7 +1,8 @@
-import { Component, OnInit, signal, inject } from '@angular/core';
+import { Component, OnInit, signal, inject, computed } from '@angular/core';
 import { ProfileService } from '../../core/services/profile.service';
-import { ProfileData } from '../../shared/models/profile.model';
+import { ProfileData, CaseStudy, StudySection } from '../../shared/models/profile.model';
 import { EngineeringProofComponent } from '../../shared/components/engineering-proof/engineering-proof.component';
+import { getVisibleContent } from '../../shared/utils/content.utility';
 
 @Component({
   selector: 'app-case-studies',
@@ -16,7 +17,7 @@ import { EngineeringProofComponent } from '../../shared/components/engineering-p
         </h2>
         
         <!-- Case Studies & Experience Track Cards Loop -->
-        @for (item of data.caseStudies; track item.title) {
+        @for (item of caseStudies(); track item.title) {
           <div class="case-card" style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 2.5rem; border-radius: 0.75rem; margin-bottom: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
             <!-- Title -->
             <h3 class="case-card-title" style="margin-top:0; font-size:1.4rem; color:var(--accent-color); font-weight: 700; margin-bottom: 1.5rem;">
@@ -37,7 +38,7 @@ import { EngineeringProofComponent } from '../../shared/components/engineering-p
             
             <!-- Dynamic Sections Display Loop -->
             <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 1.75rem;">
-              @for (sec of item.sections; track sec.heading) {
+              @for (sec of getVisibleSections(item.sections); track sec.heading) {
                 <div>
                   <h4 style="font-size: 1.05rem; font-weight: 600; margin: 0 0 0.35rem 0; color: var(--text-main); letter-spacing: 0.025em;">
                     {{ sec.heading }}
@@ -84,6 +85,14 @@ import { EngineeringProofComponent } from '../../shared/components/engineering-p
 export class CaseStudiesComponent implements OnInit {
   profile = signal<ProfileData | null>(null);
   private profileService = inject(ProfileService);
+
+  caseStudies = computed<CaseStudy[]>(() => {
+    return getVisibleContent(this.profile()?.caseStudies);
+  });
+
+  getVisibleSections(sections?: StudySection[]): StudySection[] {
+    return getVisibleContent(sections);
+  }
 
   ngOnInit() {
     this.profileService.getProfileData().subscribe({

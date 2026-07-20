@@ -1,6 +1,7 @@
 import { Component, Input, computed, signal, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EngineeringEvidenceData, EngineeringProofData, EngineeringEvidenceItem, ProofLink, ProofArtifact, ArchitectureDiagram, GitHubRepositoryProof, SwaggerApiProof } from '../../models/profile.model';
+import { getVisibleContent } from '../../utils/content.utility';
 
 @Component({
   selector: 'app-engineering-proof',
@@ -144,9 +145,7 @@ export class EngineeringProofComponent implements OnChanges {
   activeEvidence = computed(() => {
     const ev = this.evidenceSignal()?.evidence;
     if (ev && Array.isArray(ev)) {
-      return ev
-        .filter(item => item.visible !== false)
-        .sort((a, b) => (b.displayOrder ?? b.priority ?? 0) - (a.displayOrder ?? a.priority ?? 0));
+      return getVisibleContent(ev);
     }
     return [];
   });
@@ -157,8 +156,9 @@ export class EngineeringProofComponent implements OnChanges {
       const results: ArchitectureDiagram[] = [];
       for (const ev of evList) {
         if (ev.artifacts && Array.isArray(ev.artifacts)) {
-          for (const art of ev.artifacts) {
-            if (art.visible !== false && (art.type === 'architecture' || art.type === 'architectureDiagram' || art.type === 'diagram')) {
+          const visibleArts = getVisibleContent(ev.artifacts);
+          for (const art of visibleArts) {
+            if (art.type === 'architecture' || art.type === 'architectureDiagram' || art.type === 'diagram') {
               results.push({
                 id: art.id || ev.id,
                 title: art.title || ev.title,
@@ -175,7 +175,7 @@ export class EngineeringProofComponent implements OnChanges {
       return results;
     }
     // Fallback to legacy structure
-    return (this.proofSignal()?.architectureDiagrams || []).filter(item => item.visible !== false);
+    return getVisibleContent(this.proofSignal()?.architectureDiagrams);
   });
 
   repos = computed<GitHubRepositoryProof[]>(() => {
@@ -184,8 +184,9 @@ export class EngineeringProofComponent implements OnChanges {
       const results: GitHubRepositoryProof[] = [];
       for (const ev of evList) {
         if (ev.links && Array.isArray(ev.links)) {
-          for (const link of ev.links) {
-            if (link.visible !== false && link.type === 'github') {
+          const visibleLinks = getVisibleContent(ev.links);
+          for (const link of visibleLinks) {
+            if (link.type === 'github') {
               const repoName = ev.id.replace('evid-', '').replace('repo-', '');
               results.push({
                 id: link.id || ev.id,
@@ -201,7 +202,7 @@ export class EngineeringProofComponent implements OnChanges {
       return results;
     }
     // Fallback to legacy structure
-    return (this.proofSignal()?.githubRepositories || []).filter(item => item.visible !== false);
+    return getVisibleContent(this.proofSignal()?.githubRepositories);
   });
 
   swaggerApis = computed<SwaggerApiProof[]>(() => {
@@ -210,8 +211,9 @@ export class EngineeringProofComponent implements OnChanges {
       const results: SwaggerApiProof[] = [];
       for (const ev of evList) {
         if (ev.links && Array.isArray(ev.links)) {
-          for (const link of ev.links) {
-            if (link.visible !== false && link.type === 'swagger') {
+          const visibleLinks = getVisibleContent(ev.links);
+          for (const link of visibleLinks) {
+            if (link.type === 'swagger') {
               results.push({
                 id: link.id || ev.id,
                 title: link.title || ev.title,
@@ -227,7 +229,7 @@ export class EngineeringProofComponent implements OnChanges {
       return results;
     }
     // Fallback to legacy structure
-    return (this.proofSignal()?.swaggerApis || []).filter(item => item.visible !== false);
+    return getVisibleContent(this.proofSignal()?.swaggerApis);
   });
 
   hasData = computed(() => 

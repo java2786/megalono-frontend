@@ -13,7 +13,7 @@
     <!-- Professional Statistics Section -->
     <div class="hero-stats-grid" #statsContainer>
       <div class="stat-item" 
-           *ngFor="let stat of stats" 
+           *ngFor="let stat of stats()" 
            [attr.aria-label]="stat.target + stat.suffix + ' ' + stat.label">
         <div class="stat-number" aria-hidden="true">
           {{ stat.current() }}{{ stat.suffix }}
@@ -34,7 +34,7 @@
   <section class="services-section">
     <h2 class="sub-section-title">Consulting Expertise</h2>
     <div class="services-grid">
-      <div class="service-card" *ngFor="let service of data.services">
+      <div class="service-card" *ngFor="let service of visibleServices()">
         <h3 class="card-title">{{ service.title }}</h3>
         <p class="card-desc">{{ service.description }}</p>
         <div class="pill-wrapper">

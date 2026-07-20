@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProfileService } from '../../core/services/profile.service';
 import { ProfileData, SocialLinkItem } from '../../shared/models/profile.model';
+import { getVisibleContent } from '../../shared/utils/content.utility';
 
 @Component({
   selector: 'app-main-layout',
@@ -31,20 +32,22 @@ export class MainLayoutComponent implements OnInit {
     if (!data || !data.socialLinks) return [];
 
     if (Array.isArray(data.socialLinks)) {
-      return data.socialLinks
-        .filter(item => item.visible !== false)
-        .sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
+      return getVisibleContent(data.socialLinks);
     }
 
     // Fallback for legacy record object structure
     const obj = data.socialLinks as Record<string, string>;
     const orderMap: Record<string, number> = { linkedin: 10, github: 20, toptal: 30, upwork: 40 };
-    return Object.entries(obj).map(([key, url]) => ({
+    const legacyLinks: SocialLinkItem[] = Object.entries(obj).map(([key, url]) => ({
       id: key,
       title: key.charAt(0).toUpperCase() + key.slice(1),
       url,
+      visible: true,
+      status: 'PUBLISHED',
+      priority: 100 - (orderMap[key] || 100),
       displayOrder: orderMap[key] || 100
-    })).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
+    }));
+    return getVisibleContent(legacyLinks);
   });
 
   ngOnInit(): void {

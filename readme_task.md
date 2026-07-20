@@ -1,126 +1,123 @@
-Must
-- NOT redesign the UI.
-- NOT change the color palette.
-- NOT modify typography.
-- NOT change spacing unless required.
-- NOT rename routes.
-- NOT rename Angular components.
-- NOT introduce new libraries.
-- Keep Angular architecture unchanged.
-- Maintain both light and dark themes.
-- Preserve responsive behavior.
-- Preserve all existing functionality.
-- Never generate fake engineering assets or placeholder proof.
 
-Always
-- Audit the current implementation.
-- Explain how proof/evidence is currently represented.
-- List only the required changes.
-- Implement only those changes.
-- Report modified files.
-- Suggest a Git commit message.
+Final roadmap
+- Schema Freeze ✅
+- Content Population
+- Content Review
+- Technical Proof
+- Deployment
+- Post-deployment Enhancements (V2)
 
-Objective
-Strengthen the credibility of the portfolio by introducing an Engineering Proof section.
-The purpose is NOT to add marketing content.
-The purpose is to demonstrate real engineering capability using actual project artifacts.
 
-Guidelines
-The Engineering Proof section must support real assets only.
-If an asset does not exist, it must not be rendered.
-Never display fake screenshots, placeholder images, dummy repositories, or sample URLs.
-The implementation should make it very easy to add future proof items by simply updating JSON.
+Phase 2 — Content Population ⭐ (Highest Priority)
+    This is where the portfolio becomes believable.
+    Populate:
+    About
+    Hero
+    Services
+    Statistics
+    Social links
+    Case studies
+    Engineering evidence
+    Knowledge hub
+    Everything should be factual.
+    No placeholders.
+    No lorem ipsum.
+    No fake GitHub repositories.
+    No fake diagrams.
 
-Create a reusable data model.
-Suggested JSON
-content
-    engineeringProof
-        architectureDiagrams
-        githubRepositories
-        swaggerApis
-Only these three categories should be implemented before deployment.
-Future categories may be added later without changing the component.
-Architecture Diagrams
-Support
-- id
-- title
-- description
-- thumbnail
-- fullImage
-- technologies
-- category
-GitHub Repository
-Support
-- repositoryName
-- description
-- url
-- technologies
-- status
-- featured
-Swagger APIs
-Support
-- title
-- description
-- url
-- service
-- version
-Rendering
-Create a new reusable Engineering Proof section.
-Display categories only if they contain data.
-If a category is empty, do not render it.
-No empty cards.
-No "Coming Soon".
-No placeholders.
-Architecture Diagrams
-Display as image cards.
-Each card should support
-- preview image
-- title
-- short description
-- technology badges
-GitHub
-Display
-- repository name
-- short description
-- technology badges
-- GitHub button
-Swagger
-Display
-- service name
-- version
-- description
-- Open Swagger button
-Current Content
-Populate the Engineering Proof section only with real assets already available in the project.
-If an item cannot be verified from the current repository, leave that category empty.
-Do not invent content.
-Placement
-Place the Engineering Proof section naturally within the portfolio where it best supports credibility.
-The UI should remain consistent with the existing design system.
-No visual redesign.
-Acceptance Criteria
-✓ UI design remains unchanged.
-✓ Navigation remains unchanged.
-✓ Existing pages remain unchanged.
-✓ Engineering Proof is fully data-driven.
-✓ Empty categories are automatically hidden.
-✓ Future proof items can be added by editing JSON only.
-Deliverables
-1. Updated JSON schema.
-2. Updated interfaces/models.
-3. New reusable Engineering Proof component.
-4. Rendering logic.
-5. Migration summary.
-6. Modified file list.
-7. Suggested Git commit message.
+Phase 3 — Content Review
+    This is different from population.
+    Review every section from the perspective of:
+    CTO
+    Hiring Manager
+    Technical Lead
+    Upwork Client
+    Ask questions like:
+    Is every claim supported?
+    Is every technology actually used?
+    Is there unnecessary marketing language?
+    Does every section demonstrate business value?
+    This is where the portfolio becomes persuasive rather than just complete.
 
-One recommendation based on experience
-I would not implement this as a completely separate page before deployment.
-Instead, integrate it into your existing Case Studies page. A case study becomes much stronger when each project includes its supporting evidence:
-Business Problem
-Solution
-Architecture Diagram
-GitHub Repository
-Swagger API
-Technologies Used
-That way, the proof is directly tied to the work it validates. This creates a stronger narrative than having a standalone "Proof" page where unrelated artifacts are collected in one place. It also scales naturally as you add more case studies over time.
+Phase 4 — Technical Proof
+    This is the missing ingredient that turns claims into evidence.
+    Populate with real artifacts:
+    Architecture diagrams
+    Swagger/OpenAPI
+    GitHub repositories
+    Docker Compose
+    CI/CD pipelines
+    Nginx configuration
+    Deployment screenshots
+    Health dashboard
+    Monitoring
+    API responses
+    You already decided earlier that "people buy evidence, not experience." This phase is where you produce that evidence.
+
+Phase 5 — Deployment 
+    Deploy to megalono.com.
+    At this point you have something you can confidently send to:
+    Recruiters
+    Hiring managers
+    Upwork clients
+    Consulting prospects
+    It becomes your living portfolio instead of another local project.
+
+
+
+----------------
+
+
+P1 (Engineering Proof)
+    Create 2–3 architecture diagrams
+    System Architecture
+    Deployment Architecture
+    Component Architecture
+    Add GitHub repository links
+    Add technology stack badges
+    Add project structure screenshots (VS Code/file explorer)
+    Add README screenshots (optional)
+
+
+P2 (Case Studies)
+    Each case study should contain:
+    Business Problem
+    Solution
+    Technologies
+    Architecture Diagram
+    Key Features
+    GitHub Repository (if public)
+    Business Impact
+
+
+P3 (Quality)
+    Test on Mobile
+    Test on Tablet
+    Test on Desktop
+    Dark mode verification
+    Lighthouse audit
+    Broken link check
+    Immediately After Deployment
+    Build Spring Boot backend
+    Enable Swagger/OpenAPI
+    Connect frontend to APIs
+    Add live API documentation
+    Add deployment screenshots
+    Add production URL
+    Add CI/CD pipeline
+
+=======================
+
+
+Your JSON should contain:
+Real names ✅
+Real descriptions ✅
+Real statistics ✅
+Real GitHub repositories ✅
+Real workshop videos (or none)
+Real downloads (or none)
+Real architecture diagrams (or none)
+No your-video-link
+No example-*
+No dummy URLs
+No fake assets

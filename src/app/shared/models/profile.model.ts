@@ -1,6 +1,8 @@
-export type ContentStatus = 'DRAFT' | 'PUBLISHED' | 'ARCHIVED';
+import { ManageableContent, ContentStatus } from '../utils/content.utility';
 
-export interface ResourceLink {
+export type { ManageableContent, ContentStatus };
+
+export interface ResourceLink extends ManageableContent {
   id?: string;
   type: string; // 'github' | 'youtube' | 'swagger' | 'pdf' | 'slides' | 'documentation' | 'demo' | 'dockerCompose' | 'architectureDiagram' | 'erDiagram' | 'download' | 'npm' | 'maven' | 'cloudDeployment' | string
   title?: string;
@@ -9,42 +11,34 @@ export interface ResourceLink {
   description?: string;
 }
 
-export interface SocialLinkItem {
+export interface SocialLinkItem extends ManageableContent {
   id: string;
   title: string;
   url: string;
   icon?: string;
-  visible?: boolean;
-  displayOrder?: number;
 }
 
-export interface ProofLink {
+export interface ProofLink extends ManageableContent {
   id?: string;
   type: string; // 'github' | 'swagger' | 'youtube' | 'documentation' | 'slides' | 'demo' | string
   title: string;
   url: string;
-  visible?: boolean;
 }
 
-export interface ProofArtifact {
+export interface ProofArtifact extends ManageableContent {
   id?: string;
   type: string; // 'architecture' | 'deployment' | 'docker' | 'swagger' | 'database' | 'performance' | 'infrastructure' | 'cicd' | 'security' | 'monitoring' | 'configuration' | 'diagram' | string
   title: string;
   thumbnail?: string;
   url?: string;
-  visible?: boolean;
 }
 
-export interface EngineeringEvidenceItem {
+export interface EngineeringEvidenceItem extends ManageableContent {
   id: string;
   title: string;
   description?: string;
   category?: string;
-  status?: string; // 'AVAILABLE' | 'PUBLISHED' | string
   verified?: boolean;
-  visible?: boolean;
-  displayOrder?: number;
-  priority?: number; // Retained for backward compatibility
   technologies?: string[];
   links?: ProofLink[];
   artifacts?: ProofArtifact[];
@@ -60,17 +54,16 @@ export interface EngineeringEvidenceData {
 }
 
 // Legacy interfaces retained for backward compatibility
-export interface EngineeringProofItem {
+export interface EngineeringProofItem extends ManageableContent {
   id?: string;
   type: string;
   title: string;
   description?: string;
   url?: string;
   thumbnail?: string;
-  visible?: boolean;
 }
 
-export interface ArchitectureDiagram {
+export interface ArchitectureDiagram extends ManageableContent {
   id?: string;
   title: string;
   description?: string;
@@ -79,28 +72,23 @@ export interface ArchitectureDiagram {
   url?: string;
   technologies?: string[];
   category?: string;
-  visible?: boolean;
 }
 
-export interface GitHubRepositoryProof {
+export interface GitHubRepositoryProof extends ManageableContent {
   id?: string;
   repositoryName: string;
   description?: string;
   url: string;
   technologies?: string[];
-  status?: string;
-  featured?: boolean;
-  visible?: boolean;
 }
 
-export interface SwaggerApiProof {
+export interface SwaggerApiProof extends ManageableContent {
   id?: string;
   title: string;
   description?: string;
   url: string;
   service?: string;
   version?: string;
-  visible?: boolean;
 }
 
 export interface EngineeringProofData {
@@ -122,7 +110,7 @@ export interface ContentMetadata {
   [key: string]: any;
 }
 
-export interface BaseContentItem {
+export interface BaseContentItem extends ManageableContent {
   id?: string;
   slug?: string;
   title: string;
@@ -136,10 +124,6 @@ export interface BaseContentItem {
   proof?: EngineeringProofItem[];
   seo?: SEOConfig;
   metadata?: ContentMetadata;
-  status?: ContentStatus;
-  displayOrder?: number;
-  priority?: number; // Retained for backward compatibility
-  visible?: boolean;
   createdAt?: string;
   updatedAt?: string;
 }
@@ -177,19 +161,26 @@ export interface KnowledgeHub {
   learningPaths: KnowledgeHubItem[];
 }
 
-export interface ServicePillar {
+export interface ServicePillar extends ManageableContent {
   id: string;
   title: string;
   description: string;
   technologies: string[];
 }
 
-export interface StudySection {
+export interface StatisticItem extends ManageableContent {
+  id: string;
+  target: number;
+  suffix: string;
+  label: string;
+}
+
+export interface StudySection extends ManageableContent {
   heading: string;
   content: string;
 }
 
-export interface CaseStudy {
+export interface CaseStudy extends ManageableContent {
   id?: string;
   slug?: string;
   title: string;
@@ -208,10 +199,6 @@ export interface CaseStudy {
   metrics?: string[];
   artifacts?: ResourceLink[];
   proof?: EngineeringProofItem[];
-  status?: ContentStatus;
-  displayOrder?: number;
-  priority?: number; // Retained for backward compatibility
-  visible?: boolean;
   createdAt?: string;
   updatedAt?: string;
 }
@@ -227,6 +214,7 @@ export interface ProfileData {
   };
   socialLinks?: SocialLinkItem[] | Record<string, string>;
   services: ServicePillar[];
+  statistics?: StatisticItem[];
   caseStudies: CaseStudy[];
   knowledgeHub: KnowledgeHub;
   engineeringEvidence?: EngineeringEvidenceData;
