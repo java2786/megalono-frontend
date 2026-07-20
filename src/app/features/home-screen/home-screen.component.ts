@@ -28,23 +28,13 @@ export class HomeScreenComponent implements OnInit, OnDestroy {
 
   stats = computed<AnimatedStat[]>(() => {
     const rawStats = getVisibleContent(this.profile()?.statistics);
-    if (rawStats.length > 0) {
-      return rawStats.map(s => ({
-        id: s.id,
-        target: s.target,
-        suffix: s.suffix,
-        label: s.label,
-        current: signal(0)
-      }));
-    }
-    const defaults = [
-      { id: '1', target: 15, suffix: '+', label: 'Years Experience' },
-      { id: '2', target: 20, suffix: 'K+', label: 'Engineers Trained' },
-      { id: '3', target: 20, suffix: '+', label: 'Enterprise Organizations' },
-      { id: '4', target: 100, suffix: '+', label: 'Technical Workshops' },
-      { id: '5', target: 50, suffix: '+', label: 'Production Applications' }
-    ];
-    return defaults.map(s => ({ ...s, current: signal(0) }));
+    return rawStats.map(s => ({
+      id: s.id,
+      target: s.target,
+      suffix: s.suffix,
+      label: s.label,
+      current: signal(0)
+    }));
   });
 
   private observer: IntersectionObserver | null = null;

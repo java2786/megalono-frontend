@@ -19,7 +19,7 @@ import { getVisibleContent } from '../../utils/content.utility';
       <!-- CATEGORY 1: Architecture Diagrams -->
       <section *ngIf="diagrams().length > 0" style="margin-bottom: 3rem;">
         <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-main); opacity: 0.9;">
-          Architecture Diagrams
+          {{ evidenceSignal()?.diagramsTitle || 'Architecture Diagrams' }}
         </h4>
         <div class="proof-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; align-items: start;">
           <article *ngFor="let diag of diagrams()" style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 0.75rem; display: flex; flex-direction: column; height: 100%; box-sizing: border-box;">
@@ -52,7 +52,7 @@ import { getVisibleContent } from '../../utils/content.utility';
       <!-- CATEGORY 2: GitHub Repositories -->
       <section *ngIf="repos().length > 0" style="margin-bottom: 3rem;">
         <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-main); opacity: 0.9;">
-          Verified GitHub Repositories
+          {{ evidenceSignal()?.reposTitle || 'Verified GitHub Repositories' }}
         </h4>
         <div class="proof-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; align-items: start;">
           <article *ngFor="let repo of repos()" style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 0.75rem; display: flex; flex-direction: column; height: 100%; box-sizing: border-box;">
@@ -75,7 +75,7 @@ import { getVisibleContent } from '../../utils/content.utility';
             <div style="margin-top: 0.75rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
               <a [href]="repo.url" target="_blank" class="proof-btn"
                  style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.4rem 0.85rem; border-radius: 0.35rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-weight: 600; font-size: 0.8rem; text-decoration: none; transition: all 0.2s ease;">
-                <span>💻 View Repository →</span>
+                <span>💻 {{ evidenceSignal()?.repoButtonText || 'View Repository →' }}</span>
               </a>
             </div>
           </article>
@@ -85,7 +85,7 @@ import { getVisibleContent } from '../../utils/content.utility';
       <!-- CATEGORY 3: Swagger APIs (Automatically hidden if empty) -->
       <section *ngIf="swaggerApis().length > 0" style="margin-bottom: 3rem;">
         <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-main); opacity: 0.9;">
-          Live Swagger / OpenAPI Specifications
+          {{ evidenceSignal()?.swaggerTitle || 'Live Swagger / OpenAPI Specifications' }}
         </h4>
         <div class="proof-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; align-items: start;">
           <article *ngFor="let api of swaggerApis()" style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 0.75rem; display: flex; flex-direction: column; height: 100%; box-sizing: border-box;">
@@ -105,7 +105,7 @@ import { getVisibleContent } from '../../utils/content.utility';
             <div style="margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
               <a [href]="api.url" target="_blank" class="proof-btn"
                  style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.4rem 0.85rem; border-radius: 0.35rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-weight: 600; font-size: 0.8rem; text-decoration: none; transition: all 0.2s ease;">
-                <span>📜 Open Swagger Specs →</span>
+                <span>📜 {{ evidenceSignal()?.swaggerButtonText || 'Open Swagger Specs →' }}</span>
               </a>
             </div>
           </article>

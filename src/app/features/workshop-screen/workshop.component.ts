@@ -10,7 +10,9 @@ import { getVisibleContent } from '../../shared/utils/content.utility';
   imports: [CommonModule],
   template: `
     <div class="workshop-container" *ngIf="profile() as data" style="max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem;">
-      <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem; color: var(--text-main);">Technical Workshops</h2>
+      <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem; color: var(--text-main);">
+        {{ data.knowledgeHub?.title || 'Technical Workshops' }}
+      </h2>
       
       <!-- SECTION 1: Featured Video Workshops -->
       <section *ngIf="videoWorkshops().length > 0" style="margin-bottom: 4rem;">
@@ -52,7 +54,7 @@ import { getVisibleContent } from '../../shared/utils/content.utility';
             <!-- Learning Objectives -->
             <div *ngIf="workshop.learningObjectives && workshop.learningObjectives.length > 0" style="margin-bottom: 1.5rem; margin-top: auto;">
               <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-color); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.5rem;">
-                Learning Objectives
+                {{ data.knowledgeHub?.learningObjectivesLabel || 'Learning Objectives' }}
               </span>
               <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.8rem; opacity: 0.85; line-height: 1.45; display: flex; flex-direction: column; gap: 0.35rem;">
                 <li *ngFor="let obj of workshop.learningObjectives">{{obj}}</li>
@@ -62,7 +64,7 @@ import { getVisibleContent } from '../../shared/utils/content.utility';
             <!-- Dynamic Proof Items (if present) -->
             <div *ngIf="getProofItems(workshop.proof).length > 0" style="margin-bottom: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
               <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-color); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.35rem;">
-                Engineering Proof
+                {{ data.knowledgeHub?.engineeringProofLabel || 'Engineering Proof' }}
               </span>
               <div style="display: flex; flex-direction: column; gap: 0.35rem;">
                 <a *ngFor="let proofItem of getProofItems(workshop.proof)" [href]="proofItem.url" target="_blank" style="font-size: 0.8rem; color: var(--text-main); text-decoration: none; opacity: 0.9;">

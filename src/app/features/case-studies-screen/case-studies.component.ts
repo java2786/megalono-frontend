@@ -13,7 +13,7 @@ import { getVisibleContent } from '../../shared/utils/content.utility';
       <div class="case-studies-container" style="max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem; font-family: system-ui, sans-serif;">
         <!-- Page Header -->
         <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem; color: var(--text-main);">
-          Enterprise Case Studies
+          {{ data.caseStudiesConfig?.title || 'Enterprise Case Studies' }}
         </h2>
         
         <!-- Case Studies & Experience Track Cards Loop -->
@@ -28,7 +28,7 @@ import { getVisibleContent } from '../../shared/utils/content.utility';
             @if (item.businessImpact) {
               <div style="margin-bottom: 1.5rem; border-left: 3px solid var(--accent-color); padding-left: 0.75rem;">
                 <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-color); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.2rem;">
-                  Business Impact
+                  {{ data.caseStudiesConfig?.businessImpactLabel || 'Business Impact' }}
                 </span>
                 <p style="font-size: 1.05rem; line-height: 1.5; color: var(--text-main); font-weight: 500; margin: 0; opacity: 0.9;">
                   {{ item.businessImpact }}

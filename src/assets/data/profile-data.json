@@ -3,9 +3,25 @@
     "name": "Arun Kumar",
     "title": "Principal Solutions Architect & Technical Consultant",
     "subtitle": "Enterprise Java | Full Stack Engineering | Cloud & DevOps",
+    "badgeText": "ENTERPRISE SYSTEM ARCHITECTURE",
     "summary": "Principal Technical Consultant with 15+ years of experience in enterprise software development, platform engineering, cloud modernization, DevOps, full stack application development, and technical consulting. Experienced in designing, developing, deploying, and modernizing enterprise applications using Java, Spring Boot, Microservices, React, Angular, Node.js, AWS, Docker, and CI/CD technologies.",
     "location": "Delhi NCR, India",
-    "email": "arunkumar31786@gmail.com"
+    "email": "arunkumar31786@gmail.com",
+    "primaryActionText": "Book Consultation",
+    "secondaryActionText": "Download Technical Profile",
+    "resumeUrl": "assets/data/resume.pdf",
+    "servicesTitle": "Consulting Expertise"
+  },
+  "navigation": {
+    "brandName": "AK",
+    "brandSubtitle": "// Systems Consultant",
+    "consultingTitle": "Consulting Expertise",
+    "socialTitle": "PROFESSIONAL PROFILES",
+    "aboutTitle": "About",
+    "platformName": "Megalono",
+    "platformSubtitle": "Enterprise Engineering Platform",
+    "engineeredBy": "Designed & Engineered by Arun Kumar",
+    "copyrightHolder": "Arun Kumar"
   },
   "socialLinks": [
     {
@@ -46,6 +62,44 @@
       "title": "Upwork",
       "url": "https://www.upwork.com/freelancers/~017258c360bea50c26?viewMode=1",
       "icon": "upwork",
+      "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 70,
+      "displayOrder": 40
+    }
+  ],
+  "consultingExpertise": [
+    {
+      "id": "exp-enterprise-architecture",
+      "title": "Enterprise Architecture",
+      "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 100,
+      "displayOrder": 10
+    },
+    {
+      "id": "exp-platform-engineering",
+      "title": "Platform Engineering",
+      "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 90,
+      "displayOrder": 20
+    },
+    {
+      "id": "exp-full-stack",
+      "title": "Full-Stack Development",
+      "visible": true,
+      "status": "PUBLISHED",
+      "featured": false,
+      "priority": 80,
+      "displayOrder": 30
+    },
+    {
+      "id": "exp-consulting-training",
+      "title": "Technical Consulting & Training",
       "visible": true,
       "status": "PUBLISHED",
       "featured": false,
@@ -184,6 +238,10 @@
       "displayOrder": 50
     }
   ],
+  "caseStudiesConfig": {
+    "title": "Enterprise Case Studies",
+    "businessImpactLabel": "Business Impact"
+  },
   "caseStudies": [
     {
       "id": "case-brain-mentors",
@@ -452,6 +510,9 @@
     }
   ],
   "knowledgeHub": {
+    "title": "Technical Workshops",
+    "learningObjectivesLabel": "Learning Objectives",
+    "engineeringProofLabel": "Engineering Proof",
     "workshops": [
       {
         "id": "spring-security-jwt",
@@ -699,6 +760,11 @@
   "engineeringEvidence": {
     "title": "Engineering Evidence",
     "description": "Architecture diagrams, source code repositories, deployments, APIs and technical artifacts demonstrating engineering capabilities.",
+    "diagramsTitle": "Architecture Diagrams",
+    "reposTitle": "Verified GitHub Repositories",
+    "swaggerTitle": "Live Swagger / OpenAPI Specifications",
+    "repoButtonText": "View Repository →",
+    "swaggerButtonText": "Open Swagger Specs →",
     "evidence": [
       {
         "id": "evid-spring-security-jwt",

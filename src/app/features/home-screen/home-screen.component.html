@@ -3,7 +3,7 @@
   
   <!-- Introduction Focus Block -->
   <header class="hero-intro">
-    <span class="tech-indicator-pill">ENTERPRISE SYSTEM ARCHITECTURE</span>
+    <span class="tech-indicator-pill" *ngIf="data.about.badgeText">{{ data.about.badgeText }}</span>
     <h1 class="main-heading">
       Hi, I'm {{ data.about.name }}.<br>
       <span class="accent-text">{{ data.about.title }}</span>
@@ -11,7 +11,7 @@
     <p class="summary-text">{{ data.about.summary }}</p>
     
     <!-- Professional Statistics Section -->
-    <div class="hero-stats-grid" #statsContainer>
+    <div class="hero-stats-grid" #statsContainer *ngIf="stats().length > 0">
       <div class="stat-item" 
            *ngFor="let stat of stats()" 
            [attr.aria-label]="stat.target + stat.suffix + ' ' + stat.label">
@@ -25,14 +25,18 @@
     </div>
     
     <div class="action-buttons-group">
-      <a [href]="'mailto:' + (data.about.email || 'arunkumar31786@gmail.com')" class="btn-primary">Book Consultation</a>
-      <a href="assets/data/resume.pdf" download class="btn-secondary">Download Technical Profile</a>
+      <a *ngIf="data.about.email || data.about.primaryActionText" [href]="'mailto:' + (data.about.email || '')" class="btn-primary">
+        {{ data.about.primaryActionText || 'Book Consultation' }}
+      </a>
+      <a *ngIf="data.about.resumeUrl || data.about.secondaryActionText" [href]="data.about.resumeUrl || 'assets/data/resume.pdf'" download class="btn-secondary">
+        {{ data.about.secondaryActionText || 'Download Technical Profile' }}
+      </a>
     </div>
   </header>
 
   <!-- Capability Cards Presentation Layer -->
-  <section class="services-section">
-    <h2 class="sub-section-title">Consulting Expertise</h2>
+  <section class="services-section" *ngIf="visibleServices().length > 0">
+    <h2 class="sub-section-title">{{ data.about.servicesTitle || 'Consulting Expertise' }}</h2>
     <div class="services-grid">
       <div class="service-card" *ngFor="let service of visibleServices()">
         <h3 class="card-title">{{ service.title }}</h3>

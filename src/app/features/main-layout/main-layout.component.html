@@ -1,6 +1,6 @@
-<header class="main-header">
+<header class="main-header" *ngIf="profile() as data">
   <div class="logo-area">
-    AK <span class="logo-subtitle">// Systems Consultant</span>
+    {{ data.navigation?.brandName || 'AK' }} <span class="logo-subtitle">{{ data.navigation?.brandSubtitle || '// Systems Consultant' }}</span>
   </div>
 
   <!-- Desktop Navigation Links -->
@@ -44,23 +44,23 @@
 </main>
 
 <!-- Unified Profile Network Footer Framework -->
-<footer class="main-footer">
+<footer class="main-footer" *ngIf="profile() as data">
   <div class="footer-container">
     <div class="footer-grid">
       
       <!-- Column 1: Consulting Expertise -->
-      <div class="footer-col">
-        <h3 class="footer-heading">Consulting Expertise</h3>
+      <div class="footer-col" *ngIf="consultingExpertise().length > 0">
+        <h3 class="footer-heading">{{ data.navigation?.consultingTitle || 'Consulting Expertise' }}</h3>
         <ul class="footer-list">
-          <li class="footer-list-item" *ngFor="let item of consultingExpertise">
+          <li class="footer-list-item" *ngFor="let item of consultingExpertise()">
              {{ item.title }} 
           </li>
         </ul>
       </div>
 
       <!-- Column 2: Connect -->
-      <div class="footer-col">
-        <h3 class="footer-heading">PROFESSIONAL PROFILES</h3>
+      <div class="footer-col" *ngIf="socialLinks().length > 0">
+        <h3 class="footer-heading">{{ data.navigation?.socialTitle || 'PROFESSIONAL PROFILES' }}</h3>
         <div class="footer-social-links">
           <a *ngFor="let link of socialLinks()" [href]="link.url" target="_blank" class="footer-social-link">
             {{ link.title }}
@@ -70,13 +70,13 @@
 
       <!-- Column 3: About -->
       <div class="footer-col">
-        <h3 class="footer-heading">About</h3>
+        <h3 class="footer-heading">{{ data.navigation?.aboutTitle || 'About' }}</h3>
         <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-          <p class="footer-about-brand">Megalono</p>
-          <p class="footer-about-subtitle">Enterprise Engineering Platform</p>
+          <p class="footer-about-brand" *ngIf="data.navigation?.platformName">{{ data.navigation?.platformName }}</p>
+          <p class="footer-about-subtitle" *ngIf="data.navigation?.platformSubtitle">{{ data.navigation?.platformSubtitle }}</p>
           <p class="footer-about-details" style="margin-top: 0.5rem;">
-            Designed & Engineered by Arun Kumar<br>
-            Delhi NCR, India
+            {{ data.navigation?.engineeredBy || ('Designed & Engineered by ' + data.about.name) }}<br>
+            {{ data.about.location }}
           </p>
           <p class="footer-about-copyright">© {{ today.getFullYear() }}</p>
         </div>

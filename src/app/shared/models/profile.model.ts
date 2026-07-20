@@ -18,6 +18,12 @@ export interface SocialLinkItem extends ManageableContent {
   icon?: string;
 }
 
+export interface ConsultingExpertiseItem extends ManageableContent {
+  id: string;
+  title: string;
+  description?: string;
+}
+
 export interface ProofLink extends ManageableContent {
   id?: string;
   type: string; // 'github' | 'swagger' | 'youtube' | 'documentation' | 'slides' | 'demo' | string
@@ -49,6 +55,11 @@ export interface EngineeringEvidenceItem extends ManageableContent {
 export interface EngineeringEvidenceData {
   title?: string;
   description?: string;
+  diagramsTitle?: string;
+  reposTitle?: string;
+  swaggerTitle?: string;
+  repoButtonText?: string;
+  swaggerButtonText?: string;
   evidence?: EngineeringEvidenceItem[];
   [key: string]: any;
 }
@@ -151,6 +162,9 @@ export interface KnowledgeHubItem extends BaseContentItem {
 }
 
 export interface KnowledgeHub {
+  title?: string;
+  learningObjectivesLabel?: string;
+  engineeringProofLabel?: string;
   workshops: KnowledgeHubItem[];
   resources: KnowledgeHubItem[];
   architectureGuides: KnowledgeHubItem[];
@@ -203,17 +217,44 @@ export interface CaseStudy extends ManageableContent {
   updatedAt?: string;
 }
 
+export interface CaseStudiesConfig {
+  title?: string;
+  businessImpactLabel?: string;
+}
+
+export interface NavigationConfig {
+  brandName?: string;
+  brandSubtitle?: string;
+  consultingTitle?: string;
+  socialTitle?: string;
+  aboutTitle?: string;
+  platformName?: string;
+  platformSubtitle?: string;
+  engineeredBy?: string;
+  copyrightHolder?: string;
+}
+
+export interface AboutData {
+  name: string;
+  title: string;
+  subtitle?: string;
+  summary: string;
+  badgeText?: string;
+  location?: string;
+  email?: string;
+  primaryActionText?: string;
+  secondaryActionText?: string;
+  resumeUrl?: string;
+  servicesTitle?: string;
+}
+
 export interface ProfileData {
-  about: {
-    name: string;
-    title: string;
-    summary: string;
-    subtitle?: string;
-    location?: string;
-    email?: string;
-  };
+  about: AboutData;
+  navigation?: NavigationConfig;
+  caseStudiesConfig?: CaseStudiesConfig;
   socialLinks?: SocialLinkItem[] | Record<string, string>;
   services: ServicePillar[];
+  consultingExpertise?: ConsultingExpertiseItem[];
   statistics?: StatisticItem[];
   caseStudies: CaseStudy[];
   knowledgeHub: KnowledgeHub;
