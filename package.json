@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "repomix": "repomix",
     "build:prod": "ng build --configuration production --base-href /megalono-frontend/ && cp dist/arun_kumar_profile/browser/index.html dist/arun_kumar_profile/browser/404.html"
   },
   "private": true,
@@ -28,6 +29,7 @@
     "arkit": "^1.6.4",
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
+    "repomix": "^1.17.0",
     "typescript": "~6.0.2",
     "vitest": "^4.0.8"
   }

@@ -7,7 +7,8 @@ Final roadmap
 - Deployment
 - Post-deployment Enhancements (V2)
 
-
+Phase 1 - Schema Freese
+completed
 Phase 2 — Content Population ⭐ (Highest Priority)
     This is where the portfolio becomes believable.
     Populate:
@@ -109,7 +110,7 @@ P3 (Quality)
 =======================
 
 
-Your JSON should contain:
+Your JSON should contain: 
 Real names ✅
 Real descriptions ✅
 Real statistics ✅
@@ -121,3 +122,53 @@ No your-video-link
 No example-*
 No dummy URLs
 No fake assets
+
+================
+
+src/assets/
+└── downloads/
+    ├── resume/
+    │   └── arun-kumar-technical-profile.pdf
+    ├── architecture-guides/
+    │   └── enterprise-java-architecture-guide.pdf
+    │   └── github
+    ├── cheat-sheets/
+    │   └── cicd-deployment-pipelines-cheatsheet.pdf
+    │   └── github
+    ├── workshop-slides/
+    │   └── spring-security-jwt-workshop-slides.pdf
+    │   └── github
+    └── sample-projects/
+        └── java-microservices-starter.zip
+        └── github
+
+
+
+What I would do next
+I would not edit the Resume Master anymore.
+Instead, I'd move your effort to building evidence:
+Architecture case studies
+Technical articles
+Workshop slide decks
+Downloadable guides
+Sample projects
+GitHub repositories
+Demo videos
+
+
+
+professional-profile/
+
+README.md
+
+master/
+    Resume-Master.md
+    Technology-Inventory.md
+    ATS-Keywords.md
+
+generated/
+    Professional-Capability-Profile.md
+    R1.1_PrincipalTechnicalConsultant.md
+    R1.2_SeniorTechnicalConsultant.md
+    R1.3_SolutionConsultant.md
+    R1.4_SeniorJavaFullStackEngineer.md

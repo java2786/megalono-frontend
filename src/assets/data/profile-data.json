@@ -9,7 +9,7 @@
     "email": "arunkumar31786@gmail.com",
     "primaryActionText": "Book Consultation",
     "secondaryActionText": "Download Technical Profile",
-    "resumeUrl": "assets/data/resume.pdf",
+    "resumeUrl": "assets/downloads/resume/arun-kumar-technical-profile.pdf",
     "servicesTitle": "Consulting Expertise"
   },
   "navigation": {
@@ -524,8 +524,19 @@
         "level": "Advanced",
         "description": "Learn to secure enterprise Spring Boot REST APIs using Spring Security 6 and JSON Web Tokens (JWT). Covers authentication, role-based access control, and stateless session management.",
         "thumbnail": "assets/spring_security_jwt_workshop.png",
-        "technologies": ["Spring Boot", "Spring Security", "JWT", "Java"],
-        "tags": ["spring", "security", "jwt", "java", "rest-api"],
+        "technologies": [
+          "Spring Boot",
+          "Spring Security",
+          "JWT",
+          "Java"
+        ],
+        "tags": [
+          "spring",
+          "security",
+          "jwt",
+          "java",
+          "rest-api"
+        ],
         "learningObjectives": [
           "Configure JWT authentication filter",
           "Implement stateless session management",
@@ -537,7 +548,7 @@
             "type": "youtube",
             "title": "Watch Video",
             "url": "https://youtube.com/your-video-link-1",
-            "visible": true,
+            "visible": false,
             "status": "PUBLISHED",
             "featured": false,
             "priority": 100,
@@ -547,7 +558,7 @@
             "id": "res-spring-jwt-github",
             "type": "github",
             "title": "GitHub",
-            "url": "https://github.com/java2786/spring-security-jwt",
+            "url": "https://github.com/java2786/springboot-jwt-authentication",
             "visible": true,
             "status": "PUBLISHED",
             "featured": false,
@@ -559,7 +570,7 @@
             "type": "slides",
             "title": "Download Slides",
             "url": "https://slideshare.net/example-slides-1",
-            "visible": true,
+            "visible": false,
             "status": "PUBLISHED",
             "featured": false,
             "priority": 80,
@@ -576,7 +587,13 @@
         "seo": {
           "title": "Building Secure REST APIs with Spring Security & JWT",
           "description": "Learn to secure enterprise Spring Boot REST APIs using Spring Security 6 and JSON Web Tokens (JWT).",
-          "keywords": ["Spring Boot", "Spring Security", "JWT", "Java", "REST API"]
+          "keywords": [
+            "Spring Boot",
+            "Spring Security",
+            "JWT",
+            "Java",
+            "REST API"
+          ]
         }
       },
       {
@@ -589,8 +606,19 @@
         "level": "Intermediate",
         "description": "An in-depth look at managing state in Angular applications using Signals and RxJS. Build a scalable state management pattern without the boilerplate of Redux/NgRx.",
         "thumbnail": "assets/angular_state_management_workshop.png",
-        "technologies": ["Angular", "Signals", "RxJS", "TypeScript"],
-        "tags": ["angular", "signals", "rxjs", "typescript", "state-management"],
+        "technologies": [
+          "Angular",
+          "Signals",
+          "RxJS",
+          "TypeScript"
+        ],
+        "tags": [
+          "angular",
+          "signals",
+          "rxjs",
+          "typescript",
+          "state-management"
+        ],
         "learningObjectives": [
           "Leverage Angular Signals for local state management",
           "Combine Signals with RxJS for asynchronous actions",
@@ -602,7 +630,7 @@
             "type": "youtube",
             "title": "Watch Video",
             "url": "https://youtube.com/your-video-link-2",
-            "visible": true,
+            "visible": false,
             "status": "PUBLISHED",
             "featured": false,
             "priority": 100,
@@ -612,7 +640,7 @@
             "id": "res-angular-signals-github",
             "type": "github",
             "title": "GitHub",
-            "url": "https://github.com/java2786/angular-signals-store",
+            "url": "https://github.com/java2786/angular-signals-guide",
             "visible": true,
             "status": "PUBLISHED",
             "featured": false,
@@ -641,7 +669,13 @@
         "seo": {
           "title": "Angular State Management with Signals",
           "description": "An in-depth look at managing state in Angular applications using Signals and RxJS.",
-          "keywords": ["Angular", "Signals", "RxJS", "TypeScript", "State Management"]
+          "keywords": [
+            "Angular",
+            "Signals",
+            "RxJS",
+            "TypeScript",
+            "State Management"
+          ]
         }
       }
     ],
@@ -653,8 +687,20 @@
         "category": "Backend",
         "level": "Advanced",
         "description": "A comprehensive template for building cloud-native enterprise microservices using Spring Boot, Spring Cloud, PostgreSQL, and Docker.",
-        "technologies": ["Java", "Spring Boot", "Spring Cloud", "Docker", "PostgreSQL"],
-        "tags": ["java", "microservices", "docker", "spring-boot", "postgresql"],
+        "technologies": [
+          "Java",
+          "Spring Boot",
+          "Spring Cloud",
+          "Docker",
+          "PostgreSQL"
+        ],
+        "tags": [
+          "java",
+          "microservices",
+          "docker",
+          "spring-boot",
+          "postgresql"
+        ],
         "resources": [
           {
             "id": "res-microservices-github",
@@ -690,7 +736,7 @@
             "displayOrder": 30
           }
         ],
-        "visible": true,
+        "visible": false,
         "status": "PUBLISHED",
         "featured": false,
         "priority": 50,
@@ -700,7 +746,13 @@
         "seo": {
           "title": "Enterprise Java Microservices Starter Template",
           "description": "A comprehensive template for building cloud-native enterprise microservices using Spring Boot.",
-          "keywords": ["Java", "Microservices", "Spring Boot", "Docker", "PostgreSQL"]
+          "keywords": [
+            "Java",
+            "Microservices",
+            "Spring Boot",
+            "Docker",
+            "PostgreSQL"
+          ]
         }
       },
       {
@@ -710,8 +762,19 @@
         "category": "DevOps",
         "level": "Intermediate",
         "description": "Reference guide and starter templates for GitHub Actions, Jenkins declarative pipelines, and Docker Compose deployments.",
-        "technologies": ["GitHub Actions", "Jenkins", "Docker Compose", "CI/CD"],
-        "tags": ["github-actions", "jenkins", "docker-compose", "ci-cd", "devops"],
+        "technologies": [
+          "GitHub Actions",
+          "Jenkins",
+          "Docker Compose",
+          "CI/CD"
+        ],
+        "tags": [
+          "github-actions",
+          "jenkins",
+          "docker-compose",
+          "ci-cd",
+          "devops"
+        ],
         "resources": [
           {
             "id": "res-cicd-github",
@@ -736,7 +799,7 @@
             "displayOrder": 20
           }
         ],
-        "visible": true,
+        "visible": false,
         "status": "PUBLISHED",
         "featured": false,
         "priority": 40,
@@ -746,7 +809,13 @@
         "seo": {
           "title": "CI/CD Deployment Pipelines Cheat Sheet",
           "description": "Reference guide and starter templates for GitHub Actions, Jenkins, and Docker Compose.",
-          "keywords": ["GitHub Actions", "Jenkins", "Docker Compose", "CI/CD", "DevOps"]
+          "keywords": [
+            "GitHub Actions",
+            "Jenkins",
+            "Docker Compose",
+            "CI/CD",
+            "DevOps"
+          ]
         }
       }
     ],
@@ -768,22 +837,31 @@
     "evidence": [
       {
         "id": "evid-spring-security-jwt",
-        "title": "Spring Security & JWT Authentication Architecture",
-        "description": "Stateless authentication and role-based authorization flow diagram for enterprise Spring Boot microservices.",
-        "category": "Security Architecture",
+        "title": "Spring Boot JWT Authentication",
+        "description": "Modern JWT Authentication and Role-Based Authorization using Spring Boot 4, Spring Security 7, JJWT, and Swagger.",
+        "category": "Backend Security",
         "status": "PUBLISHED",
         "verified": true,
         "visible": true,
         "featured": false,
         "priority": 100,
         "displayOrder": 100,
-        "technologies": ["Spring Boot", "Spring Security", "JWT", "Java"],
+        "technologies": [
+          "Java",
+          "Spring Boot",
+          "Spring Security",
+          "JWT",
+          "JJWT",
+          "Swagger",
+          "OpenAPI",
+          "BCrypt"
+        ],
         "links": [
           {
-            "id": "link-spring-sec-repo",
+            "id": "link-springboot-jwt-authentication",
             "type": "github",
             "title": "GitHub",
-            "url": "https://github.com/java2786/spring-security-jwt",
+            "url": "https://github.com/java2786/springboot-jwt-authentication",
             "visible": true,
             "status": "PUBLISHED",
             "featured": false,
@@ -795,7 +873,7 @@
           {
             "id": "art-spring-sec-diag",
             "type": "architecture",
-            "title": "Spring Security & JWT Authentication Architecture",
+            "title": "JWT Authentication Workflow",
             "thumbnail": "assets/spring_security_jwt_workshop.png",
             "url": "assets/spring_security_jwt_workshop.png",
             "visible": true,
@@ -805,13 +883,17 @@
             "displayOrder": 10
           }
         ],
-        "relatedCaseStudies": ["case-brain-mentors"],
-        "relatedWorkshops": ["spring-security-jwt"]
+        "relatedCaseStudies": [
+          "case-library-management-jwt"
+        ],
+        "relatedWorkshops": [
+          "spring-security-jwt"
+        ]
       },
       {
         "id": "evid-angular-signals",
-        "title": "Angular Signals Reactive State Flow Architecture",
-        "description": "Component and state manager data flow architecture for modern reactive Angular applications.",
+        "title": "Angular Signals Guide",
+        "description": "A comprehensive guide to Angular Signals covering reactive state management, computed signals, effects, resources, component communication, performance optimization, and enterprise application architecture through real-world examples.",
         "category": "Frontend Architecture",
         "status": "PUBLISHED",
         "verified": true,
@@ -819,13 +901,19 @@
         "featured": false,
         "priority": 90,
         "displayOrder": 90,
-        "technologies": ["Angular", "Signals", "RxJS", "TypeScript"],
+        "technologies": [
+          "Angular",
+          "Angular Signals",
+          "TypeScript",
+          "RxJS",
+          "Angular CLI"
+        ],
         "links": [
           {
-            "id": "link-megalono-repo",
+            "id": "link-angular-signals-guide",
             "type": "github",
             "title": "GitHub",
-            "url": "https://github.com/java2786/megalono-frontend",
+            "url": "https://github.com/java2786/angular-signals-guide",
             "visible": true,
             "status": "PUBLISHED",
             "featured": false,
@@ -847,27 +935,42 @@
             "displayOrder": 10
           }
         ],
-        "relatedCaseStudies": ["case-megalono"],
-        "relatedWorkshops": ["angular-signals-store"]
+        "relatedCaseStudies": [
+          "case-angular-signals"
+        ],
+        "relatedWorkshops": [
+          "angular-signals-guide"
+        ]
       },
       {
         "id": "evid-java-microservices",
-        "title": "Cloud-Native Java Microservices Architecture",
-        "description": "Cloud-native enterprise microservices starter with Spring Cloud, PostgreSQL, and Docker containerization.",
-        "category": "Backend Architecture",
+        "title": "Spring Boot Fundamentals",
+        "description": "A comprehensive, project-based Spring Boot learning repository covering REST APIs, Spring Data JPA, Validation, Exception Handling, Testing, Spring Security, JWT, and production-ready backend development through real-world examples and case studies.",
+        "category": "Backend Development",
         "status": "PUBLISHED",
         "verified": true,
         "visible": true,
         "featured": false,
         "priority": 80,
         "displayOrder": 80,
-        "technologies": ["Java", "Spring Boot", "Spring Cloud", "Docker", "PostgreSQL"],
+        "technologies": [
+          "Java",
+          "Spring Boot",
+          "Spring MVC",
+          "Spring Data JPA",
+          "Spring Security",
+          "JWT",
+          "Hibernate",
+          "Swagger",
+          "JUnit",
+          "Mockito"
+        ],
         "links": [
           {
-            "id": "link-microservices-repo",
+            "id": "link-spring-boot-fundamentals",
             "type": "github",
             "title": "GitHub",
-            "url": "https://github.com/java2786/java-microservices-starter",
+            "url": "https://github.com/java2786/spring-boot-fundamentals",
             "visible": true,
             "status": "PUBLISHED",
             "featured": false,
@@ -876,8 +979,12 @@
           }
         ],
         "artifacts": [],
-        "relatedCaseStudies": ["case-freelance"],
-        "relatedWorkshops": ["java-microservices-starter"]
+        "relatedCaseStudies": [
+          "case-freelance"
+        ],
+        "relatedWorkshops": [
+          "spring-boot-fundamentals"
+        ]
       }
     ]
   }
