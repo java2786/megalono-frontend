@@ -91,6 +91,7 @@ export interface GitHubRepositoryProof extends ManageableContent {
   description?: string;
   url: string;
   technologies?: string[];
+  links?: ProofLink[];
 }
 
 export interface SwaggerApiProof extends ManageableContent {

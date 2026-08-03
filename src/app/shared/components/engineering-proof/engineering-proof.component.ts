@@ -70,12 +70,14 @@ import { getVisibleContent } from '../../utils/content.utility';
                     style="font-size: 0.7rem; padding: 0.2rem 0.45rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 0.2rem; font-weight: 600; color: var(--text-main);">
                 {{tech}}
               </span>
-            </div>
+            </div> 
 
-            <div style="margin-top: 0.75rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
-              <a [href]="repo.url" target="_blank" class="proof-btn"
+            <div *ngIf="getRepoLinks(repo) as repoLinks" style="margin-top: 0.75rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <a *ngFor="let link of repoLinks" [href]="link.url" target="_blank"
+                 [class.proof-btn]="repoLinks.length === 1"
+                 [class.proof-btn-multi]="repoLinks.length > 1"
                  style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.4rem 0.85rem; border-radius: 0.35rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-weight: 600; font-size: 0.8rem; text-decoration: none; transition: all 0.2s ease;">
-                <span>💻 {{ evidenceSignal()?.repoButtonText || 'View Repository →' }}</span>
+                <span>{{ getLinkIcon(link.type) }} {{ link.title }}</span>
               </a>
             </div>
           </article>
@@ -125,6 +127,11 @@ import { getVisibleContent } from '../../utils/content.utility';
       }
       .proof-btn {
         width: 100% !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        padding: 0.6rem 1rem !important;
+      }
+      .proof-btn-multi {
         justify-content: center !important;
         box-sizing: border-box !important;
         padding: 0.6rem 1rem !important;
@@ -185,17 +192,17 @@ export class EngineeringProofComponent implements OnChanges {
       for (const ev of evList) {
         if (ev.links && Array.isArray(ev.links)) {
           const visibleLinks = getVisibleContent(ev.links);
-          for (const link of visibleLinks) {
-            if (link.type === 'github') {
-              const repoName = ev.id.replace('evid-', '').replace('repo-', '');
-              results.push({
-                id: link.id || ev.id,
-                repositoryName: repoName,
-                description: ev.description,
-                url: link.url,
-                technologies: ev.technologies
-              });
-            }
+          const githubLink = visibleLinks.find(link => link.type === 'github');
+          if (githubLink) {
+            const repoName = ev.id.replace('evid-', '').replace('repo-', '');
+            results.push({
+              id: githubLink.id || ev.id,
+              repositoryName: repoName,
+              description: ev.description,
+              url: githubLink.url,
+              technologies: ev.technologies,
+              links: visibleLinks
+            });
           }
         }
       }
@@ -237,6 +244,27 @@ export class EngineeringProofComponent implements OnChanges {
     this.repos().length > 0 || 
     this.swaggerApis().length > 0
   );
+
+  getRepoLinks(repo: GitHubRepositoryProof): ProofLink[] {
+    if (repo.links && repo.links.length > 0) {
+      return repo.links;
+    }
+    return [{
+      type: 'github',
+      title: this.evidenceSignal()?.repoButtonText || 'View Repository →',
+      url: repo.url
+    }];
+  }
+
+  getLinkIcon(type: string): string {
+    switch (type?.toLowerCase()) {
+      case 'github': return '💻';
+      case 'youtube': return '▶';
+      case 'swagger': return '📜';
+      case 'documentation': return '📖';
+      default: return '🔗';
+    }
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['evidenceData']) {

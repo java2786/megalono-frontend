@@ -56,7 +56,7 @@ Phase 4 — Technical Proof
     You already decided earlier that "people buy evidence, not experience." This phase is where you produce that evidence.
 
 Phase 5 — Deployment 
-    Deploy to megalono.com.
+    Deploy 
     At this point you have something you can confidently send to:
     Recruiters
     Hiring managers

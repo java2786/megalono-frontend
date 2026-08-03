@@ -18,7 +18,7 @@
     "consultingTitle": "Consulting Expertise",
     "socialTitle": "PROFESSIONAL PROFILES",
     "aboutTitle": "About",
-    "platformName": "Megalono",
+    "platformName": "Arun Kumar",
     "platformSubtitle": "Enterprise Engineering Platform",
     "engineeredBy": "Designed & Engineered by Arun Kumar",
     "copyrightHolder": "Arun Kumar"
@@ -842,7 +842,7 @@
         "category": "Backend Security",
         "status": "PUBLISHED",
         "verified": true,
-        "visible": true,
+        "visible": false,
         "featured": false,
         "priority": 100,
         "displayOrder": 100,
@@ -897,7 +897,7 @@
         "category": "Frontend Architecture",
         "status": "PUBLISHED",
         "verified": true,
-        "visible": true,
+        "visible": false,
         "featured": false,
         "priority": 90,
         "displayOrder": 90,
@@ -942,8 +942,10 @@
           "angular-signals-guide"
         ]
       },
+
+
       {
-        "id": "evid-java-microservices",
+        "id": "evid-spring-boot-fundamentals",
         "title": "Spring Boot Fundamentals",
         "description": "A comprehensive, project-based Spring Boot learning repository covering REST APIs, Spring Data JPA, Validation, Exception Handling, Testing, Spring Security, JWT, and production-ready backend development through real-world examples and case studies.",
         "category": "Backend Development",
@@ -958,8 +960,6 @@
           "Spring Boot",
           "Spring MVC",
           "Spring Data JPA",
-          "Spring Security",
-          "JWT",
           "Hibernate",
           "Swagger",
           "JUnit",
@@ -976,6 +976,17 @@
             "featured": false,
             "priority": 100,
             "displayOrder": 10
+          },
+          {
+            "id": "link-spring-boot-fundamentals-youtube",
+            "type": "youtube",
+            "title": "Watch Overview",
+            "url": "https://youtu.be/WDhrnaHsI3s",
+            "visible": true,
+            "status": "PUBLISHED",
+            "featured": true,
+            "priority": 110,
+            "displayOrder": 5
           }
         ],
         "artifacts": [],
@@ -986,6 +997,10 @@
           "spring-boot-fundamentals"
         ]
       }
+
+
+
+
     ]
   }
 }

@@ -1,4 +1,4 @@
-# Megalono Portfolio Roadmap
+# Portfolio Roadmap
 ## Objective
 
 Build a portfolio that demonstrates engineering capability, consulting expertise, and technical leadership while avoiding unnecessary delays in deployment.
@@ -29,7 +29,7 @@ Launch a professional portfolio that is polished, credible, and sufficient to st
 - Professional footer
     - Consulting Expertise
     - Professional Profiles
-    - About Megalono
+
 
 ---
 
