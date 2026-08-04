@@ -247,6 +247,11 @@ export interface AboutData {
   secondaryActionText?: string;
   resumeUrl?: string;
   servicesTitle?: string;
+  
+  githubUrl?: string;
+  githubActionText?: string;
+  linkedinUrl?: string;
+  linkedinActionText?: string;
 }
 
 export interface ProfileData {

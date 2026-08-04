@@ -1,5 +1,6 @@
 import { Component, OnInit, signal, ViewChild, ElementRef, OnDestroy, computed, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { ProfileService } from '../../core/services/profile.service';
 import { ProfileData, ServicePillar } from '../../shared/models/profile.model';
 import { getVisibleContent } from '../../shared/utils/content.utility';
@@ -15,7 +16,7 @@ export interface AnimatedStat {
 @Component({
   selector: 'app-home-screen',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: `./home-screen.component.html`,
   styleUrls: ['./home-screen.component.css']
 })

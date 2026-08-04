@@ -5,7 +5,7 @@
   <header class="hero-intro">
     <span class="tech-indicator-pill" *ngIf="data.about.badgeText">{{ data.about.badgeText }}</span>
     <h1 class="main-heading">
-      Hi, I'm {{ data.about.name }}.<br>
+      Hi, I'm {{ data.about.name }}.<br/>
       <span class="accent-text">{{ data.about.title }}</span>
     </h1>
     <p class="summary-text">{{ data.about.summary }}</p>
@@ -26,7 +26,10 @@
     
     <div class="action-buttons-group">
       <a *ngIf="data.about.email || data.about.primaryActionText" [href]="'mailto:' + (data.about.email || '')" class="btn-primary">
-        {{ data.about.primaryActionText || 'Book Consultation' }}
+        {{ data.about.primaryActionText || 'Discuss Your Project' }}
+      </a>
+      <a routerLink="/cases" class="btn-secondary">
+        View Case Studies
       </a>
       <a *ngIf="data.about.resumeUrl || data.about.secondaryActionText" [href]="data.about.resumeUrl || 'assets/data/resume.pdf'" download class="btn-secondary">
         {{ data.about.secondaryActionText || 'Download Technical Profile' }}

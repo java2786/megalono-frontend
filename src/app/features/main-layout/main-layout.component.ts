@@ -2,7 +2,7 @@ import { Component, OnInit, signal, computed, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProfileService } from '../../core/services/profile.service';
-import { ProfileData, SocialLinkItem, ConsultingExpertiseItem } from '../../shared/models/profile.model';
+import { ProfileData, SocialLinkItem, ConsultingExpertiseItem, ServicePillar } from '../../shared/models/profile.model';
 import { getVisibleContent } from '../../shared/utils/content.utility';
 
 @Component({
@@ -19,6 +19,10 @@ export class MainLayoutComponent implements OnInit {
   
   private profileService = inject(ProfileService);
   profile = signal<ProfileData | null>(null);
+
+  visibleServices = computed<ServicePillar[]>(() => {
+    return getVisibleContent(this.profile()?.services);
+  });
 
   consultingExpertise = computed<ConsultingExpertiseItem[]>(() => {
     return getVisibleContent(this.profile()?.consultingExpertise);

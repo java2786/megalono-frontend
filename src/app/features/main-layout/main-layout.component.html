@@ -1,13 +1,12 @@
 <header class="main-header" *ngIf="profile() as data">
   <div class="logo-area">
-    {{ data.navigation?.brandName || 'AK' }} <span class="logo-subtitle">{{ data.navigation?.brandSubtitle || '// Systems Consultant' }}</span>
+    {{ data.navigation?.brandName || 'AK' }} <span class="logo-subtitle">{{ data.navigation?.brandSubtitle || '// Enterprise Software Consultant' }}</span>
   </div>
 
   <!-- Desktop Navigation Links -->
   <nav class="desktop-nav">
     <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Overview</a>
     <a routerLink="/cases" routerLinkActive="active">Case Studies</a>
-    <a routerLink="/workshops" routerLinkActive="active">Workshops</a>
   </nav>
 
   <!-- Desktop Theme Switcher Button -->
@@ -26,7 +25,6 @@
       <nav class="mobile-nav-links">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">Overview</a>
         <a routerLink="/cases" routerLinkActive="active" (click)="closeMobileMenu()">Case Studies</a>
-        <a routerLink="/workshops" routerLinkActive="active" (click)="closeMobileMenu()">Workshops</a>
       </nav>
 
       <div class="mobile-theme-wrapper">
@@ -48,9 +46,19 @@
   <div class="footer-container">
     <div class="footer-grid">
       
-      <!-- Column 1: Consulting Expertise -->
+      <!-- Column 1: Consulting Services -->
+      <div class="footer-col" *ngIf="visibleServices().length > 0">
+        <h3 class="footer-heading">Consulting Services</h3>
+        <ul class="footer-list">
+          <li class="footer-list-item" *ngFor="let item of visibleServices()">
+             {{ item.title }} 
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Core Expertise -->
       <div class="footer-col" *ngIf="consultingExpertise().length > 0">
-        <h3 class="footer-heading">{{ data.navigation?.consultingTitle || 'Consulting Expertise' }}</h3>
+        <h3 class="footer-heading">{{ data.navigation?.consultingTitle || 'Core Expertise' }}</h3>
         <ul class="footer-list">
           <li class="footer-list-item" *ngFor="let item of consultingExpertise()">
              {{ item.title }} 
@@ -58,9 +66,9 @@
         </ul>
       </div>
 
-      <!-- Column 2: Connect -->
+      <!-- Column 3: Professional Profiles -->
       <div class="footer-col" *ngIf="socialLinks().length > 0">
-        <h3 class="footer-heading">{{ data.navigation?.socialTitle || 'PROFESSIONAL PROFILES' }}</h3>
+        <h3 class="footer-heading">{{ data.navigation?.socialTitle || 'Professional Profiles' }}</h3>
         <div class="footer-social-links">
           <a *ngFor="let link of socialLinks()" [href]="link.url" target="_blank" class="footer-social-link">
             {{ link.title }}
@@ -68,17 +76,25 @@
         </div>
       </div>
 
-      <!-- Column 3: About -->
+      <!-- Column 4: Contact Information -->
       <div class="footer-col">
-        <h3 class="footer-heading">{{ data.navigation?.aboutTitle || 'About' }}</h3>
-        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-          <p class="footer-about-brand" *ngIf="data.navigation?.platformName">{{ data.navigation?.platformName }}</p>
-          <p class="footer-about-subtitle" *ngIf="data.navigation?.platformSubtitle">{{ data.navigation?.platformSubtitle }}</p>
-          <p class="footer-about-details" style="margin-top: 0.5rem;">
-            {{ data.navigation?.engineeredBy || ('Designed & Engineered by ' + data.about.name) }}<br>
-            {{ data.about.location }}
+        <h3 class="footer-heading">Contact Information</h3>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <p class="footer-about-brand" style="margin: 0; font-size: 1rem; font-weight: 700; color: var(--text-main);">
+            {{ data.about.name }}
           </p>
-          <p class="footer-about-copyright">© {{ today.getFullYear() }}</p>
+          <p class="footer-list-item" style="margin: 0; font-size: 0.85rem; line-height: 1.4;">
+            <strong>Email:</strong> <a [href]="'mailto:' + data.about.email" style="color: var(--accent-color); text-decoration: none; font-weight: 500;">{{ data.about.email }}</a>
+          </p>
+          <p class="footer-list-item" style="margin: 0; font-size: 0.85rem; line-height: 1.4;">
+            <strong>Location:</strong> {{ data.about.location }}
+          </p>
+          <a [href]="'mailto:' + data.about.email" class="footer-social-link" style="margin-top: 0.5rem; text-align: center; font-size: 0.85rem;">
+            Discuss Your Project
+          </a>
+          <p class="footer-about-copyright" style="margin-top: 0.75rem; font-size: 0.75rem; opacity: 0.5;">
+            © {{ today.getFullYear() }} {{ data.about.name }}
+          </p>
         </div>
       </div>
 

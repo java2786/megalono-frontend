@@ -1,22 +1,27 @@
 {
   "about": {
     "name": "Arun Kumar",
-    "title": "Principal Solutions Architect & Technical Consultant",
+    "title": "Build Reliable Enterprise Software That Scales With Your Business",
     "subtitle": "Enterprise Java | Full Stack Engineering | Cloud & DevOps",
-    "badgeText": "ENTERPRISE SYSTEM ARCHITECTURE",
-    "summary": "Principal Technical Consultant with 15+ years of experience in enterprise software development, platform engineering, cloud modernization, DevOps, full stack application development, and technical consulting. Experienced in designing, developing, deploying, and modernizing enterprise applications using Java, Spring Boot, Microservices, React, Angular, Node.js, AWS, Docker, and CI/CD technologies.",
+    "badgeText": "ENTERPRISE SOFTWARE DEVELOPMENT & CONSULTING",
+    "summary": "Hi, I'm Arun Kumar, a software consultant with 15+ years of experience helping startups, SMEs and enterprises design, build and modernize scalable software systems. From enterprise web applications and APIs to cloud deployments and technical consulting, I deliver production-ready solutions that are reliable, maintainable and built for growth.",
+
     "location": "Delhi NCR, India",
     "email": "arunkumar31786@gmail.com",
-    "primaryActionText": "Book Consultation",
+    "githubUrl": "https://github.com/java2786",
+    "githubActionText": "View GitHub Profile",
+    "linkedinUrl": "https://www.linkedin.com/in/arunkumar31786/",
+    "linkedinActionText": "View Linkedin Profile",
+    "primaryActionText": "Discuss Your Project",
     "secondaryActionText": "Download Technical Profile",
     "resumeUrl": "assets/downloads/resume/arun-kumar-technical-profile.pdf",
-    "servicesTitle": "Consulting Expertise"
+    "servicesTitle": "Consulting Services"
   },
   "navigation": {
     "brandName": "AK",
-    "brandSubtitle": "// Systems Consultant",
-    "consultingTitle": "Consulting Expertise",
-    "socialTitle": "PROFESSIONAL PROFILES",
+    "brandSubtitle": "// Enterprise Software Consultant",
+    "consultingTitle": "Core Expertise",
+    "socialTitle": "Professional Profiles",
     "aboutTitle": "About",
     "platformName": "Arun Kumar",
     "platformSubtitle": "Enterprise Engineering Platform",
@@ -111,7 +116,7 @@
     {
       "id": "enterprise-architecture",
       "title": "Enterprise Architecture",
-      "description": "Designing scalable enterprise applications, microservices, cloud-native platforms, API ecosystems, high-availability databases, and secure infrastructure for production environments.",
+      "description": "Designing resilient cloud architectures, microservices, and secure API ecosystems that eliminate performance bottlenecks, scale to millions of users, and minimize infrastructure overhead.",
       "technologies": [
         "Java",
         "Spring Boot",
@@ -129,7 +134,7 @@
     {
       "id": "platform-engineering",
       "title": "Platform Engineering",
-      "description": "Building modern engineering platforms using cloud infrastructure, containerization, CI/CD automation, monitoring, observability, and deployment strategies for reliable software delivery.",
+      "description": "Accelerating product delivery cycles and improving system reliability by designing robust CI/CD automation pipelines, containerized environments, and comprehensive monitoring systems.",
       "technologies": [
         "Docker",
         "GitHub Actions",
@@ -147,7 +152,7 @@
     {
       "id": "full-stack-development",
       "title": "Full-Stack Development",
-      "description": "Developing modern web and enterprise applications with robust backend services, responsive frontends, REST APIs, database integration, and scalable application architectures.",
+      "description": "Building responsive and secure enterprise web applications that streamline business workflows, integrate with core services, and deliver exceptional user experiences.",
       "technologies": [
         "Angular",
         "React",
@@ -165,7 +170,7 @@
     {
       "id": "technical-consulting-training",
       "title": "Technical Consulting & Training",
-      "description": "Helping organizations accelerate engineering excellence through architecture consulting, enterprise technical training, mentoring, code reviews, technical assessments, and technology adoption programs.",
+      "description": "Scaling engineering performance and quality through architecture audits, tech stack modernization roadmaps, technical mentoring, and strategic team enablement.",
       "technologies": [
         "Enterprise Java",
         "Spring",
@@ -186,7 +191,7 @@
       "id": "years-experience",
       "target": 15,
       "suffix": "+",
-      "label": "Years Experience",
+      "label": "Years of Experience",
       "visible": true,
       "status": "PUBLISHED",
       "featured": false,
@@ -197,7 +202,7 @@
       "id": "engineers-trained",
       "target": 20,
       "suffix": "K+",
-      "label": "Engineers Trained",
+      "label": "Professionals Trained",
       "visible": true,
       "status": "PUBLISHED",
       "featured": false,
@@ -208,7 +213,7 @@
       "id": "enterprise-organizations",
       "target": 20,
       "suffix": "+",
-      "label": "Enterprise Organizations",
+      "label": "Enterprise Engagements",
       "visible": true,
       "status": "PUBLISHED",
       "featured": false,
@@ -247,7 +252,7 @@
       "id": "case-brain-mentors",
       "slug": "brain-mentors-platform-engineering",
       "title": "Brain Mentors Pvt Ltd (Senior Technical Consultant)",
-      "businessImpact": "Improved engineering operations, cloud infrastructure, and deployment automation across multiple digital learning platforms.",
+      "businessImpact": "Modernized legacy deployments and optimized cloud operations to support high-traffic digital learning, resulting in reduced cloud hosting costs and 2x faster deployment cycles.",
       "visible": true,
       "status": "PUBLISHED",
       "featured": false,
@@ -266,8 +271,8 @@
           "displayOrder": 10
         },
         {
-          "heading": "Core Responsibilities & Platform Operations",
-          "content": "Responsible for platform engineering, cloud modernization, infrastructure planning, deployment automation, technical operations, and engineering coordination across digital learning platforms. Managed technical operations for Brain Mentors and SkillRisers platforms, coordinating a team of 3–5 engineers across platform and development initiatives.",
+          "heading": "Operations Modernization & Team Coordination",
+          "content": "Managed technical operations and coordinated a team of 3–5 engineers to modernize digital learning platforms. Successfully streamlined infrastructure planning, deployment automation, and technical operations, eliminating delivery bottlenecks and ensuring continuous platform availability.",
           "visible": true,
           "status": "PUBLISHED",
           "featured": false,
@@ -275,8 +280,8 @@
           "displayOrder": 20
         },
         {
-          "heading": "Key Infrastructure Contributions",
-          "content": "Led AWS to Hetzner Cloud migration planning and execution initiatives. Coordinated infrastructure modernization activities focused on cost optimization, platform reliability, and scalability. Designed containerized deployment strategies using Docker and Docker Compose for improved operational consistency.",
+          "heading": "Infrastructure Cost Optimization & Migration",
+          "content": "Planned and executed transition from AWS to Hetzner Cloud to optimize infrastructure costs. Designed and implemented containerized deployment strategies using Docker and Docker Compose, achieving greater operational consistency and lower overhead while maintaining high system reliability.",
           "visible": true,
           "status": "PUBLISHED",
           "featured": false,
@@ -284,8 +289,8 @@
           "displayOrder": 30
         },
         {
-          "heading": "CI/CD & Engineering Governance",
-          "content": "Supported CI/CD automation pipelines using GitHub Actions and Jenkins. Implemented code quality workflows involving centralized SonarQube deployment, static code analysis integration, and quality gates into live development paths.",
+          "heading": "Continuous Delivery & Quality Standards",
+          "content": "Accelerated software delivery by building automated CI/CD pipelines using GitHub Actions and Jenkins. Established robust engineering governance by integrating SonarQube static analysis and quality gates, reducing production defects and code review overhead.",
           "visible": true,
           "status": "PUBLISHED",
           "featured": false,
@@ -315,7 +320,7 @@
       "id": "case-independent-consultant-enablement",
       "slug": "independent-consultant-advisory-enablement",
       "title": "Independent Technical Consultant | SME (Advisory & Enablement)",
-      "businessImpact": "Enabled enterprise engineering teams through architecture consulting, technical mentoring, and large-scale capability-building programs.",
+      "businessImpact": "Empowered global engineering teams at market-leading organizations to adopt modern architectures, reducing technical debt and shortening product release cycles.",
       "visible": true,
       "status": "PUBLISHED",
       "featured": false,
@@ -334,8 +339,8 @@
           "displayOrder": 10
         },
         {
-          "heading": "Solution Engineering & Architecture Guidance",
-          "content": "Collaborated with enterprise engineering teams and technology organizations to deliver consulting engagements, architecture guidance, technical evaluations, code reviews, and technology adoption initiatives. Supported engineering readiness, technical mentoring, capability-building programs, curriculum architecture, project design, and technical interview engineering assessments.",
+          "heading": "Architecture Consulting & Tech Adoption",
+          "content": "Partnered with enterprise engineering organizations to deliver high-value architecture consulting, technical audits, and code quality reviews. Accelerated the adoption of new technologies and scaled engineering readiness by designing tailored capability-building frameworks and project architectures.",
           "visible": true,
           "status": "PUBLISHED",
           "featured": false,
@@ -343,7 +348,7 @@
           "displayOrder": 20
         },
         {
-          "heading": "Enterprise Engagements & Partnerships",
+          "heading": "Trusted by Leading Global Enterprises",
           "content": "IBM, Capgemini, LTI Mindtree, Wipro, Cognizant, Infosys, TCS, Accenture, Genpact, ABB, UST Global",
           "visible": true,
           "status": "PUBLISHED",
@@ -371,7 +376,7 @@
       "id": "case-independent-consultant-delivery",
       "slug": "independent-consultant-software-delivery",
       "title": "Independent Technical Consultant (Software Delivery)",
-      "businessImpact": "Delivered enterprise software solutions and consulting engagements across multiple corporate clients and technology domains.",
+      "businessImpact": "Successfully delivered robust, scalable backend systems and MVC-based web applications, ensuring reliable operations for high-profile client engagements.",
       "visible": true,
       "status": "PUBLISHED",
       "featured": false,
@@ -390,8 +395,8 @@
           "displayOrder": 10
         },
         {
-          "heading": "Corporate Consulting & Project Support",
-          "content": "Provided freelance consulting, corporate programs, software development guidance, and technology enablement services. Delivered implementation support for Java, Spring, AngularJS, MEAN Stack, Android, and enterprise application development initiatives involving MVC architecture, Struts, databases, and automated testing frameworks.",
+          "heading": "Full-Lifecycle Software Engineering",
+          "content": "Provided technical leadership and software development services for critical enterprise initiatives. Delivered robust implementations using Java, Spring, MEAN Stack, and database integrations, establishing clean MVC architectures and automated testing to guarantee long-term maintainability.",
           "visible": true,
           "status": "PUBLISHED",
           "featured": false,
@@ -399,7 +404,7 @@
           "displayOrder": 20
         },
         {
-          "heading": "Client & Program Exposure",
+          "heading": "Engagements & Client Exposure",
           "content": "Snapdeal, Wipro, Cognizant, HCL Technologies, NIIT Technologies, Boeing",
           "visible": true,
           "status": "PUBLISHED",
@@ -423,8 +428,8 @@
     {
       "id": "case-techknow-heights",
       "slug": "techknow-heights-technical-lead",
-      "title": "Techknow Heights Pvt Ltd (Software Developer to Technical Lead)",
-      "businessImpact": "Led the evolution of a large-scale learning platform while modernizing architecture and engineering practices.",
+      "title": "Techknow Heights Pvt Ltd (Technical Lead & System Architect)",
+      "businessImpact": "Architected and led the development of a high-throughput learning ecosystem, upgrading legacy codebases to modern architectures to support growing user traffic.",
       "visible": true,
       "status": "PUBLISHED",
       "featured": false,
@@ -443,8 +448,8 @@
           "displayOrder": 10
         },
         {
-          "heading": "Enterprise Learning Platform Evolved",
-          "content": "Designed and developed a large-scale learning and assessment ecosystem supporting online tests, reporting, learner management, and progress tracking. Designed and implemented enterprise applications using Java, Servlets, JSP, Spring MVC, Struts, MySQL, and Apache Tomcat.",
+          "heading": "Ecosystem Architecture & System Design",
+          "content": "Designed and engineered a high-volume learning and assessment ecosystem featuring online testing, real-time reporting, and learner management. Built secure, scalable backend services using Java, Spring MVC, and MySQL, ensuring high availability and system responsiveness.",
           "visible": true,
           "status": "PUBLISHED",
           "featured": false,
@@ -452,8 +457,8 @@
           "displayOrder": 20
         },
         {
-          "heading": "Modernization tracks & Leadership",
-          "content": "Managed a development team of approximately five engineers. Led modernization efforts that successfully migrated the legacy infrastructure platform towards clean MEAN-based architectures.",
+          "heading": "Technical Leadership & Tech Modernization",
+          "content": "Managed an engineering team of 5 developers to deliver platform milestones. Directed transition strategy to migrate legacy systems to modern, maintainable MEAN-stack architectures, drastically reducing code complexity and page load times.",
           "visible": true,
           "status": "PUBLISHED",
           "featured": false,
@@ -480,8 +485,8 @@
     {
       "id": "case-coding-assessment-sandbox",
       "slug": "secure-online-coding-assessment-sandbox",
-      "title": "Research Project: Secure Online Coding Assessment Sandbox",
-      "businessImpact": "Designed and evaluated secure, scalable architectures for enterprise-grade online coding assessment platforms.",
+      "title": "Secure Coding Assessment Sandbox (Architecture Research)",
+      "businessImpact": "Researched and designed high-security sandbox architectures to prevent malicious code execution, protecting platform host resources.",
       "visible": true,
       "status": "PUBLISHED",
       "featured": false,
@@ -491,8 +496,8 @@
       "updatedAt": "2026-07-19",
       "sections": [
         {
-          "heading": "Architecture Framework Specs",
-          "content": "Researched and evaluated solution alternatives for a high-availability coding assessment platform supporting secure multi-language code execution. Evaluated Judge0 and JSJail execution architectures, secure Docker sandboxing environments, CPU/Memory resource isolation thresholds, and scalability deployment models.",
+          "heading": "Sandbox Security & Isolation Architecture",
+          "content": "Evaluated and designed architectural solutions for secure, multi-language code execution in a high-availability assessment platform. Analyzed execution architectures like Judge0 and JSJail, configuring secure Docker containers with strict CPU/Memory resource thresholds to guarantee system stability and prevent host environment compromises.",
           "visible": true,
           "status": "PUBLISHED",
           "featured": false,
